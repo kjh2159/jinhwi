@@ -61,13 +61,14 @@ a{
 
 	height: 3vh;
 	width: 13vw;
-	border: 2px solid black;
+	border: 0.5px solid white;
 	border-radius: 5px;
 
 	/*background: #71E38B;*/
-	background: black;
+	/*background: black;*/
+	background: rgba(0,0,0, 0.5);
 	/*color: rgb(105, 250, 23);*/
-	color: #71E38B;
+	color: #00E0FF;
 }
 
 .sidemenu .button:hover{
@@ -134,7 +135,7 @@ a{
 	transform: translate(-50%); /*absolute center*/
 	bottom: 10vh;
 
-	font-size: 25pt;
+	font-size: 20pt;
 }
 
 .sidemenu .social-media a{
