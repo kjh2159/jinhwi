@@ -52,8 +52,10 @@ a{
 
 /** LISTING **/
 .sidemenu .button{	
-	font-family: "HSSaemaul-Regular";
-	font-size: 15pt;
+	/*font-family: "HSSaemaul-Regular";*/
+	letter-spacing: 1px;
+	font-size: 12pt;
+
 	margin-left: 3vw;
 	margin-top: 1vh;
 
@@ -64,7 +66,8 @@ a{
 
 	/*background: #71E38B;*/
 	background: black;
-	color: rgb(105, 250, 23);
+	/*color: rgb(105, 250, 23);*/
+	color: #71E38B;
 }
 
 .sidemenu .button:hover{
@@ -177,7 +180,7 @@ a{
 	opacity:1.0;
 	
 	width: 80vw;
-	height: 9vh;
+	height: 9.5vh;
 	z-index: 1;
 }
 
@@ -185,7 +188,7 @@ a{
 	color: white;
 	padding-top: 1.5vh;
 	text-align: center;
-	font-size: 20pt;
+	font-size: 15pt;
 }
 
 .wrapper .home-heading .spacing{
@@ -210,4 +213,3 @@ a{
 @keyframes blink{
 	50% {opacity: 0%;}
 }
-
