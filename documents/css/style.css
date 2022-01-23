@@ -1,3 +1,26 @@
+/** Fonts **/
+@font-face {
+    font-family: 'HSSaemaul-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'National-Museum-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 *{
 	margin: 0;
 	padding: 0;
@@ -8,16 +31,11 @@ body{
 }
 
 a{
-	color: white;
 	text-decoration: none;
 }
 
-/** Fonts **/
-@font-face {
-    font-family: 'HSSaemaul-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+span {
+	display: inline;
 }
 
 
@@ -53,6 +71,7 @@ a{
 /** LISTING **/
 .sidemenu .button{	
 	/*font-family: "HSSaemaul-Regular";*/
+	font-family: "National-Museum-B";
 	letter-spacing: 1px;
 	font-size: 12pt;
 
@@ -138,35 +157,99 @@ a{
 	font-size: 20pt;
 }
 
-.sidemenu .social-media a{
-}
-
 .sidemenu .social-media a:hover{
 	color: red;
 }
 
 
 
+/** LANGUAGE SWITCH **/
+
+.wrapper .lang-switch{
+	text-align: left;
+	margin-left: 61vw;
+	margin-right: 10vw;
+	
+	width: 9vw;
+	height: 22pt;
+	border-radius: 20px;
+	
+	background-image: 
+		linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+		url("../img/korea.png");
+	background-size: cover;
+	background-position-y: 5em;
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	padding-right: 0.5vw;
+	padding-left: 0.5vw;
+}
+
+.lang-detail{
+	font-family: "GyeonggiBatang";
+	font-size: 16pt;
+	font-weight: bold;
+
+	width: 4.5vw;
+	height: 21pt;
+
+	box-shadow: 0 0.15em 0 black;
+	
+	border-radius: 15px;
+	background-color: rgba(255,255,255,0.8);
+	border: 1px solid black;
+	outline: none;
+}
+
+.eng-text{
+	display: none;
+}
+
+.kor-text{
+	display: inline-block;
+}
+
+
 /** MAIN CONTENTS **/
+
 .wrapper .main-content{
 	position: relative;
 	margin-left: 20vw;
 	margin-top: 0vw;
-	padding-top: 7vh;
+	padding-top: 10vh;
 }
 
 .main-content h2{
+	font-family: "GyeonggiBatang";
+	font-size: 28pt;
 	padding-top: 7vh;
-	margin-bottom: 1vh;
-	text-align: center;
+	margin-bottom: 8vh;
+
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.main-content h3{
+	font-family: "GyeonggiBatang";
+	font-size: 24pt;
+	margin-left: 8vw;
 }
 
 .wrapper .main-content p{
-	font-size: 20pt;
-	padding-left: 6vw;
-	padding-right: 6vw;
-	padding-top: 2vh;
+	position: relative;
+	font-family: "GyeonggiBatang";
+	font-size: 15pt;
 
+	margin-left: 8vw;
+	margin-right: 8vw;
+
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+
+	line-height:22pt;
 	text-align:justify;
 }
 
@@ -215,3 +298,76 @@ a{
 	50% {opacity: 0%;}
 }
 
+#code-canvas{
+	margin-left: 12vw;
+	margin-right: 12vw;
+	border-radius: 10px;
+	font-size: 13pt;
+}
+
+#code-word{
+	font-size: 13pt;
+	padding: 2px 2px 2px 2px;
+	background: rgb(227,230,232);
+	border-radius: 3px;
+}
+
+#code-title{
+	font-weight: normal;
+	font-size: 18pt;
+	padding: 5px 5px 5px 5px;
+	background: rgb(227,230,232);
+	border-radius: 8px;
+}
+
+/** Subject Info **/
+.subj-gate{
+	float: left;
+	margin-top: 1em;
+	margin-left: 8vw;
+	
+	width: 8vw;
+	height: 8vh;
+	background: skyblue;
+	border-radius: 20px;
+
+	box-shadow: 0 0 0 3px #ee6352,
+				0 0 0 6px #a4558f,
+				0 0 0 9px #405378;
+	background-color: white;
+
+	font-family: "GyeonggiBatang";
+	font-size:  16pt;
+	text-align: justify;
+	padding-top: 4vh;
+	padding-left: 0.5vw;
+	padding-right: 0.5vw;
+	text-align: center;
+}
+
+.subj-info{
+	margin-top: 1em;
+	margin-left: 12vw;
+	width: 51vw;
+	height: 13vh;
+	/* background: #777;*/
+
+	padding-top: 15px;
+	padding-left: 6vw;
+	padding-right: 2vw;
+	border: 2px solid black;
+	border-radius: 5px;
+
+	font-family: "GyeonggiBatang";
+	font-size: 16pt;
+}
+
+.up-date{
+	color: #777;
+	font-size: 13pt;
+}
+
+.doc-list{
+	display: inline-block;
+	color: black;
+}
