@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Jinhwi Kim</title>
+
+		<script src="https://kit.fontawesome.com/35a4560683.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- CDN Code Highlighter -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/rainbow.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<!-- External JavaScript -->
+		<script src="js/script.js"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- side menu -->
+			<div class="sidemenu">
+				<h1 class="contents">CONTENTS</h1>
+
+				<!--  -->
+				<button type="button" class="button contents" onclick="location.href='#'">C</button>
+				<button type="button" class="button contents" onclick="location.href='#'">C++</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Python</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Swift</button>
+				<button type="button" class="button contents" onclick="location.href='#'">MATLAB</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Com. Architecture</button>
+				<button type="button" class="button contents" onclick="location.href='#'">OS</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Computer Network</button>
+
+
+				<!-- Profile  -->
+				<div class="profile">
+					<img src="img/jh_test.jpg" alt="Unloaded" class="profile-img">
+					<p>Jinhwi Kim</p>
+					<p class="profile-msg">Hello, World</p>
+				</div>
+
+
+				<!-- Social Media -->
+				<div class="social-media">
+					<a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
+				</div>
+			</div>
+
+
+			<!-- home heading -->
+			<div class="home-heading">
+				<p class="spacing"> 
+					<a href="#" style="color: white;"><i class="fas fa-home"></i></a>
+					<a href="#" style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a href="#" style="color: white;"><i class="far fa-id-card"></i></a>
+				</p>
+				<h1>Jinhwi Kim: Docs</h1>
+			</div>
+
+			<!-- main content -->
+			<div class="main-content">
+				<div class="lang-switch" id = "lang-canvas">
+					<button id="l-switch" onclick="switchLang()" class="lang-detail">한글</button>
+				</div>
+				<section id = "section1">
+					<h2 class="kor-text">
+						JIN's Documents에 어서오세요!
+					</h2>
+					<!--
+					<p class = "kor-text">
+						1. 개인 블로그 형식으로 저의 공부, 연구, 프로젝트 등을 올리는 공간입니다.
+						2. 다른 사람들과 공유할 수 있고 공유하면 좋겠다고 여겨지는 내용을 다루는 사이트 공간입니다.
+						3. 이 페이지는 대문의 역할을 갖고 있습니다.
+					</p>
+					-->
+
+					<h2 class="eng-text">
+						Welcome to JIN's Documents!
+					</h2>
+					<!--
+					<p class = "eng-text">
+						This website is a place to upload my studies, research, projects and etc. in a format of a private blog.
+						Simultaneously, some duplicious posts will be uploaded and discussed with other people. This page has a role of main gate of my documents sites.
+					</p>
+					-->
+
+					<p>
+						<h3 class="kor-text"> 게시글 목록 </h3>
+						<h3 class="eng-text"> Documetns List </h3> 
+					</p>
+
+
+					<div class="subj-gate">
+						C++
+					</div>
+					<div class="subj-info">
+						<span class="up-date">2022/01/15 >  </span> <a href="#" class="kor-text doc-list"><code id="code-word">using namespace std</code>는 이제 그만 쓰세요!</a> <a href="#" class="eng-text doc-list" style="display: none;">Don't Use <code id="code-word">using namespace std</code> From Now!</a>
+					</div>
+					<div class="subj-gate">
+						Computer Network
+					</div>
+					<div class="subj-info">
+						Hello
+					</div>
+
+					<div class="subj-gate">
+						Computer Architect.
+					</div>
+					<div class="subj-info">
+						Hello
+					</div>
+
+					<p>
+						<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+
+int main(){
+	return 0;
+}</code></pre>
+					</p>
+				</section>
+
+			</div>
+		
+		</div>
+	</body>
+</html>
