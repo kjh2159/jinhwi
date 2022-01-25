@@ -15,6 +15,14 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 
+		<!-- Link LaTex -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({            
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$', '$$']]}            
+			});
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
 		<!-- External JavaScript -->
 		<script src="../js/script.js"></script>
 		<script src="../js/lectures.js"></script>
@@ -84,6 +92,9 @@
 					<button class="problem" onclick="viewCppLectureProblem('lecture11')">Lecture 11</button>
 					<button class="problem" onclick="viewCppLectureProblem('lecture12')">Lecture 12</button>
 					<button class="problem" onclick="viewCppLectureProblem('lecture13')">Lecture 13</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture13')">Lecture 14</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture13')">Lecture 15</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture13')">Lecture 16</button>
 			    </div>
 				<p class = "kor-text">
 					위의 버튼들 중 학습한 강의의 버튼을 눌러주세요. 해당 강의에 대한 문제가 나옵니다. 영어 버전으로 풀고 싶다면, 언어 전환 버튼을 눌러주세요.
@@ -181,11 +192,187 @@ $(TARGET) : $(OBJS)
 				<!-- LECTURE 2 PROBLEMS -->
 				<section id="lecture2">
 					<h2 class="kor-text" style="margin-bottom: 3vh;">
-						준비중 (2)
+						2강 예제
 					</h2>
 					<h2 class="eng-text" style="margin-bottom: 3vh;">
-						Being Prepared (2)
+						Lecture 2 Example Problem
 					</h2>
+
+					<p> <h3 class="kor-text"> 1. 구의 속성 계산하기 </h3>
+						<h3 class="eng-text"> 1. Evaluate Properties of Sphere</h3></p>
+					
+					<p class = "kor-text">
+						구의 반지름을 입력받아 구의 속성들을 계산해주는 프로그램을 작성해봅시다.
+						구의 속성들에는 구의 겉넓이와 부피가 포함됩니다.
+						관련 수식은 아래를 참고해주세요.
+					</p>
+					<p class = "eng-text">	
+						Let's make a program which receive a radius of a sphere and evaluate properties of the sphere.
+						The properties include its surface area and volume.
+						Please refer to the related equations.
+					</p>
+					<p style="font-size: 35pt; padding-top: 0; text-align: center;">$A=4\pi r^{2},$ $V=\frac{4}{3} \pi r^{3}$</p>
+
+					<p class = "kor-text">
+						위의 수식을 참고해 아래와 같은 입출력 결과가 도출되도록 프로그램을 짜봅시다.
+					</p>
+					<p class = "eng-text">	
+						Please implement a program to derive the expected input and output result like the below referring to the above equations.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Enter a Radius: 10
+Spherical Surface Area: 628.3186
+Spherical Volume: 1047.1976</code></pre>
+					</p>
+
+					<p> <h3 class="kor-text"> 2. Overflow와 Underflow 감지하기 </h3>
+						<h3 class="eng-text"> 2. Detect Overflow and Underflow</h3></p>
+
+					<p class = "kor-text">
+						You Can C++ 2강에서 배운 바와 같이 Overflow와 Underflow는 해당 프로그램에 매우 치명적인 영향을 끼칠 수 있습니다.
+						왜냐하면, 계산 결과 값 자체를 완전히 바꿔버릴 수 있기 때문입니다.
+						그렇다면 Overflow나 Underflow가 발생할 수 있을 것으로 예상이 가는 부분에서는 계산 결과로부터 Overflow나 Underflow 이슈를 확인해봐야 할 것입니다.
+						이번에는 특정 계산 결과에 대해서 Overflow가 발생했는지 혹은 Underflow가 발생했는지 아니면 안전한 값인지 확인하는 코드를 만들어봅시다.
+					</p>
+					<p class = "eng-text">	
+						As mentioned in the 2nd lecture, an overflow and underflow could give a very lethal impact on a program.
+						Because the computation result could be totally changed.
+						Therefore, a program should check the result of the part that the overflow or underflow are expected.
+						Let's make your own program to check if the computation value is overflowed, underflowed or secure.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (1)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (1)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: 999999999999
+Overflow</code></pre>
+					</p>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (2)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (2)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: -1
+Underflow</code></pre>
+					</p>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (3)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (3)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: 1234
+Secure</code></pre>
+					</p>
+
+					<p class = "kor-text">
+						Overflow와 Underflow를 감지하기 위해서는 각각의 Data Type이 나타낼 수 있는 최댓값과 최솟값이 몇인지 알아야 합니다.
+						이 최댓값과 최솟값을 구하는 코드를 직접 구현해도 되고 또는 아래의 코드에서 최댓값과 최솟값을 활용하는 방식을 참고하면 되겠습니다.
+						여러분들이 확인하셔야 하는 Data Type은 정수형으로 고정된다고 가정합니다. 또한, Overflow와 Underflow를 발생시킬만한 연산은 아래의 코드를 참고해주세요.
+						(참고: <a href="https://www.cplusplus.com/reference/climits/">&lt;limits.h&gt;</a>)
+					</p>
+					<p class = "eng-text">	
+						First of all, you must know what the maximum and minimum value of each data type is, to detect the overflow and underflow.
+						You can implement this functionality for the maximum and minimum value or refer to the following code to get the values.
+						Let assume that the data type you should check is fixed on integer data types.
+						Also, please refer to the computations expected to cause the overflow or underflow.
+						(Reference: <a href="https://www.cplusplus.com/reference/climits/">&lt;limits.h&gt;</a>)
+					</p>
+
+					<p style="margin-left: 10vw; padding-bottom: 0;">
+						p2_2.cpp
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="cpp" id="code-canvas">#include &lt;limits.h&gt;
+#include &lt;iostream&gt;
+
+int main(){
+	std::cout &lt;&lt; INT_MAX &lt;&lt; std::endl; // for the maximum of int
+	std::cout &lt;&lt; INT_MIN &lt;&lt; std::endl; // for the minimum of int
+
+	// Expected Computation Warning 1
+	// Expected Computation Warning 2
+	// Expected Computation Warning 3
+	// Expected Computation Warning 4
+	// Expected Computation Warning 5
+	// Expected Computation Warning 6
+	// Expected Computation Warning 7
+	// Expected Computation Warning 8
+	return 0;
+}</code></pre>
+					</p>
+
+					<p> <h3 class="kor-text"> 3. 대출의 액면가 구하기 </h3>
+						<h3 class="eng-text"> 3. Evaluate a Face Value of Loan</h3></p>
+
+					<p class = "kor-text">
+						이번 문제는 경제와 수학에 가까운 문제입니다. 소비자 대출 협상은 그렇게 간단하지만은 않다.
+						대출의 한 형태는 다음과 같이 작용하는 할인 할부 대출이라고 가정하자. 한 대출이 액면가 <span>$</span>1,000에 5% 이자율과 24개월의 존속 기간을 가지고 있다.
+						이자는 액면가 <span>$</span>1,000에 0.05를 곱한 <span>$</span>50이다. 전체 이자는 이자 <span>$</span>50에 존속기간 2년을 곱해 <span>$</span>100이다.
+						액면가로부터 이 액수를 공제하면, 소비자의 대출금은 <span>$</span>900이다.
+						액면가를 기반으로 계산한 월 할부금은 <span>$</span>1,000를 24로 나눈 <span>$</span>41.67이다.
+						액면가만을 통해 계산한 소비자 대출금은 <span>$</span>900를 필요로 하는 소비자에게는 좋겠지만, <span>$</span>2,000를 필요로 하는 소비자에게는 다른 방식으로 액면가를 계산해야한다.
+						즉, 소비자 대출금 <span>$</span>2,000에 맞추어서 계산을 달리해야 한다.
+						소비자가 받기 원하는 액수, 이자율, 대출 존속 기간 이렇게 3개의 입력을 받은 후, 소비자를 위해 요구되는 액면가를 계산하는 프로그램을 만들어보자.
+						(입출력 예시를 참고해주시기 바랍니다.)
+					</p>
+					<p class = "eng-text">	
+						This problem is close to the economy and mathematics. A negotiation of a customer loan is not that simple.
+						Suppose that one form of loan is operated as a discount installment loan. The loan policy has a face value <span>$</span>1,000, an interest rate 5% and 24 months of duration.
+						Interest is <span>$</span>50 that the face value of <span>$</span>1,000 is multiplied by 0.05. Total interest is a value, <span>$</span>50 in interest multiplied by 2 years of life, equal to <span>$</span>100.
+						If the total interest is deducted from the face value, a loan of a client is <span>$</span>900.
+						The monthly installment based on the face value is <span>$</span>41.67, which is <span>$</span>1,000 divied by 24.
+						It is good for a client who want to loan <span>$</span>900, however the face value is evaluted in another way for a client who needs <span>$</span>2,000.
+						In other words, the face value should be calculated for the standard of the client loan of <span>$</span>2,000.
+						Let's make a program that computes the required face value for the client after receiving 3 values of the amount of the loan the client wants, installment rate, and the loan period.
+						(Please, refer to the expected input and output example.)
+					</p>
+
+					<p class="kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						입출력 예시 (1)
+					</p>
+					<p class="eng-text" style="margin-left: 10vw; padding-bottom: 0;">
+						The expected IO example (2)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">The amount of the client enquiring loan ($): 2000
+An interest rate (%): 5
+A loan period (month): 24
+
+&lt;Expectated Info&gt;
+A face value ($): 2222.22
+A monthly installment ($): 83.33
+						</code></pre>
+					</p>
+
+					<p class="kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						입출력 예시 (2)
+					</p>
+					<p class="eng-text" style="margin-left: 10vw; padding-bottom: 0;">
+						The expected IO example (3)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">The amount of the client enquiring loan ($): 0
+An interest rate (%): -1
+A loan period (month): 24
+
+&lt;Expectated Info&gt;
+ERROR: Wrong Input</code></pre>
+					</p>
 				</section>
 
 				<!-- LECTURE 3 PROBLEMS -->
@@ -295,6 +482,36 @@ $(TARGET) : $(OBJS)
 					</h2>
 					<h2 class="eng-text" style="margin-bottom: 3vh;">
 						Being Prepared (13)
+					</h2>
+				</section>
+
+				<!-- LECTURE 13 PROBLEMS -->
+				<section id="lecture14">
+					<h2 class="kor-text" style="margin-bottom: 3vh;">
+						준비중 (14)
+					</h2>
+					<h2 class="eng-text" style="margin-bottom: 3vh;">
+						Being Prepared (14)
+					</h2>
+				</section>
+
+				<!-- LECTURE 15 PROBLEMS -->
+				<section id="lecture15">
+					<h2 class="kor-text" style="margin-bottom: 3vh;">
+						준비중 (15)
+					</h2>
+					<h2 class="eng-text" style="margin-bottom: 3vh;">
+						Being Prepared (15)
+					</h2>
+				</section>
+
+				<!-- LECTURE 16 PROBLEMS -->
+				<section id="lecture16">
+					<h2 class="kor-text" style="margin-bottom: 3vh;">
+						준비중 (16)
+					</h2>
+					<h2 class="eng-text" style="margin-bottom: 3vh;">
+						Being Prepared (16)
 					</h2>
 				</section>
 			</div>
