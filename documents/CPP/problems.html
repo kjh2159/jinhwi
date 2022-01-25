@@ -299,19 +299,21 @@ Secure</code></pre>
 					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
 						<pre><code class="cpp" id="code-canvas">#include &lt;limits.h&gt;
 #include &lt;iostream&gt;
+#include &lt;cmath&gt;
 
 int main(){
 	std::cout &lt;&lt; INT_MAX &lt;&lt; std::endl; // for the maximum of int
 	std::cout &lt;&lt; INT_MIN &lt;&lt; std::endl; // for the minimum of int
 
-	// Expected Computation Warning 1
-	// Expected Computation Warning 2
-	// Expected Computation Warning 3
-	// Expected Computation Warning 4
-	// Expected Computation Warning 5
-	// Expected Computation Warning 6
-	// Expected Computation Warning 7
-	// Expected Computation Warning 8
+	int a=1, b=-2, c=5;
+	int i=5, j=7, k=15, x=9;
+
+	a &lt;&lt; (sizeof(int)*4 - 1); 	// Expected Computation Warning 1
+	b &gt;&gt; 1;				// Expected Computation Warning 2
+	exp(k);				// Expected Computation Warning 3
+	120*log2(1+exp(i)*pow(3,j)/k);	// Expected Computation Warning 4
+	c*pow(x,3) + b*pow(x,2) + a*x;	// Expected Computation Warning 5
+	
 	return 0;
 }</code></pre>
 					</p>
@@ -355,8 +357,7 @@ A loan period (month): 24
 
 &lt;Expectated Info&gt;
 A face value ($): 2222.22
-A monthly installment ($): 83.33
-						</code></pre>
+A monthly installment ($): 83.33</code></pre>
 					</p>
 
 					<p class="kor-text" style="margin-left: 10vw; padding-bottom: 0;">
