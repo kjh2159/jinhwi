@@ -40,6 +40,21 @@ body{
 	font-size: 15pt;
 }
 
+.answer{
+	font-family: "GyeonggiBatang";
+	color: black;
+
+	border: 0px solid;
+	background-color: rgba(0, 0, 0, 0);
+
+	cursor: pointer;
+	font-size: 15pt;
+}
+
+.answer-sheet{
+	display: none;
+}
+
 #lecture1{
 	display: none;
 }

@@ -38,6 +38,10 @@ span {
 	display: inline;
 }
 
+/** Code Highlighter **/
+.hljs{
+	tab-size: 4;
+}
 
 /** SIDE MENU **/
 .wrapper .sidemenu{
