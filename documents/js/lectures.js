@@ -20,3 +20,34 @@ function displayNone(item){
 	console.log(item)
 	section.style.display = "none";
 }
+
+function changeAnswerDisplay(item_id) {
+	let answer_sheet  = document.getElementById(item_id);
+	
+	console.log(answer_sheet.style.display);
+
+	var disp = answer_sheet.style.display;
+
+	if(disp === "none" || disp === ""){
+		answer_sheet.style.display = "block";
+	} else {
+		answer_sheet.style.display = "none";
+	}
+	
+	let langBtn = document.getElementById("l-switch");
+	if (langBtn.textContent === "한글") item_id += "_k";
+	else item_id += "_e";
+
+	changeAnsExLang(item_id);
+}
+
+function changeAnsExLang(ans_class){
+	var classes = document.getElementsByClassName(ans_class);
+	for(let i=0; i<classes.length; i++){
+		if (classes[i].style.display === "none"){
+			classes[i].style.display = "inline-block";
+		} else {
+			classes[i].style.display = "none";
+		}
+	}
+}
