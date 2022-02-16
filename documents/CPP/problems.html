@@ -122,7 +122,7 @@
 					</p>
 					<p class = "eng-text">	
 						Welcome to the first example problem. Most of all, I wish you complete all of lectures and problems.
-						You must practice standard input and output. Let's make a program which is input user information from users and print them.
+						You must practice standard input and output. Let's write a program which prompts the user enter the user information and displays them.
 						User information includes a name, age and hometown. Please refer to the expected output.
 					</p>
 					
@@ -153,7 +153,7 @@ Age: 25 / Hometown: Seoul</code></pre>
 						그리고 여러분의 파일구조가 다음과 비슷하게 연습문제 파일이 <code id="code-word">main.cpp</code>와 같이 있다면, <code id="code-word">Makefile</code>을 수정해주셔야 합니다.
 					</p>
 					<p class = "eng-text" style="padding-bottom: 0;">	
-						If using the command <code id="code-word">sh do.sh</code> used in the lecture after making a program code, then you might face a compile error.
+						If using the command <code id="code-word">sh do.sh</code> used in the lecture after making your own program code, then you might face a compile error.
 						For example, assume that there is a new file <code id="code-word">p1_1.cpp</code> for the problem.
 						Also, suppose that there is an existing file <code id="code-word">main.cpp</code> in the folder made during the lecture.
 						Specifically, please watch the following file structure about your C++ files.
@@ -161,11 +161,11 @@ Age: 25 / Hometown: Seoul</code></pre>
 					</p>
 					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
 <pre><code class="bash" id="code-canvas">YouTube
-   └─── 1
-   	├─── main.cpp
-	├─── p1_1.cpp
-	├─── Makefile
-	└─── do.sh</code></pre>
+   └─ 1
+   	  ├─── main.cpp
+	  ├─── p1_1.cpp
+	  ├─── Makefile
+	  └─── do.sh</code></pre>
 					</p>
 
 					<p class = "kor-text" style="padding-bottom: 0;">
@@ -208,7 +208,7 @@ $(TARGET) : $(OBJS)
 						관련 수식은 아래를 참고해주세요.
 					</p>
 					<p class = "eng-text">	
-						Let's make a program which receive a radius of a sphere and evaluate properties of the sphere.
+						Let's make a program that prompts the user to enter a radius of a sphere and evaluate properties of the sphere.
 						The properties include its surface area and volume.
 						Please refer to the related equations.
 					</p>
@@ -294,9 +294,10 @@ Secure</code></pre>
 						(Reference: <a href="https://www.cplusplus.com/reference/climits/">&lt;limits.h&gt;</a>)
 					</p>
 
-					<p style="margin-left: 10vw; padding-bottom: 0;">
-						p2_2.cpp
-					</p>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						참조 코드: <code id="code-word">p2_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Reference Code: <code id="code-word">p2_2.cpp</code></p>
 					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
 						<pre><code class="cpp" id="code-canvas">#include &lt;limits.h&gt;
 #include &lt;iostream&gt;
@@ -337,7 +338,7 @@ int main(){
 						This problem is close to the economy and mathematics. A negotiation of a customer loan is not that simple.
 						Suppose that one form of loan is operated as a discount installment loan. The loan policy has a face value <span>$</span>1,000, an interest rate 5% and 24 months of duration.
 						Interest is <span>$</span>50 that the face value of <span>$</span>1,000 is multiplied by 0.05. Total interest is a value, <span>$</span>50 in interest multiplied by 2 years of life, equal to <span>$</span>100.
-						If the total interest is deducted from the face value, a loan of a client is <span>$</span>900.
+						If the total interest is deducted from the face value, the loan of the client is <span>$</span>900.
 						The monthly installment based on the face value is <span>$</span>41.67, which is <span>$</span>1,000 divied by 24.
 						It is good for a client who want to loan <span>$</span>900, however the face value is evaluted in another way for a client who needs <span>$</span>2,000.
 						In other words, the face value should be calculated for the standard of the client loan of <span>$</span>2,000.
@@ -352,7 +353,7 @@ int main(){
 						The expected IO example (2)
 					</p>
 					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
-						<pre><code class="bash" id="code-canvas">The amount of the client enquiring loan ($): 2000
+						<pre><code class="bash" id="code-canvas">A retail baking loan amount ($): 2000
 An interest rate (%): 5
 A loan period (month): 24
 
@@ -368,7 +369,7 @@ A monthly installment ($): 83.33</code></pre>
 						The expected IO example (3)
 					</p>
 					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
-						<pre><code class="bash" id="code-canvas">The amount of the client enquiring loan ($): 0
+						<pre><code class="bash" id="code-canvas">A retail baking loan amount ($): 0
 An interest rate (%): -1
 A loan period (month): 24
 
@@ -394,7 +395,7 @@ ERROR: Wrong Input</code></pre>
 						다음의 출력 예시를 참고해서 패턴을 분석하여 정상 동작하는 프로그램을 만들어 보자.
 					</p>
 					<p class = "eng-text">	
-						Let's make your own program which receives one number as a height and print a pattern such as the following example.
+						Let's make your own program that the user is promted to enter one number as a height and it displays a pattern such as the following example.
 						Please refer to the expected output for a normal operation.
 					</p>
 
@@ -416,7 +417,7 @@ Program Terminated.</code></pre>
 
 
 					<p> <h3 class="kor-text"> 2. 변형된 FizzBuzz 게임</h3>
-						<h3 class="eng-text"> 2. Modified FizzBuzz Game</h3></p>
+						<h3 class="eng-text"> 2. A Variation of FizzBuzz Game</h3></p>
 					
 					<p class = "kor-text">
 						혹시 FizzBuzz 게임에 대해서 들어보셨나요? FizzBuzz게임은 3의 배수에서는 <code id="code-word">Fizz</code>를, 5의 배수에서는 <code id="code-word">Buzz</code>를 그리고 3과 5의 공배수에서는 <code id="code-word">FizzBuzz</code>를 출력하는 게임입니다.
@@ -428,7 +429,7 @@ Program Terminated.</code></pre>
 						Let's make a slight variation of this FizzBuzz game.
 						Write a program next to <code id="code-word">Fizz</code>,<code id="code-word">Buzz</code>, or <code id="code-word">FizzBuzz</code> that can print out if the number is odd or even.
 						Please refer to the expected input and output result. 
-						Your program must receive two input numbers to specify a range to execute the FizzBuzz game.
+						Your program must prompt the user to enter two input numbers to specify a range to execute the FizzBuzz game.
 					</p>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
@@ -452,7 +453,7 @@ Buzz even</code></pre>
 
 
 					<p> <h3 class="kor-text"> 3. 변형된 카이사르 암호 풀기 (심화)</h3>
-						<h3 class="eng-text"> 3. Solve a Modified Caesar Cipher (Advanced)</h3></p>
+						<h3 class="eng-text"> 3. Solve a Variation of Caesar Cipher (Advanced)</h3></p>
 					
 					<p class = "kor-text">
 						카이사르 암호는 여러분들이 살아가면서 한 번쯤은 들어봤은 고전 암호 기법입니다.
@@ -477,7 +478,7 @@ Buzz even</code></pre>
 						따라서 원본 문자와 암호 문자를 비교해보면, Shift Right 3를 한 경우에 A는 50, B는 51, ... 의 값을 가져야 합니다.
 					</p>
 					<p class = "eng-text">	
-						From now, this Caesar cipher will be modified.
+						From now, this Caesar cipher will be variated.
 						Most of all, the general Caesar cipher does not distinguish upper and lower cases, however your program should be able to distinguish them.
 						Therefore, if the alphabets ABCDE...vwxyz is shifted right by three, they will be replaced with xyzAB...stuvw.
 						Your program must additionally replace the alphabets with not the alphabets but the numbers.
@@ -489,9 +490,9 @@ Buzz even</code></pre>
 					<p style="text-align: center;"><img src="../img/caesar_1.png" alt="No-Img" style="width: 40vw;"></p>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
-						카이사르 암호의 변형</p>
+						카이사르 암호의 변형 과정</p>
 					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
-						Modification of Caesar Cipher</p>
+						A Procedure of Variation of Caesar Cipher</p>
 					<pre><code class="bash" id="code-canvas">ABCDE -&gt; xyzAB -&gt; 50,51,52,1,2</code></pre>
 
 					<p class = "kor-text">
@@ -501,8 +502,8 @@ Buzz even</code></pre>
 					</p>
 					<p class = "eng-text">	
 						Refering to the following the expected result and example code, please make a program to follow the following rules.
-						After receiving one character sequence, your program should encrypt the input string into the modified Caesar cipher mentioned above through <code id="code-word">SHIFT_P</code>and <code id="code-word">SHIFT_R</code>.
-						A code for your program to receive a character sequence is implemented in the example code.
+						After the user entering one character sequence, your program should encrypt the input string into the variated Caesar cipher mentioned above through <code id="code-word">SHIFT_P</code>and <code id="code-word">SHIFT_R</code>.
+						An operation for the user to be prompted to enter the character sequence is implemented in the example code.
 					</p>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
