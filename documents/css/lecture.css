@@ -44,8 +44,12 @@ body{
 	font-family: "GyeonggiBatang";
 	color: black;
 
-	border: 0px solid;
+	border: 2px solid red;
 	background-color: rgba(0, 0, 0, 0);
+	border-radius: 5px;
+
+	height: 22pt;
+	width: wrap;
 
 	cursor: pointer;
 	font-size: 15pt;
