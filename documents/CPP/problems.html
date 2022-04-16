@@ -212,7 +212,7 @@ $(TARGET) : $(OBJS)
 						The properties include its surface area and volume.
 						Please refer to the related equations.
 					</p>
-					<p style="font-size: 35pt; padding-top: 0; text-align: center;">$$A=4\pi r^{2},$$ $$V=\frac{4}{3} \pi r^{3}$$</p>
+					<p style="font-size: 35pt; padding-top: 0; padding-bottom: 0; text-align: center;">$$A=4\pi r^{2},$$ $$V=\frac{4}{3} \pi r^{3}$$</p>
 
 					<p class = "kor-text">
 						위의 수식을 참고해 아래와 같은 입출력 결과가 도출되도록 프로그램을 짜봅시다.
@@ -845,9 +845,9 @@ Time Cost: 216min
 					</p>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
-						<code id="code-word">main.cpp</code></code></p>
+						<code id="code-word">main.cpp</code></p>
 					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
-						<code id="code-word">main.cpp</code></code></p>
+						<code id="code-word">main.cpp</code></p>
 					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
 #include &lt;ctime&gt; // for time_t
 #include &lt;chrono&gt;
@@ -926,11 +926,522 @@ int main(){
 				<!-- LECTURE 6 PROBLEMS -->
 				<section id="lecture6">
 					<h2 class="kor-text">
-						준비중 (6)
+						6강 예제
 					</h2>
 					<h2 class="eng-text">
-						Being Prepared (6)
+						Lecture 6 Exercises
 					</h2>
+
+<!-- 6-1 -->
+					<p> <h3 class="kor-text"> 1. 16진수의 비트 분해</h3>
+						<h3 class="eng-text"> 1. Bits Separation for Hexadecimal</h3></p>
+					
+					<p class = "kor-text">
+						6번째 강의에서 2진수를 분해하는 예시를 보고 공부한 적이 있다.
+						이번 문제는 확장된 예시로 16진수를 분해하는 문제이다.
+						16진수 숫자는 16진수 숫자임을 나타내는 접두어 <code id="code-word">0x</code>를 사용해서 표현한다.
+						예를 들어, <code id="code-word">0xABC123</code>이라는 숫자에서 <code id="code-word">0x</code>는 그 이후의 값인 <code id="code-word">ABC123</code>가 16진수 표현임을 의미한다.
+						이 숫자를 10진수로 변환하면, 다음과 같은 과정을 통해서 10진수 값을 얻을 수 있다.
+					</p>
+					<p class = "eng-text">	
+						We've learned about the bit separation for a binary number from the 6th lecture.
+						This problem represents the bit separation for a hexadecimal number as an extended example.
+						Hexadecimal numbers are expressed with a prefix <code id="code-word">0x</code>.
+						For example, for a number <code id="code-word">0xABC123</code>,  <code id="code-word">0x</code> means that <code id="code-word">ABC123</code> after the prefix is written by the hexadecimal number system.
+						We translating this number into a decimal number, then the decimal value is calculated following the below step.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{5} \times 10 + 16^{4} \times 11 + 16^{3} \times 12 + 16^{2} \times 1 + 16^{1} \times 2 + 16^{0} \times 3 = 11,256,099 $$$
+					</p>
+
+					<p class = "kor-text">
+						주어진 수인 <code id="code-word">0xABC123</code>를 16진수 형태에서 이분할하면, <code id="code-word">0xABC</code> 그리고 <code id="code-word">0x123</code>으로 나눌 수 있다.
+						이분할한 16진수는 아래의 계산식을 참고하면 10진수로 각각 2,748과 291을 나타낸다.
+					</p>
+					<p class = "eng-text">	
+						If separating the given hexadecimal number <code id="code-word">0xABC123</code> into two parts with the hexadecimal form, we can get numbers, <code id="code-word">0xABC</code> and <code id="code-word">0x123</code>.
+						These hexadecimal numbers respectively represent 2,748 and 291 with the decimal form referring to the following equation.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{2} \times 10 + 16^{1} \times 11 + 16^{0} \times 12 = 2,748 $$$
+						$$$ 16^{2} \times 1 + 16^{1} \times 2 + 16^{0} \times 3 = 291 $$$
+					</p>
+
+					<p class = "kor-text">
+						<code id="code-word">0xFE987</code>과 같이 16진수 자릿수($$n$$)가 홀수개인 경우에는 주어진 수의 앞쪽을 $$\frac{n-1}{2}$$개로 그리고 뒤쪽을 $$\frac{n+1}{2}$$개로 분할해야 한다.
+						즉, <code id="code-word">0xFE</code>와 <code id="code-word">0x987</code>과 같이 앞쪽을 짧게, 뒤쪽을 길게 분할하면 된다.
+						그리고 이렇게 이분할한 16진수는 아래의 계산식을 참고해 10진수로 각각 254와 2,439를 나타낸다.
+					</p>
+					<p class = "eng-text">	
+						Plus, hexadecimal numbers like <code id="code-word">0xFE987</code>, which have odd hexadecimal digits, must be separated into $$\frac{n-1}{2}$$ hexadecimal digits for the front part and $$\frac{n+1}{2}$$ hexadecimal digits for the rear part.
+						Therefore, this hex number can be partitioned, shorter for the front and longer for the rear, with <code id="code-word">0xFE</code> and <code id="code-word">0x987</code>.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{2} \times 0 + 16^{1} \times 15 + 16^{0} \times 14 = 254 $$$
+						$$$ 16^{2} \times 9 + 16^{1} \times 8 + 16^{0} \times 7 = 2,439 $$$
+					</p>
+
+					<p class = "kor-text">
+						사용자로부터 문자열의 형태로 16진수를 입력받은 뒤에 그 수를 분할하고 아래의 입출력 예시처럼 출력하는 프로그램을 만들어보아라.
+						16진수를 분할하는 방식은 위에서 설명된 방식을 따른다.
+						단, 16진수의 크기는 128bit(2진수 변환시)로 제한한다.
+						또한, 16진수를 나타내는 접두어(<code id="code-word">0x</code> 또는 <code id="code-word">0X</code>) 유무 그리고 숫자의 대소문자에 상관없이 16진수로 간주한다.
+						프로그램 구현을 위해서 주어진 스켈레톤 코드를 참조하라(스켈레톤 코드에는 프로그램 구현에 도움이 될 수 있는 함수가 작성되어 있고 그 예시가 있으며 더 자세한 설명을 위해서는 참조 버튼을 통해 확인하라).
+					</p>
+					<p class = "eng-text">	
+						Write a program to print out the partitioned numbers after prompting the user to enter a hexadecimal number with a character sequence form like the following examples.
+						There are some constraints for the hexadecimal separation.
+						First, the size of the hexadecimal number is limited to up to 128 bits for the maximum.
+						Second, the input numbers are considered as hexadecimal numbers regardless of the prefix(<code id="code-word">0x</code> or <code id="code-word">0X</code>)'s existance and case-sensitivity.
+						Please refer to the skeleton code for the program implementation (some functions, which might be helpful, are implemented).
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입출력 예시</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Input & Output</p>
+					<pre><code class="bash" id="code-canvas">Enter a Hexadecimal Number: 0XABC123
+[1] 0xabc = 2748
+[2] 0x123 = 291
+
+Enter a Hexadecimal Number: 0xfe987
+[1] 0xfe = 254
+[2] 0x987 = 2439
+
+Enter a Hexadecimal Number: 123456
+[1] 0x123 = 291
+[2] 0x456 = 1110
+
+Enter a Hexadecimal Number: abcdefgh
+[Error] Out of Range</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;algorithm&gt; // for std::transform
+#include &lt;cctype&gt;    // for ::tolower, ::toupper
+
+#define MAX_LEN /*Your Implementation*/
+#define LOWER(C) std::transform(C, C+MAX_LEN, C, ::tolower)
+#define UPPER(C) std::transform(C, C+MAX_LEN, C, ::toupper)
+
+int main(){
+	char hex[MAX_LEN];
+	std::cout &lt;&lt; "Enter a Hexadecimal Number: ";
+	std::cin &gt;&gt; hex;
+
+	/* Your Implementation */
+
+	/* ## You Can Use the Given Function like the Following Example ##
+	 * char str[10] = "HellO";
+	 * LOWER(str);
+	 * std::cout &lt;&lt; str &lt;&lt; std::endl; // Result: hello
+	 * // or //
+	 * char str[10] = "HellO";
+	 * UPPER(str);
+	 * std::cout &lt;&lt; str &lt;&lt; std::endl; // Result: HELLO
+	 */
+
+	/* Your Implementation */
+	return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_1')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_1')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_6_1_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						정의된 매크로 함수인 <code id="code-word">LOWER(C)</code>와 <code id="code-word">UPPER(C)</code>함수는 각각 인자로 주어진 문자열을 모두 소문자와 대문자로 바꿔주는 함수이다.
+						리턴값은 신경쓰지 않아도 가능하며 인자로 들어간 문자열 자체가 바뀐다.
+						가령, 스켈레톤 코드의 예시에서 <code id="code-word">LOWER(str)</code>의 결과는 <code id="code-word">str</code> 변수에 저장된 문자열 자체가 <code id="code-word">hello</code>로 바뀐 형태이다.
+						또한, 함수가 구현된 방식은 고려하지 않아도 된다. 
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_6_1_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						The defined macro functions <code id="code-word">LOWER(C)</code> and <code id="code-word">UPPER(C)</code> respectively have a function to change the given string into totally lower cases and upper cases.
+						The return value does not matter because the argument string variable is changed itself.
+						For example, the result of <code id="code-word">LOWER(str)</code> from the skeleton code is <code id="code-word">hello</code>, which the value of the argument variable <code id="code-word">str</code> itself is changed into.
+						Additionally, you need not to focus on the way that implement these functions.
+					</p>
+					<pre class="answer-sheet" id="prob_6_1"><code class="cpp" id="code-canvas">char str[10] = "HeLlO";
+LOWER(str);
+std::cout &lt;&lt; str &lt;&lt; std::endl;</code></pre>
+
+
+<!-- 6-2 -->
+					<p> <h3 class="kor-text"> 2. 포인터로 배열 접근하기 (이미지 처리)</h3>
+						<h3 class="eng-text"> 2. Access to Array with Pointer (Image Processing) </h3></p>
+					
+					<p class = "kor-text">
+						컴퓨터에서 어떠한 파일을 저장할 때는 크게 2가지의 영역으로 나뉜다.
+						바로 메타데이터(Metadata)라고 불리는 영역과 실제 데이터(Data) 영역이다.
+						이 영역 분할은 거의 모든 파일 포맷에 대해서 공통적으로 적용이 되는데, 메타데이터는 해당 파일과 데이터 영역에 대한 속성 정보를 지닌다.
+						이미지 파일의 경우, 메타데이터에는 해당 이미지가 가로-세로 몇 픽셀을 갖는지, 흑백 이미지인지, 데이터 크기가 얼마나 되는지 등등의 정보를 지닌다.
+					</p>
+					<p class = "eng-text">	
+						When the computer save any files, they roughly consists of two parts, which are metadata section and data section.
+						This section separation is applied to almost all file formats and metadata has information for the file and the data section.
+						In the case of an image file, the metadata might have information about what pixels it has for a width and height, if it has gray scale, how big size it has and etc.
+					</p>
+
+					<p class = "kor-text">
+						파일 확장자에 따라서 '메타데이터+데이터'형식과 '데이터+메타데이터'형식으로 존재할 수 있다.
+						컴퓨터는 파일 확장자와 메타데이터의 정보에 따라서 데이터 해석 방식을 정한다.
+						이미지의 경우 가장 간단한 형태중의 하나가 <code id="code-word">비트맵(Bitmap)</code> 이미지인데, 확장자는 <code id="code-word">.bmp</code>를 가지며 '메타데이터+데이터'의 형식을 갖는다.
+						이번 문제에서는 복잡한 컬러 이미지지 대신 흑백 이미지를 가공하고자 한다.
+						흑백의 비트맵 이미지는 실제 데이터 영역의 데이터 값이 흑백 명암 세기를 나타낸다.
+						이 흑백 명암 세기는 0~255 중 하나의 값을 가지며 255가 밝은 백색이며 0이 어두운 흑색이다.
+						(정확히는 이렇게 보이는 것이다.)
+						따라서, 가로-세로에 대한 2차원 배열로 흑백의 비트맵 이미지를 표현할 수 있다.
+					</p>
+					<p class = "eng-text">	
+						According to the file formats, the files take one type of 'metadata+data' and 'data+metadata'.
+						The Computer decides a method to analyze the data with the file extension type and metadata.
+						In the case of images, a <code id="code-word">bitmap</code> image is the simplest method, which has <code id="code-word">.bmp</code> for the extension type and a type of 'metadata+data'.
+						This problem drives you process a gray-scale image instead of complex color images.
+						In the case of the gray-scale bitmap image, the numbers of the data section represent the intensity of light and shade for the gray scale.
+						One pixel of the data section can have one value from 0 to 255, which is light white for 255 and dark black for 0.
+						(It just looks like this, if describing accurately.)
+						Therefore, this data section can be expressed with a 2-dimensional array for the width and height.
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex6_2(1).png" alt="No-Img" style="width: 20vw;"></p>
+
+					<p class = "kor-text">
+						이번 문제는 이러한 흑백 비트맵 이미지에 대해서 <code id="code-word">binarization</code> 및 <code id="code-word">threshold</code> 기능을 구현하는 것이 목표이다.
+						<code id="code-word">ROW x COLUMN</code>(행x열) 크기의 흑백 비트맵 이미지에 대해 실제 데이터 영역에 존재하는 2차원 배열을 고려해보자.
+						실제 데이터는 숫자의 일자 나열이라고 생각하면 되는데, 프로그램 코드 상에서 <code id="code-word">ROW x COLUMN</code>의 형태로 읽어들여 변수에 저장해 사용한다고 생각하면 쉽다.
+						<code id="code-word">threshold</code>란, 어떤 변수가 특정 기준값 이상일 때는 특정 유효 범위 내의 최댓값을, 미만일 때는 특정 유효 범위의 최솟값을 갖도록 만드는 동작에서 이 특정 기준값을 의미한다.
+						그리고 이 동작을 <code id="code-word">이진화(Binarization)</code>이라고 부른다.
+						가령, 어떤 변수 $$x$$가 $$ 1 \leq x \leq 10 $$의 값을 가질 수 있을때 <code id="code-word">threshold</code> 값을 4로 설정했다고 가정하자.
+						변수 $$x$$가 2의 값을 갖는다면 4보다 작으므로 1을 $$x$$에 대입하고, 8의 값을 갖는다면 4보다 크므로 10을 $$x$$에 대입한다.
+						따라서, 이러한 동작을 <code id="code-word">Binarization</code>이라고 부르며 이 Binarization에 필요한 기준값을 <code id="code-word">Threshold</code>라고 할 수 있다.
+						이러한 기능을 하는 프로그램을 작성하라.
+						(단, 함수를 사용하지 않아도 된다. main 함수에 모든 동작을 구현해도 좋다. 스켈레톤 코드를 참고하면 매우 좋다.)
+					</p>
+					<p class = "eng-text">	
+						An ultimate goal of this problem is to implement two functionalities of <code id="code-word">binarization</code> and <code id="code-word">threshold</code> on the grayscale bitmap images.
+						Suppose that there is an array of <code id="code-word">ROW x COLUMN</code> for the real data to exist in the data section of the grayscale bitmap image.
+						Like mentioned, though the real data is a sequence of numbers in a single line, it is read with a format of <code id="code-word">ROW x COLUMN</code> by the program code and stored to a variable.
+						The <code id="code-word">threshold</code> is defined as a special reference value that lets a variable take a maximum or minimum value of a valid range.
+						And, this operation letting the variable get a maximum or minimum value is <code id="code-word">binarization</code>.
+						For example, suppose that the <code id="code-word">threshold</code> is set as 4 when a variable $$x$$ can take a number of $$ 1 \leq x \leq 10 $$.
+						If $$x$$ has a value of 2, it is less than 4 so that 1 is substituted into $$x$$. Vice versa, if $$x$$ has a value of 8, it is greater than 4 so that 10 is substituted into $$x$$.
+						Thus, this operation is called <code id="code-word">Binarization</code> and the reference value for the binarization is called <code id="code-word">Threshold</code>.
+						Write a program to have these functionalities.
+						(Hint: You need not to use functions. It is better to implement all operations in the main function and refer to the skeleton code.)
+					</p>
+						
+					<p style="text-align: center;"><img src="../img/ex6_2(2).png" alt="No-Img" style="width: 30vw;"></p>
+
+					<p class = "kor-text">
+						스켈레톤 코드의 <code id="code-word">Do Not Touch Section</code>에 해당하는 부분에 작성된 코드는 전혀 분석할 필요가 없다.
+						추후 공부하게 되는 부분이며, 분석을 하고자하면 오히려 개념 이해에 혼동을 줄 수 있다.
+						이미지의 순수 데이터는 스켈레톤 코드에 존재하는 변수 <code id="code-word">read_image</code>에 존재하며, <code id="code-word">unsigned char</code> 자료형을 지닌 <code id="code-word">[ROW][COLUMN]</code> 크기의 배열이다.
+						<code id="code-word">Your Binarization Implementation</code> 부분에 여러분 만의 Binarization 코드를 작성하면 된다.
+						스켈레톤 코드에서 활용할 변수와 상수는 <code id="code-word">read_image</code>와 <code id="code-word">THRESHOLD</code>가 전부이며 추가로 변수가 필요하다면 추가로 생성해도 괜찮다.
+						또한 <code id="code-word">THRESHOLD</code> 값을 변경해가면서, Binarization 변화 양상을 관찰해보자.
+						문제에 사용할 이미지 파일은 아래의 다운로드 버튼을 통해 다운로드 받을 수 있다.
+					</p>
+					<p class = "eng-text">	
+						You should not analyze the code written in the <code id="code-word">Do Not Touch Section</code> of the skeleton code.
+						You will study this section later so that it can drive you into some difficulties for the understanding if you try to figure out those sections against the advice.
+						The real data of the given image is stored to a variable, <code id="code-word">read_image</code>, on the skeleton code.
+						Also, it is an array of the <code id="code-word">[ROW][COLUMN]</code> size which takes <code id="code-word">unsigned char</code> for the data type.
+						You must implement your own binarization code into the <code id="code-word">Your Binarization Implementation</code> section.
+						The utilizable variables or constants from the skeleton codes are only a variable <code id="code-word">read_image</code> and a constant <code id="code-word">THRESHOLD</code>.
+						If something is required, it is allowed to add some variables or functions too.
+						Plus, observe the change aspects of the binarization according to the changes of the <code id="code-word">THRESHOLD</code> value.
+						You can download the image file for the problem from the below download button.
+					</p>
+
+					<p class="kor-text" style="text-align: center;"><a href="../img/ex6_2(2).png" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/ex6_2(2).png" download>download</a></p>
+
+					<p style="text-align: center;"><img src="../img/ex6_2(3).png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cassert&gt;
+
+#define THRESHOLD 150
+
+/** Do Not Touch Section : START **/
+#define ROW 512
+#define COLUMN 512
+
+constexpr char readfilename[30] = "lena_gray.bmp";
+constexpr char r_writefilename[30] = "random_input.bmp";
+constexpr char writefilename[30] = "output.bmp";
+char header[2048]; // Meta Data
+unsigned char read_image[ROW][COLUMN], image_buffer[ROW][COLUMN];
+
+void copyToBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = read_image[i][j];
+}
+void clearBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = 0;
+}
+/** Do Not Touch Section : END **/
+
+
+int main(){
+
+/** Do Not Touch Section : START **/
+	FILE *fpread, *fpwrite, *r_fpwrite;
+	fpread = fopen(readfilename, "rb");   // file open for read
+	fpwrite = fopen(writefilename, "wb"); // file open for write
+
+	assert((fpread != NULL) || (fpwrite != NULL));
+
+	fread(header, 1, 1078, fpread);
+	fread(read_image, 1, ROW*COLUMN, fpread);
+/** Do Not Touch Section : END **/
+
+	//bool random = true;  // for random (line 39)
+	bool random = false; // for lena image (line 40)
+
+/** Do Not Touch Section : START **/
+	if (random) { // for random
+		r_fpwrite = fopen(r_writefilename, "wb"); // file open for random write
+		assert(r_fpwrite != NULL); // check r_fpwrite
+
+		srand(1); // Set a Random Seed
+		for (int idx=0; idx&lt;ROW*COLUMN; ++idx) // Assign Random Values to read_image
+			*(*(read_image + idx/COLUMN) + idx%COLUMN) = rand()%256;
+
+		copyToBuffer();
+		fwrite(header, 1, 1078, r_fpwrite);             // Store Header
+		fwrite(image_buffer, 1, ROW*COLUMN, r_fpwrite); // Store Random Image Data 
+		fclose(r_fpwrite); // Save and Close
+
+		clearBuffer();
+	}
+/** Do Not Touch Section : END **/
+
+
+	/* Your Binarization Implementation */
+
+
+/** Do Not Touch Section : START **/
+	copyToBuffer();
+	fwrite(header, 1, 1078, fpwrite);           // Store Header
+	fwrite(image_buffer, 1, ROW*COLUMN, fpwrite); // Store Random Image Data
+	fclose(fpwrite); // Save and Close 
+	fclose(fpread);
+/** Do Not Touch Section : END **/
+
+	return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_2')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_2')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_6_2_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						스켈레톤 코드에서 <code id="code-word">Do Not Touch Section : START</code> ~ <code id="code-word">Do Not Touch Section : END</code>에 해당하는 영역들은 절대 건드리지 않는다.
+						<code id="code-word">Threshold</code> 값은 코드 위쪽에 Macro Constant로 정의되어 있다.
+						<code id="code-word">39~40</code>번째 라인에서 <code id="code-word">Line 39</code>를 활성화시키면 값이 랜덤으로 할당된 랜덤 이미지 <code id="code-word">random_input.bmp</code>가 생성되며 랜덤 이미지에 대한 <code id="code-word">Binarization</code>이 진행된 결과 <code id="code-word">output.bmp</code>가 생성된다.
+						그리고 <code id="code-word">Line 40</code>를 활성화시키면 기존의 <code id="code-word">lena_gray.bmp</code>의 이미지를 통해 <code id="code-word">Binarization</code>을 진행해 결과 이미지 <code id="code-word">output.bmp</code>가 생성된다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_6_2_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Please do not touch the <code id="code-word">Do Not Touch Section : START</code> ~ <code id="code-word">Do Not Touch Section : END</code> section from the skeleton code.
+						<code id="code-word">Threshold</code> is defined as a macro constant.
+						At line <code id="code-word">39~40</code>, activating the line 39 makes the program create a grayscale bitmap image <code id="code-word">random_input.bmp</code> to have random values and binarize it for the result image <code id="code-word">output.bmp</code>.
+						And activating the line 40 makes the program binarize the given and existing bitmap image <code id="code-word">lena_gray.bmp</code> and create the output image file <code id="code-word">output.bmp</code>.
+					</p>
+					
+
+<!-- 6-3 -->
+					<p> <h3 class="kor-text"> 3. 포인터와 배열의 융합 (페이징 기법, 고급) </h3>
+						<h3 class="eng-text"> 3. Combination of Pointer and Array (Paging Technique, Advanced) </h3></p>
+
+					<p class = "kor-text">
+						<span style="background-color: rgba(255, 251, 0, 0.5);">(주의: Computer Science 분야의 개발자 혹은 연구자를 목표하는 분이 아니시라면 도전하지 않는 것을 추천드립니다.)<br></span>
+						컴퓨터 운영체제를 비롯한 컴퓨터 과학 분야에는 '페이징'이라는 기법이 존재한다.
+						이 기법은 주어진 메모리를 고정된 크기로 일정하게 잘라서 각각의 칸을 용도에 맞게 데이터를 저장 및 이용한다.
+						따라서, Page들의 모임이 메모리라고 생각하면 쉽다.
+						이러한 Page는 Address Entry 혹은 Page Entry라고 지칭되는 데이터가 저장될 수 있는 메모리 공간들이 페이지 크기에 맞게 1개 이상 존재한다.
+						(예를 들어, 이번 문제에서는 32Byte 크기의 Page와 4Byte의 Page Entry들을 상정했으므로 한 개의 Page에는 8개의 Page Entry가 존재할 수 있다.)
+						메모리를 일정 크기로 자를 때 그 크기는 구현하기에 따라 결정되며 그 외에 여러가지 조건과 구현들이 있다.
+						이 페이징 기법은 Virtual Memory, Address Space, Address Translation 등의 개념을 알아야 정확하게 이해할 수 있다.
+						그러므로 이 페이징 기법을 매우 단순화시킨 에뮬레이터(Emulator)를 구현하고자 한다. 
+					</p>
+					<p class = "eng-text">	
+						<span style="background-color: rgba(255, 251, 0, 0.5);">(CAUTION: Recommend to skip solving this problem if you do not aim to a developer or researcher in computer science.)<br></span>
+						There is a technique called 'paging' in the computer science field such as operating system.
+						The paging method has the given memory be divided by a fixed size of 'page' and utilize each page for purposes of the data.
+						The gathering of these pages can be understood as the memory simply.
+						This page consists of one or more memory spaces where data called <code id="code-word">Address Entry</code> or <code id="code-word">Page Entry</code> can be stored.
+						(For instance, in this problem, the page size and page entry size are respectively assummed with 32Byte and 4Byte so that one page can have at most up to eight page entries.)
+						Except for assumptions of this problem, there are other conditions and implementations for the paging.
+						To understand the concept of the paging method requires knowing about <code id="code-word">Virtual Memory</code>, <code id="code-word">Address Space</code>, <code id="code-word">Address Translation</code> and etc.
+						Thus, this problem will ask the solvers to implement an emulator which has drastically simplified this paging technique.
+					</p>
+
+					<p class = "kor-text">
+						이러한 페이징 기법을 사용하는 이유는 주어진 메모리 공간을 더욱 효율적으로 사용할 수 있으며 가상이지만 더 많은 양의 데이터 저장이 가능해지기 때문이다.
+						이러한 페이징 기법을 여러개 겹쳐서 사용할 수 있는데 다중페이징(Multi-level Paging) 기법이라고 부른다.
+						가장 간단한 페이징 기법인 First Level Paging 기법의 에뮬레이터 동작은 다음의 설명과 같이 동작한다.
+						해당 설명은 MEMORY READ 혹은 WRITE가 일어나야 하는 Physical Address 위치를 찾아가는 동작에 대한 과정이다.
+					</p>
+					<p class = "eng-text">	
+						The paging method is widely used because efficiently utilizing the given memory space and enabling to store bigger ammount of data virtually.
+						Actually, multiple paging methods could be overwrapped then it is called <code id="code-word">Multi-level Paging</code>.
+						The emulator of the simplest paging method, <code id="code-word">First Level Paging</code>, for this problem follows the below explanation.
+						The following explanation states the operation to find and go to a location of <code id="code-word">Physical Address</code> where <code id="code-word">MEMORY READ</code> or <code id="code-word">MEMORY WRITE</code> have to be invoked.
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex6_3(1).png" alt="No-Img" style="width: 60vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						1. First Level Paging의 구현을 위해 3단계의 메모리를 상정한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						1. Suppose three step memories to implement the first level paging.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						2. 각 단계의 메모리 이름은 Process Address, Page Table, Physical Memory이며 각 1개씩 존재한다. Page Table은 Code에 의해서 결정되며 Execution Time(실행중)에는 바뀌지 않는다고 가정한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						2. The memories of each step are respectively named <code id="code-word">Process Address</code>, <code id="code-word">Page Table</code>, and <code id="code-word">Physical Memory</code> and each has one. The page table is determined by the code and cannot be changed on the execution time.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						3. Page Table을 제외한 메모리는 모두 페이지 구조를 사용하며 페이지의 크기는 32Byte이다. 그리고 각각의 data는 4Byte이므로 각 페이지에는 총 8개의 page entry가 들어갈 수 있다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						3. All the memories except for the page table use the page architecture and the page size is defined by 32Byte. In addition, each data is regarded as 4Byte size so that one page can include totoally eight page entries.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						4. 각 메모리는 프로그램 구현에 있어 배열로 대체한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						4. All memories are replaced with arrays for the implementation.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						5. Process Address로부터 주어진 Address Entry(주소, 그림 상의 0xf32ed027)에서 하위 3bits를 무시한다. 
+						하위 3bits를 무시한 상태에서 8로 나누었을 때의 나머지 값에 해당하는 index의 Page Table Entry로 향한다.
+						가령, Process Address로부터 주어진 Address Entry가 <code id="code-word">0xf32ed027 = 0b111100[skip]100111</code>인 경우, 하위 3bits를 무시하면 <code id="code-word">0b111100[skip]100</code>이다.
+						(<code id="code-word">0b</code>는 이진수임을 나타내는 접두사이다)
+						이 값을 8로 나누면, <code id="code-word">0b100 = 4</code>이므로 index값이 4인 Page Table Entry를 향하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						5. First, the least significant 3 bits of an <code id="code-word">Address Entry</code> from the <code id="code-word">Process Address</code> (0xf32ed027 on the figure ) are ignored. The operation must head to the <code id="code-word">Page Table Entry</code> of the index, which is the remainder of the result that the address (the 3bits are ignored) is divided by 8. 
+						For instance, the given <code id="code-word">Address Entry</code> is <code id="code-word">0xf32ed027 = 0b111100[skip]100111</code> so that the address for the 3bits to be ignored is <code id="code-word">0b111100[skip]100</code>.
+						(<code id="code-word">0b</code> is a prefix for the binary base number system.)
+						If it divided by 8, the remainder is <code id="code-word">0b100 = 4</code>.
+						Thus, the operations head to the <code id="code-word">Page Table Entry</code> of the index value 4.
+						</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						6. 그리고 향한 Page Table Entry에 저장된 값과 동일한 index에 존재하는 Physical Memory의 페이지를 향한다.
+						향한 Physical Address의 Page 내부에서 기존에 주어진 Address Entry를 8로 나누었을 때의 나머지 값에 해당하는 index의 Page Entry로 다시 향한다.
+						가령, 향한 Page Table Entry에 저장된 값은 <code id="code-word">0xd1 = 209</code>이므로 Physical Address에서 index가 209인 Page를 향한다.
+						그 다음에 기존에 주어졌던 Address Entry <code id="code-word">0xf32ed027 = 0b[skip]100111</code>를 8로 나누면 나머지는 <code id="code-word">0b111 = 7</code>이므로 209번째 Page 내부의 index 값 7에 해당하는 주소 공간을 향하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						6. And, the opreation must head to the page of <code id="code-word">Physical Memory</code> where exist at the index page identical with the stored value on the heading <code id="code-word">Page Table Entry</code>.
+						Inside of the heading page of <code id="code-word">Physical Address</code>, the operation must head to the <code id="code-word">page entry</code> of the index value, which is the remainder of that the given <code id="code-word">Address Entry</code> is divided by 8.
+						For example, the stored value at the heading <code id="code-word">Page Table Entry</code> is <code id="code-word">0xd1 = 209</code> so that the operation heads to the page of index value 209.
+						If the given address entry <code id="code-word">0xf32ed027 = 0b[skip]100111</code> is divided by 8,then the remainder is <code id="code-word">0b111 = 7</code>. Therefore, the operation heads to the 7th index ([6]) <code id="code-word">Page Entry</code> inside of the 209th index ([208]) physical address page.
+						</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						7. 향한 주소 공간에서 READ 또는 WRITE 동작을 수행하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						7. Finally, the operation,READ or WRITE, is performed at the heading address space.</p>
+
+					<p class = "kor-text">
+						즉, MEMORY READ 함수와 MEMORY WRITE 함수는 각각 <code id="code-word">read(ADDRESS_ENTRY)</code>, <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>와 같은 형식으로 사용된다.
+						예를 들어, <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>의 경우에, <code id="code-word">ADDRESS_ENTRY</code>는 Process Address에 저장된 값을 의미한다.
+						그 값을 위의 과정을 통해 최종적으로 도달하는 위치인 Physical Address 부분에 <code id="code-word">VALUE</code>로 주어진 값을 쓰면 된다(이미 값이 있는 경우에는 덮어 쓴다).
+					</p>
+					<p class = "eng-text">	
+						That is, <code id="code-word">MEMORY READ</code> and <code id="code-word">MEMORY WRITE</code> functions are used follwing <code id="code-word">read(ADDRESS_ENTRY)</code> and <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code> formats.
+						For example, in the case of <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>, <code id="code-word">ADDRESS_ENTRY</code> means any stored value at <code id="code-word">Process Address</code>.
+						The function operation has <code id="code-word">VALUE</code> written to the <code id="code-word">Physical Address</code> space to reach finally through the above procedure (If any value is already written on the space, then the operation should overwrite the space.).
+					</p>
+
+					<p class = "kor-text">
+						스켈레톤 코드를 참고해 에뮬레이터를 만들어보자.
+						그리고, <code id="code-word">main</code>함수에 작성된 코드가 read, write를 통해 어떤 동작을 의미하고 있는지 생각해보자.
+						더 나은 이해를 위해 각 Physical Address 마다 read, write 발생 여부와 저장된 값을 출력해볼 수도 있다(옵션이므로 출력 형식은 정해져있지 않다.). 이거 풀면 천재로 인정함.
+					</p>
+					<p class = "eng-text">	
+						Referring to the <code id="code-word">Skeleton Code</code>, write the emulator.
+						Also, try to figure out the meaning of the operations that the read and write functions are gathered in <code id="code-word">main</code> function.
+						For better understanding, you can try printing which function is called between read and write function and the stored value at each physical address (This suggestion is optional so that the printing format is not fixed).
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+
+// Base Converter: https://bit.ly/3uMc1yD				
+/** Do Not Touch Section : START **/
+#define uint unsigned int
+
+uint proc_addr[8096] = {};			// process address
+uint physc_addr[8096] = {};			// physical address
+constexpr uint page_table[8] = {	// page table
+    0x2a3, // 0 - page table index
+    0x50,  // 1 
+    0x00,  // 2
+    0x3a1, // 3
+    0xd1,  // 4
+    0xff,  // 5
+    0x00,  // 6
+    0x2db, // 7
+};
+
+void preproc(){ // preprocessing
+    proc_addr[8*200]   = 0x01ff8040; proc_addr[8*200+1] = 0x09ff8e41;
+    proc_addr[8*122+3] = 0xf32aa01a; proc_addr[8*122+4] = 0xf03aae1b;
+    proc_addr[8*122+5] = 0x06d15f9c; proc_addr[8*122+6] = 0xabc4439d;
+    proc_addr[8*122+7] = 0x10cef19e; proc_addr[8*123]   = 0xe11cd71f;
+}
+/** Do Not Touch Section : END **/
+
+uint read(uint addr_entry){
+    /** Your Implementation **/
+    return 0;
+}
+
+void write(uint addr_entry, uint value){
+    /** Your Implementation **/
+    return;
+}
+
+int main(){
+/** Do Not Touch Section : START **/
+    preproc(); // preprocessing
+    uint temp; // temporary varaible
+
+    // Try to analyze these operations
+    write(proc_addr[8*200+1], 0);
+    for (int i=0; i&lt;5; ++i){
+        temp = read(proc_addr[8*200+(i+1)%2]);
+        write(proc_addr[8*200+i%2], temp+1);
+    }
+    write(proc_addr[979], 1);
+    for (int i=5; i&gt;0; --i){
+        temp = read(proc_addr[984-i]);
+        write(proc_addr[985-i], temp*i);
+    }
+/** Do Not Touch Section : END **/
+
+    // You Can Add Other Read and Write Functions
+    // For the Tests.
+    // It Will Improve Your Abilities Intensely.
+
+    return 0;
+}</code></pre>
+
 				</section>
 
 				<!-- LECTURE 7 PROBLEMS -->
@@ -942,6 +1453,88 @@ int main(){
 						Being Prepared (7)
 					</h2>
 				</section>
+<!--
+				<section id="lecture7">
+					<h2 class="kor-text">
+						7강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 7 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 3. 행렬 제곱 계산하기</h3>
+						<h3 class="eng-text"> 3. Square of Matrix</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						컴퓨터 분야는 수학과 떨어지려고 해도 떨어질 수가 없는 분야이다.
+						대표적으로 컴퓨터 분야에서는 행렬을 많이 사용한다.
+						그에 따라서 행렬 계산을 할 수 있는 함수를 만들어 보아라.
+						다음과 같이 $$n\times n$$ 크기의 행렬 $$A$$가 있다고하자.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						
+					</p>
+					
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ A=\begin{pmatrix}
+						a_{11} & a_{12} & \cdots & a_{1n} \\
+						a_{21} & a_{22} &        & \vdots \\
+						\vdots &        & \ddots & \vdots \\
+						a_{n1} & \cdots & \cdots & a_{nn} \\
+						\end{pmatrix} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						그리고 행렬 $$B$$는 $$A^{2}$$으로 정의한다. ($$B\overset{\underset{\mathrm{def}}{}}{=} A^{2}$$)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0; margin-top: 0;">
+						
+					</p>
+
+					<p style="font-size: 30pt;">
+						$$$ B=A^{2}=\begin{pmatrix}
+						b_{11} & b_{12} & \cdots & b_{1n} \\
+						b_{21} & b_{22} &        & \vdots \\
+						\vdots &        & \ddots & \vdots \\
+						b_{n1} & \cdots & \cdots & b_{nn} \\
+						\end{pmatrix}  $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						행렬 $$B$$의 원소 값들은 다음의 수식을 통해 계산될 수 있다.
+						아래의 계산식은 행렬곱의 정의에 따른 계산식을 작성한 것이다.
+					</p>
+					<p class = "eng-text" style="margin-bottom: 0; margin-top: 0;">	
+						
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ b_{ij}=\sum_{k=1}^{n}a_{ik}\cdot a_{kj}$$$
+						$$$s.t.\; 1\leq i,j\leq n,\;\;\; i,j\in \mathbb{N} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						위의 수식을 참고해 행렬 $$B$$를 구하는 구하는 프로그램을 작성하라.
+						정의에 따른 계산식보다 더 좋은 방식으로 계산할 수 있다면, 다른 방식으로 구현하는 것도 가능하다.
+						그리고 행렬을 출력해주는 함수를 만들어 프로그램에 구현에 사용하라.
+					</p>
+					<p class = "eng-text" style="margin-bottom: 0; margin-top: 0;">	
+						
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+
+int main(){
+	
+	return 0;
+}
+</code></pre>
+				</section>
+-->
 				
 				<!-- LECTURE 8 PROBLEMS -->
 				<section id="lecture8">

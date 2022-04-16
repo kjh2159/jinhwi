@@ -24,14 +24,14 @@ function displayNone(item){
 function changeAnswerDisplay(item_id) {
 	let answer_sheet  = document.getElementById(item_id);
 	
-	console.log(answer_sheet.style.display);
+	if (answer_sheet !== null){
+		console.log(answer_sheet.style.display);
+		var disp = answer_sheet.style.display;
 
-	var disp = answer_sheet.style.display;
-
-	if(disp === "none" || disp === ""){
-		answer_sheet.style.display = "block";
-	} else {
-		answer_sheet.style.display = "none";
+		if(disp === "none" || disp === "")
+			answer_sheet.style.display = "block";
+		else 
+			answer_sheet.style.display = "none";
 	}
 	
 	let langBtn = document.getElementById("l-switch");
