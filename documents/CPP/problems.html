@@ -1447,21 +1447,236 @@ int main(){
 				<!-- LECTURE 7 PROBLEMS -->
 				<section id="lecture7">
 					<h2 class="kor-text">
-						준비중 (7)
-					</h2>
-					<h2 class="eng-text">
-						Being Prepared (7)
-					</h2>
-				</section>
-<!--
-				<section id="lecture7">
-					<h2 class="kor-text">
 						7강 예제
 					</h2>
 					<h2 class="eng-text">
 						Lecture 7 Exercises
 					</h2>
 
+<!-- 7-1 -->
+					<p> <h3 class="kor-text"> 1. 진수 변환기</h3>
+						<h3 class="eng-text"> 1. Base System Converter</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제는 2진수, 10진수, 16진수를 서로 변환하는 문제이다.
+						<code id="code-word">2진수&lt;-&gt;10진수</code>, <code id="code-word">2진수&lt;-&gt;16진수</code>, <code id="code-word">10진수&lt;-&gt;16진수</code> 총 6개의 함수를 구현하면 된다. 
+						아래의 공식은 0과 자연수를 표현하는 2진수, 그리고 16진수 표현법에 대한 수식이다(10진수는 우리가 일반적으로 사용하는 숫자 체계이다).
+						이 진수변환 프로그램은 2진수 기준으로 32bit 체제를 사용한다고 가정한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; font-size: 30pt;">
+						$$$ Binary:\; \left\{ 0,1 \right\}\cdot 2^{31}+\left\{ 0,1 \right\}\cdot 2^{30}+ \cdots +\left\{ 0,1 \right\}\cdot 2^{1}+\left\{ 0,1 \right\}\cdot 2^{0}$$$
+						$$$Hexadecimal:\; \left\{ 0,1,...,15 \right\}\cdot 16^{7}+\left\{ 0,1,...,15 \right\}\cdot 16^{6}+ \cdots +\left\{ 0,1,...,15 \right\}\cdot 16^{1}+\left\{ 0,1,...,15 \right\}\cdot 16^{0}$$$
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						위의 식에서 $$\left\{ 0,...,n \right\}$$ 표현은 중괄호 내의 정수들 중에 1개의 값만이 선택적으로 올 수 있다는 표현이다.
+						추가적인 제약 조건은 아래의 스켈레톤 코드 <code id="code-word">p7_1.cpp</code>에 명시된 라이브러리 외에 다른 라이브러리의 include는 허용되지 않는다.
+						(출력 결과는 제공되지 않으며 시중의 진수 변환기를 이용해 직접 확인해보아라.)
+						2진수 혹은 16진수에 대해서 32bit 전체 표현과 유효 범위 표현 모두 허용된다.
+						(<code id="code-word">1101</code>, <code id="code-word">000[SKIP]1101</code> 모두 허용이 된다.)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;math.h&gt;
+#include &lt;iostream&gt;
+
+char* fromBINtoDEC(/* Your Implemenation */);
+char* fromBINtoHEX(/* Your Implemenation */);
+char* fromDECtoHEX(/* Your Implemenation */);
+char* fromHEXtoDEC(/* Your Implemenation */);
+char* fromHEXtoBIN(/* Your Implemenation */);
+char* fromDECtoBIN(/* Your Implemenation */);
+
+int main(){
+    char BD[33]="00000111010110111100110100010101", BH[33]="10010001101001111111011011100",
+    DH[11]="2882343476", HD[9]="3ade68b1", HB[9]="08f3cf1", DB[11]="4042264335", DB2[11]="9999999999";
+
+    std::cout &lt;&lt; fromBINtoDEC(BD) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromBINtoHEX(BH) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoHEX(DH) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromHEXtoDEC(HD) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromHEXtoBIN(HB) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoBIN(DB) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoBIN(DB2) &lt;&lt; std::endl; // ERROR: Out of Range
+
+    /* Test Your Other Examples!! */
+
+    return 0;
+}
+
+char* fromBINtoDEC(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromBINtoHEX(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromDECtoHEX(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromHEXtoDEC(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromHEXtoBIN(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromDECtoBIN(/* Your Implemenation */){
+    /* Your Implemenation */
+}</code></pre>
+
+<!-- 7-2 -->
+					<p> <h3 class="kor-text"> 2. 문자열을 위한 함수들 </h3>
+						<h3 class="eng-text"> 2. Functions for String</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						프로그램 개발을 하다보면, 문자열을 사용해야 하는 경우가 많다.
+						그러한 경우에 문자열 가공을 위해서는 사용하는 함수들이 꽤 있다.
+						그 중에 2 종류의 함수를 구현하는 것이 이번 문제의 목표이다.
+						그 두 종류의 함수들은 각각 <code id="code-word">insert</code>, <code id="code-word">find</code>이다.
+						이 두 함수는 Global Namespace에 정의된 문자열에 대해서 동작한다고 간주한다.
+						(std::size_t는 0과 양의 정수만을 허용하는 자료형으로 음수가 될 경우 프로그램이 비정상 종료된다.)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						<code id="code-word">find</code> 함수는 오버로딩되어 있어 총 3가지의 형태를 띈다.
+						인자 형태는 <code id="code-word">find(char* str)</code>(Overload 1)과 <code id="code-word">find(std::size_t s, char* str, std::size_t e = 0)</code>(Overload 2), 마지막 <code id="code-word">find(char* ref_str, std::size_t pos, std::size_t n)</code>(Overload 3)으로 나눌 수 있다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 1'은 주어진 Global String에서 왼쪽부터 인자로 들어온 문자열 <code id="code-word">str</code>을 찾기 시작한다. 그리고 찾았을 때 Global String에서 <code id="code-word">str</code>이 위치한 index를 리턴하며 남은 문자열에 대해서는 스캔하지 않는다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 2'는 조금 더 디테일한 설정을 줄 수 있는 인자들을 갖고 있다. <code id="code-word">s</code>는 start index를 의미하며 이 위치부터 <code id="code-word">str</code>을 찾기 시작한다. 
+						<code id="code-word">e</code>는 end index를 의미하며 default 값인 0이 주어진다면, start index 이후 전 영역에 대해서 그리고 다른 값이 주어진다면 $$s \leq index &lt; e$$ 영역에 대해서 <code id="code-word">str</code>을 찾으면 된다.
+						해당 영역내에서의 find 동작은 'Overload 1'과 동일하다.
+						즉, 원하는 문자열을 찾으면 그 이후는 탐색하지 않아도 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 3'는 조금 특이한 인자를 갖고 있다.
+						세 번째 오버로딩된 함수는 Global String의 index <code id="code-word">pos</code>부터 <code id="code-word">ref_str</code>의 index 0 ~ <code id="code-word">n-1</code>에 해당하는 문자열을 찾으면 된다.
+						가령, <code id="code-word">ref_str</code>이 <code id="code-word">"I Love You"</code>이고 <code id="code-word">n</code>이 <code id="code-word">6</code>이라고 가정하면, Global String에서 <code id="code-word">pos</code>의 위치부터 <code id="code-word">"I Love"</code>를 찾으면 된다.
+						그리고, 찾은 문자열이 시작되는 Global String의 index를 return하면 된다.
+						찾기만 하면, 그 이후는 더 이상 탐색하지 않아도 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						함수 insert는 <code id="code-word">insert(std::size_t pos, char* str, bool wrap=false)</code>와 같은 형식을 갖는다.
+						이 함수는 이렇게 동작한다.
+						Global String의 <code id="code-word">pos</code> index에 str을 삽입한다.
+						이때, <code id="code-word">wrap = false</code>이라면, 겹쳐 쓰지않고 Global String 뒤쪽을 밀어서 삽입한다.
+						<code id="code-word">wrap = true</code>이라면, 밀지않고 덮어쓰는 방식으로 문자열을 삽입한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						위와 같은 함수들이 정상적으로 동작하는 프로그램을 만들어라.
+						위의 함수를 구현을 위해서 제공된 스켈레톤 코드와 예상 출력 결과를 참고하라.
+						또한, 이 2가지의 함수를 이용해 또 다른 활용된 함수로 사용할 수 있는데, 어떤 함수로 응용할 수 있을지 생각해보자.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;math.h&gt;
+#include &lt;iostream&gt;
+
+char test_str[101] = "You have two girlfriends now though you have never committed to one before.";
+char g_string[501] = "Indeed, most of these real-time AI applications are requested on end devices such as smartphones. However, for mobile or embedded devices, the important issues would be energy consumption and processing capability.";
+
+int find(char* str){/* Your Implementation*/ }
+int find(std::size_t s, char* str, std::size_t e = 0){/* Your Implementation*/ }
+int find(char* ref_str, std::size_t pos, std::size_t n){/* Your Implementation*/ }
+char* insert(std::size_t pos, char* str, bool wrap=false);
+
+int main(){
+    int found;
+    
+    found = find("have");
+    std::cout &lt; "The first \'have\' found at " &lt; found &lt; std::endl;
+
+    found = find(found+1, "have");
+    std::cout &lt; "The second \'have\' found at " &lt; found &lt; std::endl;
+    found = find(found+1, "have", found+3);
+    std::cout &lt; "\'have\' found at " &lt; found &lt; std::endl; // -1, It means an error (exception)
+
+    found = find("you look so beautiful", 0, 3);
+    std::cout &lt; "The first \'you\' found at " &lt; found &lt; std::endl;
+
+    std::cout &lt; insert(9, "one", true) &lt; std::endl;
+    std::cout &lt; insert(28, "even ", false) &lt; std::endl;
+
+    // TTest Your Other Examples!!! //
+
+    return 0;
+}
+
+char* insert(std::size_t pos, char* str, bool wrap=false){
+    /* Your Implementation */
+}</code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="bash" id="code-canvas"> The first 'have' found at 4
+The second 'have' found at 40
+'have' found at -1
+The first 'you' found at 36
+You have one girlfriends now though you have never committed to one before.
+You have two girlfriends now even though you have never committed to one before.</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_7_2')">정답</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_7_2')">Answer</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_7_2_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						주어진 두 함수를 통해서 <code id="code-word">replace</code>, <code id="code-word">split</code> 등의 역할을 하는 함수를 응용해 만들어낼 수 있다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_7_2_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Being Prepared
+					</p>
+
+
+<!-- 7-3 -->
 					<p> <h3 class="kor-text"> 3. 행렬 제곱 계산하기</h3>
 						<h3 class="eng-text"> 3. Square of Matrix</h3></p>
 					
@@ -1516,7 +1731,9 @@ int main(){
 					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
 						위의 수식을 참고해 행렬 $$B$$를 구하는 구하는 프로그램을 작성하라.
 						정의에 따른 계산식보다 더 좋은 방식으로 계산할 수 있다면, 다른 방식으로 구현하는 것도 가능하다.
+						스켈레톤 코드의 <code id="code-word">square</code> 함수는 정상적인 행렬이 입력되어 정상적으로 계산이 되었을 때는 <code id="code-word">true</code>를 리턴하고 비정상적이라면 <code id="code-word">false</code>를 리턴한다.
 						그리고 행렬을 출력해주는 함수를 만들어 프로그램에 구현에 사용하라.
+						또한, 스켈레톤 코드와 예상 출력결과를 참고하여 프로그램을 만들어라.
 					</p>
 					<p class = "eng-text" style="margin-bottom: 0; margin-top: 0;">	
 						
@@ -1527,14 +1744,59 @@ int main(){
 					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
 						Skeleton Code for <code id="code-word">p7_3.cpp</code></p>
 					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+#define ROW 5
+#define COL ROW
+
+bool square(int (&mtrx)[ROW][COL]){ //Reference Type for an Array
+    /** Your Implementation **/
+}
+/* Your Implementation */ printMatrix(/* Your Implementation */){
+    /* Your Implementation */
+}
 
 int main(){
-	
-	return 0;
+    int matrixA[ROW][COL] =
+    {
+        /** Define Your Own Square Matrix **/
+    };
+    /** Your Implementation **/
+    return 0;
 }
 </code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="bash" id="code-canvas">&lt;Test Case 1&gt;
+Matrix A
+[3]
+Matrix B
+[9]
+
+&lt;Test Case 2&gt;
+Matrix A
+┌  1 -1  1 ┐
+| -1  0 -1 |
+└  1 -1  1 ┘
+Matrix B
+┌  3 -2  3 ┐
+| -2  2 -2 |
+└  3 -2  3 ┘
+
+&lt;Test Case 3&gt;
+Matrix A
+┌ 1 2 3 ┐
+└ 4 5 6 ┘
+Matrix B
+Error: Cannot Be Calculated
+</code></pre>
+
+
 				</section>
--->
 				
 				<!-- LECTURE 8 PROBLEMS -->
 				<section id="lecture8">
