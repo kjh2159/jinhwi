@@ -496,14 +496,16 @@ Buzz even</code></pre>
 					<pre><code class="bash" id="code-canvas">ABCDE -&gt; xyzAB -&gt; 50,51,52,1,2</code></pre>
 
 					<p class = "kor-text">
-						아래의 출력 예시와 예시 코드를 참고해서 다음과 같은 프로그램을 만들자.
-						하나의 문자열을 입력받은 후에 <code id="code-word">SHIFT_P</code>와 <code id="code-word">SHIFT_R</code>의 값을 이용해 위에서 설명한 변형된 형태의 카이사르 암호로 암호화하는 프로그램을 만들어라.
-						문자열을 입력받는 코드는 예시 코드에 구현되어 있다.
+						아래의 출력 예시와 예시 코드를 참고해서 다음과 같은 프로그램을 만들어봅시다.
+						하나의 문자열을 입력받은 후에 <code id="code-word">SHIFT_P</code>와 <code id="code-word">SHIFT_R</code>의 값을 이용해 위에서 설명한 변형된 형태의 카이사르 암호로 암호화하는 프로그램을 만들자.
+						문자열을 입력받는 코드는 예시 코드에 구현되어 있습니다.
+						(단, 띄어쓰기가 없는 문자열만을 고려한다.)
 					</p>
 					<p class = "eng-text">	
 						Refering to the following the expected result and example code, please make a program to follow the following rules.
 						After the user entering one character sequence, your program should encrypt the input string into the variated Caesar cipher mentioned above through <code id="code-word">SHIFT_P</code>and <code id="code-word">SHIFT_R</code>.
 						An operation for the user to be prompted to enter the character sequence is implemented in the example code.
+						(However, consider a string only which does not have any space.)
 					</p>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
@@ -525,13 +527,66 @@ After Encryption: 30 7 10 17 52 42</code></pre>
 
 int main(){
     char origin[100];
+
+	std::cout &lt;&lt; "Shift: " &lt;&lt; (SHIFT_R == true ? "right " : "left ") 
+						   &lt;&lt; SHIFT_P &lt;&lt; std::endl;
     std::cout &lt;&lt; "Original Letters: ";
     std::cin &gt;&gt; origin;
+	std::cin.clear();
 
     /* Your Encryption Code */
 
     return 0;
 }</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_3_3')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_3_3')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_3_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						코드에 갑자기 배우지 않았던 코드가 있어서 놀라셨죠? 
+						우리가 배우지 않았던 코드 <code id="code-word">char origin[100]</code>는 6강에서 배우게 됩니다.
+						하지만, 한 번 경험을 해보시면, 조금 더 친숙하게 다가가실 수 있지 않을까 싶어서 이번 문제에 포함을 시켰습니다. 
+						이 코드의 의미는 <code id="code-word">char</code> 타입의 데이터를 100개까지 수용할 수 있는, 즉 단일 문자 100개까지를 수용할 수 있는 변수를 의미합니다.
+						예를 들어, 여러분들이 배웠던 문자열을 생각해봅시다. 만약 <code id="code-word">abc</code>을 입력으로 넣었다면, <code id="code-word">"abc" = 'a' + 'b' + 'c' + '\0'</code>에 의해서 길이를 4개로 갖습니다. 따라서 <code id="code-word">origin</code> 변수에 4개의 문자를 맨 앞쪽부터 채워넣습니다.
+						<code id="code-word">char origin[100]</code>과 같은 문자열 변수를 출력하기 위해서는 <code id="code-word">std::cout &lt;&lt; origin &lt;&lt; std::endl;</code>과 같은 형식을 사용하면, 스스로 <code id="code-word">\0</code>을 만날 때까지 출력을 합니다.
+						(이제부터는 아래의 코드를 참조해주세요) 추가적으로 origin 변수에 저장된 i-번째 문자를 수정하거나 그 값을 가져올 수 있습니다. 이를 위해서는 <code id="code-word">origin[0]</code>와 같이 대괄호를 사용할 수 있습니다. 
+						우리는 100개의 문자를 수용할 수 있도록 했지만, 그 순서는 0번째부터 시작합니다. 따라서 0번째 ~ 99번째까지만 가능합니다.
+						또한, 대괄호 안에는 1,2와 같은 상수 뿐만 아니라 변수도 들어갈 수 있습니다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_3_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Weren't you very surprised because of the new syntax?
+						The new syntax that we didn't learn yet, <code id="code-word">char origin[100]</code>, will be learned in the Lecture 6.
+						However, once you experiencing it, I guess you can get close to the syntax more familiarly so that I've included it on this problem.
+						The code means a variable that contains upto 100 data of <code id="code-word">char</code> data type, in other words, has a capability of 100 characters.
+						For example, consider the string you've learned. If you input a string <code id="code-word">abc</code> into the variable, then it has a length of 4 because of a fact <code id="code-word">"abc" = 'a' + 'b' + 'c' + '\0'</code>. Thus, <code id="code-word">origin</code> variable fills the 4 characters into itself from the front.
+						To print out a string like <code id="code-word">char origin[100]</code>, you can use a format of <code id="code-word">std::cout &lt;&lt; origin &lt;&lt; std::endl;</code> then your computer will print out the characters in the variable until it faces the terminator character <code id="code-word">\0</code>.
+						(From now, please refer to the below codes) Additionally, you can also modify or get a i-th charcter stored in the origin variable. For this, you have to use brackets like <code id="code-word">origin[0]</code>.
+						The variable can contain upto 100 characters, but the order starts from 0. Therefore, it has an order of from 0-th to 99-th.
+						Plus, not only a constant but also a variable can be placed in the brackets.
+					</p>
+					<pre class="answer-sheet" id="prob_3_3"><code class="cpp" id="code-canvas">char str[100];
+std::cin >> str;                    // Assume: the input is 'ABCD'
+str[0] = 'a';                       // Assignment: Okay
+std::cout &lt;&lt; str[100] &lt;&lt; std::endl; // Get: Error 
+std::cout &lt;&lt; str[1] &lt;&lt; std::endl;   // Get: Okay
+std::cout &lt;&lt; str &lt;&lt; std::endl;</code></pre>
+
+					<p class="kor-text prob_3_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						위의 코드에서 3번째 줄은 에러가 발생합니다. 따라서 해당 줄을 주석 처리하고 실행한다면, 4번째 줄은 <code id="code-word">B</code>를, 5번째 줄은 <code id="code-word">aBCD</code>
+						라는 결과를 얻을 수 있게 됩니다.
+						이러한 기능을 잘 참고해서 프로그램을 짜봅시다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_3_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						The above code occurs an error on the third line. Thus, making the line a comment, the result of the fourth line will be <code id="code-word">B</code> and the fifth line will be <code id="code-word">aBCD</code>.
+						Remembering this functionality, let's make a good program.
+					</p>
+
+
 				</section>
 
 				<!-- LECTURE 4 PROBLEMS -->
@@ -1806,6 +1861,90 @@ Error: Cannot Be Calculated
 					<h2 class="eng-text">
 						Being Prepared (8)
 					</h2>
+
+<!--
+					<p> <h3 class="kor-text"> 1. 안전한 시스템이란?</h3>
+						<h3 class="eng-text"> 1. What is the Secure System?</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						일반적으로 안전한 시스템을 구축하기 위해서는 컴퓨터 과학 분야에서는 시스템에 민감한 부분과 둔감한 부분으로 나눈다.
+						그래서 어떤 사용자가 민감한 영역을 건드리려고 한다면, 시스템에 둔감한 영역 또는 중간 다리 역할을 하는 어떤 기능이 민감한 영역을 건드려도 괜찮을만큼 동작이 안전한지 확인한다.
+						따라서, 만약 사용자 동작이 안전하지 않다고 판단되면 사용자의 동작 요청을 막아낸다.
+						이번 문제는 이렇게 (매우 단순화되어있으면서) 안전한 시스템을 구축하는 방식에 대해 간단히 실습해보고자 한다.
+						이번 문제에서 가정할 시스템은 서버(Server), 몇 명의 사용자 PC, 몇 명의 사용자로 구성된다.
+						서버는 시스템에서 민감한 영역을, 사용자들의 PC는 시스템에서 둔감한 영역을, 그리고 사용자들은 main 함수에서 자신의 PC를 이용해 몇 가지 동작을 수행하는 역할을 담당한다고 가정한다.
+						그러므로 이 시스템에서는 사용자가 직접적인 서버 접근 자체가 접근 권한에 의해서 거절된다(어떤 동작 수행도 허용되지 않는다).
+						사용자가 어떤 동작을 서버에 수행하기 위해서는 무조건 자신의 PC를 통과해야 하며, PC에서 안전한 동작인지 확인하는 단계를 거쳐야 한다.
+						이에 대한 시스템 모델은 아래의 사진을 참고하면 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						아래의 스켈레톤 코드를 참고하며, 다음의 설명을 읽으면 더욱 도움이 될 것이다.
+						서버에는 2차원 배열의 <code id="code-word">_data</code>와 서버에 대한 최근 사용자의 동작 에러 상태를 의미하는 <code id="code-word">error_state</code>가 민감한 영역으로 존재한다. 물론 서버에는 누구나 접근할 수 있는 함수도 존재하긴 한다.
+						이 값들을 접근해서 수정하기 위해서는 각 유저의 PC에 존재하는 <code id="code-word">bool checkSecure()</code>, <code id="code-word">bool changeDATA()</code> 기능을 이용해야 한다.
+						특히나 서버의 <code id="code-word">error_state</code> 변수는 PC에서 조차 접근만 가능할 뿐, 직접적인 대입은 불가능하다(<code id="code-word">SERVER::error_state = 1;</code> 형식은 불가능, <code id="code-word">something = SERVER::error_state;</code> 형식은 가능).
+						<code id="code-word">bool changeDATA(row, col, to)</code>는 PC에서만 사용이 가능하며 해당 함수는 서버에 존재하는 <code id="code-word">_data[row][col]</code>의 값을 <code id="code-word">to</code>로 변경하고자 시도한다.
+						해당 동작 시도시 PC는 이 동작이 Server에 안전한지 확인해야 한다(확인에는 <code id="code-word">bool checkSecure()</code>을 사용).
+						PC는 변경하고자 하는 값이 음수이거나 1000 이상이라면, 동작이 안전하지 않다고 판단하고  간접적으로 error_state를 1로 바꾸는 동시에 false를 리턴한다.
+						그리고 동작이 안전하다면, 동작 이후에 error_state를 0으로 바꾸고 true를 리턴한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+
+
+					<p> <h3 class="kor-text"> 2. 잘 안 보이는 사진 해상도 복원</h3>
+						<h3 class="eng-text"> 2. To Recover Resolution to Have Bad Visibility</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제는 Lecture 6의 2번 문제에 대한 연장선이다. 이미지 프로세싱 분야에서는 선명도가 낮은 사진을 해상도를 어느 정도 복구하는 기법이 존재한다.
+						이러한 기법을 Normalize (Normalization)이라고 부른다. Normalize 방식에는 여러가지 방식이 존재한다.
+						대표적인 예시로 Min/Max Normalization, Histogram Equalization, z-score Standardization 등이 존재하는데, 이는 상황에 따라 사용하는 기법이 다르기 때문이다.
+						이번 문제에서는 화질이 안 좋아진 사진에 대한 Min/Max Normalization 사용한 화질 복원이 목표이다.
+						Min/Max Normalization은 다음의 수식을 따른다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p style="font-size: 30pt;">
+						$$$ s_{k} = (L-1) \cdot \frac{r_{k} - r_{min}}{r_{max} - r_{min}}  $$$
+						$$$ s.t. \;\; k\in \mathbb{Z} , \; 0 \leq k \lt N $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						$$ k $$는 이미지 데이터에서 $$ k $$ 번째 인덱스를, $$ N $$은 주어진 사진의 <code id="code-word">ROW x COLUMN</code>의 최댓값을 의미한다. $$s_{k}$$는 $$ k $$번째 인덱스의 이미지 데이터 값이 바뀔 수치이고, $$ r_{k} $$는 $$ k $$번째 인덱스의 이미지 데이터 값이며 $$ r_{max} $$와 $$ r_{min} $$은 각각 주어진 이미지 데이터의 값들 중에서 최댓값과 최솟값을 의미한다. $$ L $$는 이미지 데이터가 가질 수 있는 최댓값을 의미하는데, 가령 8bit 체제에서는 255가 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+				
+					<p class="kor-text" style="margin-bottom: 0;">
+						Lecture 6의 2번 문제와 다른 점은 보다 안전한 데이터 계산 및 대입을 위해서 global namespace에서 사용하던 이미지 데이터 변수들을 main 함수 내부로 옮겼다. 이로인해 변수 수정을 위해서는 배열을 함수의 인자로 넘겨주어야 한다.
+						이 부분도 고려해서 코드를 짜야 한다.
+						아래의 스켈레톤 코드를 참고하라.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+
+
+					<p> <h3 class="kor-text"> 3. 명령어 만들기 </h3>
+						<h3 class="eng-text"> 3. Make Commands</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						또잉쓰:
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+-->
+
+
 				</section>
 
 				<!-- LECTURE 9 PROBLEMS -->
