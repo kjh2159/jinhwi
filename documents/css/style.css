@@ -61,7 +61,8 @@ span {
 .wrapper .sidemenu h1{
 	color: white;
 	font-family: "HSSaemaul-Regular";
-	font-size: 40pt;
+	/*font-size: 40pt;*/
+	font-size: 4vw;
 	font-style: italic;
 
 	text-shadow: 
