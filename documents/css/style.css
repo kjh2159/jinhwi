@@ -155,11 +155,18 @@ span {
 
 /** Social Media **/
 .sidemenu .social-media {
-	position: absolute;
+	/*position: absolute;*/
+	
+	/*left:50%;*/
+	/*transform: translate(-50%);*/ /*absolute center*/
+	/*bottom: 10vh;*/
 
-	left:50%;
-	transform: translate(-50%); /*absolute center*/
-	bottom: 10vh;
+	position: relative;
+
+	margin-left: 3vw;
+	margin-top: 1vh;
+	width: 15vw;
+	text-align: center;
 
 	font-size: 20pt;
 }
