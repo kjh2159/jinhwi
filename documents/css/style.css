@@ -54,6 +54,7 @@ span {
 		linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
 		url("../img/sidemenu2.jpeg");
 	background-position: center;
+	background-size: cover;
 }
 
 
@@ -78,12 +79,13 @@ span {
 	/*font-family: "HSSaemaul-Regular";*/
 	font-family: "National-Museum-B";
 	letter-spacing: 1px;
-	font-size: 12pt;
+	/*font-size: 12pt;*/
+	font-size: calc(0.8vw + 0.6vh);
 
 	margin-left: 3vw;
 	margin-top: 1vh;
 
-	height: 3vh;
+	height: calc(3vh + 1vw);
 	width: 13vw;
 	border: 0.5px solid white;
 	border-radius: 5px;
