@@ -56,7 +56,7 @@
 
 				<!-- Social Media -->
 				<div class="social-media">
-					<a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="https://www.youtube.com/channel/UCoLmMLvQFm5o3aWl-XR8LTQ" style="color: white;"><i class="fab fa-youtube"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
@@ -68,7 +68,8 @@
 			<div class="home-heading">
 				<p class="spacing"> 
 					<a href="#" style="color: white;"><i class="fas fa-home"></i></a>
-					<a href="#" style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a href="#" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"
+								style="color: white;"><i class="fas fa-chevron-up"></i></a>
 					<a href="#" style="color: white;"><i class="far fa-id-card"></i></a>
 				</p>
 				<h1>Jinhwi Kim: Docs</h1>
@@ -1217,8 +1218,8 @@ std::cout &lt;&lt; str &lt;&lt; std::endl;</code></pre>
 						You can download the image file for the problem from the below download button.
 					</p>
 
-					<p class="kor-text" style="text-align: center;"><a href="../img/ex6_2(2).png" download>다운로드</a></p>
-					<p class="eng-text" style="text-align: center;"><a href="../img/ex6_2(2).png" download>download</a></p>
+					<p class="kor-text" style="text-align: center;"><a href="../img/lena_gray.bmp" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/lena_gray.bmp" download>download</a></p>
 
 					<p style="text-align: center;"><img src="../img/ex6_2(3).png" alt="No-Img" style="width: 40vw;"></p>
 
@@ -1726,7 +1727,7 @@ You have two girlfriends now even though you have never committed to one before.
 						주어진 두 함수를 통해서 <code id="code-word">replace</code>, <code id="code-word">split</code> 등의 역할을 하는 함수를 응용해 만들어낼 수 있다.
 					</p>
 <!--English Answer-->
-					<p class="eng-text prob_7_2_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+					<p class="eng-text prob_7_2_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
 						Being Prepared
 					</p>
 
@@ -1856,13 +1857,12 @@ Error: Cannot Be Calculated
 				<!-- LECTURE 8 PROBLEMS -->
 				<section id="lecture8">
 					<h2 class="kor-text">
-						준비중 (8)
+						8강 예제
 					</h2>
 					<h2 class="eng-text">
-						Being Prepared (8)
+						Lecture 8 Exercises
 					</h2>
 
-<!--
 					<p> <h3 class="kor-text"> 1. 안전한 시스템이란?</h3>
 						<h3 class="eng-text"> 1. What is the Secure System?</h3></p>
 					
@@ -1881,6 +1881,8 @@ Error: Cannot Be Calculated
 						Being prepared
 					</p>
 
+					<p style="text-align: center;"><img src="../img/ex8_1(1).png" alt="No-Img" style="width: 30vw;"></p>
+
 					<p class="kor-text" style="margin-bottom: 0;">
 						아래의 스켈레톤 코드를 참고하며, 다음의 설명을 읽으면 더욱 도움이 될 것이다.
 						서버에는 2차원 배열의 <code id="code-word">_data</code>와 서버에 대한 최근 사용자의 동작 에러 상태를 의미하는 <code id="code-word">error_state</code>가 민감한 영역으로 존재한다. 물론 서버에는 누구나 접근할 수 있는 함수도 존재하긴 한다.
@@ -1890,12 +1892,83 @@ Error: Cannot Be Calculated
 						해당 동작 시도시 PC는 이 동작이 Server에 안전한지 확인해야 한다(확인에는 <code id="code-word">bool checkSecure()</code>을 사용).
 						PC는 변경하고자 하는 값이 음수이거나 1000 이상이라면, 동작이 안전하지 않다고 판단하고  간접적으로 error_state를 1로 바꾸는 동시에 false를 리턴한다.
 						그리고 동작이 안전하다면, 동작 이후에 error_state를 0으로 바꾸고 true를 리턴한다.
+						(제가 만들었지만, 그렇게 좋은 문제는 아닌 것 같아요.)
 					</p>
 					<p class="eng-text" style="margin-bottom: 0;">
 						Being prepared
 					</p>
 
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+//#include &lt;cstring&gt;
+#include &lt;iomanip&gt;
 
+#define _uint unsigned int
+
+namespace SERVER{
+	// Assume This Section is Authority-Limited.
+	_uint _data[3][3] = { {1,2,3},
+						  {4,5,6},
+					  	  {7,8,9} };
+	bool error_state = 0; // 1 = something wrong / 0 = secure
+	
+
+	// Assume This Section is Revealed for Public.
+	void checkDATA(){
+		for (std::size_t i=0; i&lt;3; ++i){ 
+			for (std::size_t j=0; j&lt;3; ++j)
+				std::cout &lt;&lt; " " &lt;&lt; std::setw(4) &lt;&lt;  _data[i][j];
+			std::cout &lt;&lt; std::endl;
+		}
+	}
+};
+
+
+namespace PC1{
+	// An operation such as 'SERVER::error_state = 1' is not allowed.
+	// That is, you cannot modify SERVER::error_state, however can only access to and get it by SERVER::error_state. 
+	
+	// !hint!
+	// Think of how to modify error_state indirectly in the namespace of PC
+
+	const bool checkSecure(std::size_t& row, std::size_t& col, _uint& val){ /** Your Implemenation **/ }
+
+	const bool changeDATA(std::size_t row, std::size_t col, _uint to){ /** Your Implemenation **/ }
+
+	void checkDATA(){ /** Your Implemenation **/ }
+};
+
+namespace PC2{
+	// It has an identical structure with a namespace PC1
+	// Implement this by yourself
+}
+
+int main(){
+	
+	SERVER::checkDATA(); // Allowed
+	//SERVER::_data[0][0] = 9; // Not Allowed by the Assumption
+
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; PC1::changeDATA(0,0, -10) &lt;&lt; std::endl;
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; PC2::changeDATA(1,1,5) &lt;&lt; std::endl;
+
+	// Test Your Own Cases
+
+	return 0;
+}</code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="shell" id="code-canvas">   1   2   3
+   4   5   6
+   7   8   9
+false
+true</code></pre>
 
 					<p> <h3 class="kor-text"> 2. 잘 안 보이는 사진 해상도 복원</h3>
 						<h3 class="eng-text"> 2. To Recover Resolution to Have Bad Visibility</h3></p>
@@ -1922,27 +1995,307 @@ Error: Cannot Be Calculated
 					<p class="eng-text" style="margin-bottom: 0;">
 						Being prepared
 					</p>
+
+					<p class="kor-text" style="text-align: center;"><a href="../img/8_2.zip" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/8_2.zip" download>download</a></p>
+
+					<p style="text-align: center;"><img src="../img/ex8_2(1).png" alt="No-Img" style="width: 60vw;"></p>
 				
 					<p class="kor-text" style="margin-bottom: 0;">
 						Lecture 6의 2번 문제와 다른 점은 보다 안전한 데이터 계산 및 대입을 위해서 global namespace에서 사용하던 이미지 데이터 변수들을 main 함수 내부로 옮겼다. 이로인해 변수 수정을 위해서는 배열을 함수의 인자로 넘겨주어야 한다.
 						이 부분도 고려해서 코드를 짜야 한다.
 						아래의 스켈레톤 코드를 참고하라.
+						또한, 다른 테스트 케이스를 위해 이미지에 노이즈를 추가하는 함수를 만들어 Normalize하기도 해보는 것도 좋은 공부가 될 것이다. 다만, 이는 선택 사항이다.
 					</p>
 					<p class="eng-text" style="margin-bottom: 0;">
 						Being prepared
 					</p>
 
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cassert&gt;
 
+#define THRESHOLD 150
+
+/** Do Not Touch Section : START **/
+#define ROW 512
+#define COLUMN 512
+unsigned char image_buffer[ROW][COLUMN];
+/** Do Not Touch Section : END **/
+
+
+// Uncompleted Function
+void copyToBuffer(/** Your Implementation **/){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j){ 
+		image_buffer[i][j] = image_data[i][j];
+	}
+}
+// Completed Function
+void clearBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = 0;
+}
+// Uncompleted Function
+void intensify(/** Your Implementation **/, int val){
+    if (val &gt; 255 || val &lt; -255) return;
+    
+    for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j){ 
+        int temp = image_data[i][j] + val;
+        image_data[i][j] = temp &lt; 0 ? 0 : temp &gt; 255 ? 255 : temp;
+    }
+}
+// Uncompleted Function
+void binarization(/** Your Implementation **/){
+    for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) read_image[i][j] = read_image[i][j] &lt; THRESHOLD ? 0 : 255;
+}
+// Uncompleted Function
+void grayNormalize(/** Your Implementation **/){
+    /** Your Implementation **/
+}
+// Uncompleted Function
+void addNoise(/** Your Implemenation **/){
+	/** Your Implemenation **/
+}
+
+
+int main(){
+	//constexpr char readfilename[30] = "lena_gray.bmp";
+	constexpr char readfilename[30] = "pasta.bmp";
+	constexpr char r_writefilename[30] = "random_input.bmp";
+	constexpr char writefilename[30] = "output.bmp";
+	char header[2048]; // Meta Data
+	unsigned char read_image[ROW][COLUMN];
+
+
+/** Do Not Touch Section : START **/
+	FILE *fpread, *fpwrite, *r_fpwrite;
+	fpread = fopen(readfilename, "rb");   // file open for read
+	fpwrite = fopen(writefilename, "wb"); // file open for write
+
+	assert((fpread != NULL) || (fpwrite != NULL));
+
+	fread(header, 1, 1078, fpread);
+	fread(read_image, 1, ROW*COLUMN, fpread);
+/** Do Not Touch Section : END **/
+
+
+	/* Your Normalization Implementation */
+	//binarization();
+    //intensify(-120); // for image distortion
+    //addNoise();      // if you need other tests
+	grayNormalize();
+	
+
+
+/** Do Not Touch Section : START **/
+	copyToBuffer();
+	fwrite(header, 1, 1078, fpwrite);           // Store Header
+	fwrite(image_buffer, 1, ROW*COLUMN, fpwrite); // Store Random Image Data
+	fclose(fpwrite); // Save and Close 
+	fclose(fpread);
+/** Do Not Touch Section : END **/
+
+	return 0;
+}</code></pre>
 
 					<p> <h3 class="kor-text"> 3. 명령어 만들기 </h3>
 						<h3 class="eng-text"> 3. Make Commands</h3></p>
 
 					<p class="kor-text" style="margin-bottom: 0;">
-						또잉쓰:
+						이번 문제는 7강에서 풀었던 문제의 확장이다. 따라서 Lecture 6의 3번 문제의 설명 또한 이번 문제에서도 적용이 된다. Lecture 6의 3번 문제에서는 주어진 정방행렬에 대해서 제곱을 구하고 그 행렬을 출력해주는 프로그램을 구현했었다.
+						이번에는 프로그램을 실행할 때에 실행 옵션을 주어서 계산된 결과의 출력을 달리해주도록 프로그램을 재구현하는 것이 목표이다.
+						또한, Determinant 계산하는 코드도 추가하여야 한다.
+						Determinant 계산을 위해서는 아래의 수식을 참고하여라.
 					</p>
 					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
 					</p>
--->
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ A\times C^{T} = det(A)\times I $$$
+						$$$ C=
+\begin{pmatrix}
+C_{1,1}&  C_{1,2}&      ...&  C_{1,j}&     ...&  C_{1,n} \\
+C_{2,1}&  C_{2,2}&      ...&  C_{2,j}&     ...&  C_{2,n} \\
+\vdots &  \vdots &   \ddots&   \vdots&        &   \vdots \\
+C_{i,1}&  C_{i,2}&      ...&  C_{i,j}&     ...&  C_{i,n} \\
+\vdots &  \vdots &         &   \vdots&  \ddots&   \vdots \\
+C_{n,1}&  C_{n,2}&      ...&  C_{n,j}&     ...&  C_{n,n} \\
+\end{pmatrix} $$$
+						$$$ C_{i,j} = (-1)^{i+j}M_{i,j} $$$
+						$$$ M_{i,j}=det
+\begin{pmatrix}
+a_{1,1}&  a_{1,2}&      ...&  \square&     ...&  a_{1,n} \\
+a_{2,1}&  a_{2,2}&      ...&  \square&     ...&  a_{2,n} \\
+\vdots &  \vdots &   \ddots&  \square&        &   \vdots \\
+\square&  \square&  \square&  \square& \square&  \square \\
+\vdots &  \vdots &         &  \square&  \ddots&   \vdots \\
+a_{n,1}&  a_{n,2}&      ...&  \square& ...& a_{n,n}\\
+\end{pmatrix} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						수식에 대한 부연설명을 하자면, C는 Cofactor (여인자), M은 Minor (소행렬식)을 의미한다. 그리고 $$M_{i,j}$$에서 $$\square$$가 의미하는 바는 해당 행(i번째 행)과 열(j번째 열)을 생략한다는 의미이다. 즉, $$M_{i,j}$$는 A행렬의 i행과 j열을 생략한 행렬의 Determinant (행렬식)을 의미한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						옵션에 대한 설명은 아래를 참고하라. 스켈레톤 코드는 7-3번 문제와 거의 다름이 없지만, 제공이 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -i</code>(ignore): 입력된 행렬 A와 A의 제곱이 계산된 행렬 B 중에 행렬 A의 출력을 무시한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -d</code>(determinant): 계산된 행렬 B의 Determinant(행렬식)을 출력한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -v</code>(value only): 행렬의 값만을 출력한다. 이 옵션은 <code id="code-word"> -sp</code>옵션을 무시하지 않는다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -sp &lt;character&gt;</code>(separator): 입력된 <code id="code-word">&lt;character&gt;</code>를 기준으로 값을 구분해 출력한다. 해당 옵션은 <code id="code-word">character</code>가 항상 바로 뒤에 따라야 하며, 존재하지 않을 경우 에러로 간주한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_8_3')">힌트</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_8_3')">HINT</button></p>
+					
+<!--Korean Hint-->
+					<p class="kor-text prob_8_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Determinant를 구하는 부분부터 문제가 만만치 않죠? Determinant 계산은 한 번 재귀함수 형식을 사용해본다면, 조금 더 쉽게 접근하실 수 있을 것 같습니다. 
+						실행시 입력하는 옵션은 main 함수에서 문자열 형식으로 들어오지만, 바로 활용(수정 또는 대입 등)하는 것은 불가능합니다. 따라서, 다른 방식으로 입력 옵션을 복사해서 활용해야 합니다. 이를 위해서는 동적할당 사용을 고려해볼 수 있습니다. 왜냐하면, 옵션이 무엇들이 올지 모르니까요.
+					</p>
+<!--English Hint-->
+					<p class="eng-text prob_8_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;string.h&gt;
+
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+#define ROW 5
+#define COL ROW
+
+/*Your Implementation*/ evalDet(/*Your Implementation*/){
+	/*Your Implementation*/
+}
+
+bool square(/*Your Implementation*/){
+    /*Your Implementation*/
+}
+
+/*Your Implementation*/ printMatrix(/*Your Implementation*/){
+    /* Your Implementation */
+}
+
+int main(const int argc, const char* argv[]){
+    int matrixB[ROW][COL];
+	memset(matrixB, 0, ROW*COL); // Just ignore. This code does not impact your program.
+								 // The line is added for a safe program.
+
+	int matrixA[ROW][COL] =
+    {
+		{1, -1, 1},
+		{-1, 0, -1},
+		{1, -1, 1}
+        /** Define Your Own Square Matrix 
+		    for Other Example Tests. **/
+    };
+
+    /** Your Implementation **/
+
+    return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 1</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 1</p>
+					<pre><code class="bash" id="code-canvas">./runfile -i -d -v -sp ,</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+  3, -2,  3
+ -2,  2, -2
+  3, -2,  3
+Det = 0
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 2</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 2</p>
+					<pre><code class="bash" id="code-canvas">./runfile -sp & -i</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+┏  3& -2&  3 ┓
+┃ -2&  2& -2 ┃
+┗  3& -2&  3 ┛
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 3</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 3</p>
+					<pre><code class="bash" id="code-canvas">./runfile -d -sp & -v -i</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+  3& -2&  3
+ -2&  2& -2
+  3& -2&  3
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 4</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 4</p>
+					<pre><code class="bash" id="code-canvas">./runfile -sp & -v</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix A
+  1& -1&  1
+ -1&  0& -1
+  1& -1&  1
+Matrix B
+  3& -2&  3
+ -2&  2& -2
+  3& -2&  3
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 5</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 5</p>
+					<pre><code class="bash" id="code-canvas">./runfile</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix A
+┏  1 -1  1 ┓
+┃ -1  0 -1 ┃
+┗  1 -1  1 ┛
+Matrix B
+┏  3 -2  3 ┓
+┃ -2  2 -2 ┃
+┗  3 -2  3 ┛
+</code></pre>
+
+
 
 
 				</section>
