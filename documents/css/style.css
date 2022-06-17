@@ -63,7 +63,7 @@ span {
 	color: white;
 	font-family: "HSSaemaul-Regular";
 	/*font-size: 40pt;*/
-	font-size: 4vw;
+	font-size:4vw;
 	font-style: italic;
 
 	text-shadow: 
@@ -133,8 +133,8 @@ span {
 	margin-left: auto;
 	margin-right: auto;
 
-	width: 12vw;
-	height:12vw;
+	width: 8vw;
+	height:8vw;
 	border-radius: 50%;
 }
 
@@ -242,8 +242,12 @@ span {
 	margin-bottom: 8vh;
 
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	margin-left: 8vw;
+	margin-right: 8vw;
+	width: 60vw;
+	text-align: center;
+	/*left: 50%;
+	transform: translateX(-50%);*/
 }
 
 .main-content h3{
@@ -342,8 +346,8 @@ span {
 	margin-top: 1em;
 	margin-left: 8vw;
 	
-	width: 8vw;
-	height: 8vh;
+	width: max(8vw, 8vh);
+	height: min(8vw, 8vh);
 	background: skyblue;
 	border-radius: 20px;
 
@@ -369,7 +373,7 @@ span {
 	/* background: #777;*/
 
 	padding-top: 15px;
-	padding-left: 6vw;
+	padding-left: max(8vw, 8vh);
 	padding-right: 2vw;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -383,7 +387,28 @@ span {
 	font-size: 13pt;
 }
 
+/** Documents List **/
 .doc-list{
-	display: inline-block;
+	/*word-break: break-all;*/
+	white-space: pre-line;
 	color: black;
+}
+
+.doc-content{
+	position: relative;
+	font-family: "GyeonggiBatang";
+	font-size: 18pt;
+
+	margin-left: 15vw;
+	margin-right: 15vw;
+	padding-bottom: 3mm;
+	width: 48vw;
+
+	line-height: 22pt;
+	text-align: justify;
+}
+
+.doc-content .up-date{
+	color: #777;
+	font-size: 16pt;
 }

@@ -12,7 +12,8 @@
 
 		<!-- CDN Code Highlighter -->
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/rainbow.min.css">
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
+		<script src="../js/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 
 		<!-- Link LaTex -->
@@ -40,7 +41,7 @@
 				<button type="button" class="button contents" onclick="location.href='#'">C++</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Python</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Swift</button>
-				<button type="button" class="button contents" onclick="location.href='#'">MATLAB</button>
+				<button type="button" class="button contents" onclick="location.href='../MATLAB/index.html'">MATLAB</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Com. Architecture</button>
 				<button type="button" class="button contents" onclick="location.href='#'">OS</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Computer Network</button>
@@ -2063,7 +2064,7 @@ void addNoise(/** Your Implemenation **/){
 
 int main(){
 	constexpr char readfilename[30] = "lena_gray.bmp";
-	//constexpr char readfilename[30] = "train_gray.bmp";
+ 	//constexpr char readfilename[30] = "train_gray.bmp";
 	constexpr char writefilename[30] = "output.bmp";
 	char header[2048]; // Meta Data
 	unsigned char read_image[ROW][COLUMN];

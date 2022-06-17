@@ -26,7 +26,9 @@ function switchLang(){
 		btnBackground[0].style.backgroundImage = url_usa;
 		// right: Eng
 		for(var i=0; i<engText.length; i++){
-			if (engText[i].classList.contains("answer-sheet") && engText[i].style.display === "none"){
+			// handling a bug for Documents List
+			if ( (engText[i].classList.contains("answer-sheet") || engText[i].classList.contains("doc-content")) 
+				&& engText[i].style.display === "none" ){
 				// handling a bug for answer-sheet class 
 				if (korText[i].style.display === "none"){ continue; }
 				else{ engText[i].style.display = "inline-block"; }
@@ -43,7 +45,9 @@ function switchLang(){
 		btnBackground[0].style.backgroundImage = url_kor;
 		// left: Kor
 		for(var i=0; i<korText.length; i++){
-			if (korText[i].classList.contains("answer-sheet") && korText[i].style.display === "none"){
+			// handling a bug for Documents List
+			if ((korText[i].classList.contains("answer-sheet") || korText[i].classList.contains("doc-content")) 
+				&& korText[i].style.display === "none"){
 				// handling a bug for answer-sheet class 
 				if (engText[i].style.display === "none"){ continue; }
 				else{ korText[i].style.display = "inline-block"; }
