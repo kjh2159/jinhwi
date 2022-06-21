@@ -226,6 +226,29 @@ span {
 }
 
 
+/** CHANGE MODE **/
+#color-mode-change {
+	position: fixed;
+	left: 90%;
+	right:  auto;
+	bottom: 5%;
+	top: auto;
+	background-color: transparent;
+	border: 0;
+	font-size: 30pt;
+}
+
+#mode-light{
+	display: inline-block;
+	color: #FF7800;
+}
+
+#mode-dark{
+	display: none;
+	color: #FFF200;
+}
+
+
 /** MAIN CONTENTS **/
 
 .wrapper .main-content{
@@ -328,7 +351,7 @@ span {
 #code-word{
 	font-size: 13pt;
 	padding: 2px 2px 2px 2px;
-	background: rgb(227,230,232);
+	background: rgb(227, 230, 232);
 	border-radius: 3px;
 }
 
