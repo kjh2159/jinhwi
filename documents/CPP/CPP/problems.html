@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--FIX HTTPS ERROR-->
+		<title>Jinhwi Kim</title>
+
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/lecture.css">
+
+		<!-- For Icon -->
+		<script src="https://kit.fontawesome.com/35a4560683.js" crossorigin="anonymous"></script>
+		<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+		<!-- CDN Code Highlighter -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/rainbow.min.css">
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
+		<script src="../js/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<!-- Link LaTex -->
+		<!-- Web LaTex Editor: https://latex.codecogs.com -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({            
+				tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['$$$', '$$$']]}            
+			});
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+		<!-- External JavaScript -->
+		<script src="../js/script.js"></script>
+		<script src="../js/lectures.js"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- side menu -->
+			<div class="sidemenu">
+				<h1 class="contents">CONTENTS</h1>
+
+				<!--  -->
+				<button type="button" class="button contents" onclick="location.href='#'">C</button>
+				<button type="button" class="button contents" onclick="location.href='#'">C++</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Python</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Swift</button>
+				<button type="button" class="button contents" onclick="location.href='../MATLAB/index.html'">MATLAB</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Com. Architecture</button>
+				<button type="button" class="button contents" onclick="location.href='#'">OS</button>
+				<button type="button" class="button contents" onclick="location.href='#'">Computer Network</button>
+
+
+				<!-- Profile  -->
+				<div class="profile">
+					<img src="../img/jh_test.jpg" alt="Unloaded" class="profile-img">
+					<p>Jinhwi Kim</p>
+					<p class="profile-msg">Hello, World</p>
+				</div>
+
+
+				<!-- Social Media -->
+				<div class="social-media">
+					<a href="https://www.youtube.com/channel/UCoLmMLvQFm5o3aWl-XR8LTQ" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
+				</div>
+			</div>
+
+
+			<!-- home heading -->
+			<div class="home-heading">
+				<p class="spacing"> 
+					<a href="#" style="color: white;"><i class="fas fa-home"></i></a>
+					<a href="#" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"
+								style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a href="#" style="color: white;"><i class="far fa-id-card"></i></a>
+				</p>
+				<h1>Jinhwi Kim: Docs</h1>
+			</div>
+
+			<!-- main content -->
+			<div class="main-content">
+				<div class="lang-switch" id = "lang-canvas">
+					<button id="l-switch" onclick="switchLang()" class="lang-detail">한글</button>
+				</div>
+				<div>
+					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="icomoon-free:sun" id="mode-light"></span></button>
+					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="bi:moon-stars" id="mode-dark"></span></button>
+					<i class="fa fa-brightness"></i>
+				</div>
+
+				<div id="problems">
+					<button class="problem" onclick="viewCppLectureProblem('lecture1')">Lecture 1</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture2')">Lecture 2</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture3')">Lecture 3</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture4')">Lecture 4</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture5')">Lecture 5</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture6')">Lecture 6</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture7')">Lecture 7</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture8')">Lecture 8</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture9')">Lecture 9</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture10')">Lecture 10</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture11')">Lecture 11</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture12')">Lecture 12</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture13')">Lecture 13</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture14')">Lecture 14</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture15')">Lecture 15</button>
+					<button class="problem" onclick="viewCppLectureProblem('lecture16')">Lecture 16</button>
+			    </div>
+				<p class = "kor-text">
+					위의 버튼들 중 학습한 강의의 버튼을 눌러주세요. 해당 강의에 대한 문제가 나옵니다. 영어 버전으로 풀고 싶다면, 언어 전환 버튼을 눌러주세요.
+				</p>
+				<p class = "eng-text">
+					Please click a button you have learned among the above buttons. Some problems for the lecture will be appeared. If you want to read and solve the problems in Korean, then please press the button of languange change.
+				</p>
+				<section id = "lecture1">
+
+					<h2 class="kor-text">
+						1강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 1 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. 표준 입출력 연습 </h3>
+						<h3 class="eng-text"> 1. Standard Input & Output Practice</h3></p>
+					
+					<p class = "kor-text">
+						첫 번째 연습문제에 잘 오셨습니다. 먼저, 여러분들이 포기하지 않고 강의와 연습문제를 끝까지 완강하시기를 기원합니다.
+						여러분들은 표준 입출력을 연습하셔야 합니다. 사용자들의 정보를 입력받고 출력해주는 코드를 작성해봅시다.
+						사용자들의 정보에는 이름, 나이, 출신 지역이 포함됩니다. 출력 예시를 참고해 구현해봅시다.
+					</p>
+					<p class = "eng-text">	
+						Welcome to the first example problem. Most of all, I wish you complete all of lectures and problems.
+						You must practice standard input and output. Let's write a program which prompts the user enter the user information and displays them.
+						User information includes a name, age and hometown. Please refer to the expected output.
+					</p>
+					
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Enter Your First Name: Jacob
+Enter Your Age: 25
+Enter Your Hometown: Seoul
+
+&lt;USER: Jacob&gt;
+Age: 25 / Hometown: Seoul</code></pre>
+					</p>
+
+					<p> <h3 class="kor-text"> 2. 연습문제 컴파일 및 실행 </h3>
+						<h3 class="eng-text"> 2. Compile and Excute an Example Problem</h3></p>
+
+					<p class = "kor-text" style="padding-bottom: 0;">
+						연습 문제를 푸신 후에 컴파일 및 실행을 위해서 강의에서와 같이 <code id="code-word">sh do.sh</code>를 사용하면, 컴파일 및 실행이 되지 않을 수도 있습니다.
+						예를 들어 여러분이 연습문제를 풀기 위해 새로 만든 파일이 <code id="code-word">p1_1.cpp</code>이라고 가정해봅시다.
+						그리고 이 파일이 여러분이 강의를 들을 때 만든 폴더에 들어있어 강의시에 만든 파일 <code id="code-word">main.cpp</code>이 같이 있다고 생각해봅시다.
+						아래와 같은 구조라고 생각해봅시다.
+						그리고 여러분의 파일구조가 다음과 비슷하게 연습문제 파일이 <code id="code-word">main.cpp</code>와 같이 있다면, <code id="code-word">Makefile</code>을 수정해주셔야 합니다.
+					</p>
+					<p class = "eng-text" style="padding-bottom: 0;">	
+						If using the command <code id="code-word">sh do.sh</code> used in the lecture after making your own program code, then you might face a compile error.
+						For example, assume that there is a new file <code id="code-word">p1_1.cpp</code> for the problem.
+						Also, suppose that there is an existing file <code id="code-word">main.cpp</code> in the folder made during the lecture.
+						Specifically, please watch the following file structure about your C++ files.
+						If your files have a similar structure (<code id="code-word">main.cpp</code> and <code id="code-word">p1_1.cpp</code> exist in the same folder), then you should modify your <code id="code-word">Makefile</code>.
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+<pre><code class="bash" id="code-canvas">YouTube
+   └─ 1
+   	  ├─── main.cpp
+	  ├─── p1_1.cpp
+	  ├─── Makefile
+	  └─── do.sh</code></pre>
+					</p>
+
+					<p class = "kor-text" style="padding-bottom: 0;">
+						<code id="code-word">Makefile</code>을 다음과 같이 수정하고 <code id="code-word">sh do.sh</code> 명령어를 입력해주세요.
+					</p>
+					<p class = "eng-text" style="padding-bottom: 0;">	
+						Please modify your <code id="code-word">Makefile</code> like the following code and execute the command <code id="code-word">sh do.sh</code>
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+<pre><code class="makefile" id="code-canvas">CMP = g++
+TARGET = runfile
+OBJS = p1_1.o
+	
+all: $(TARGET)
+	
+$(TARGET) : $(OBJS)
+	$(CMP) -o $@ $^
+	
+.cpp.o :
+	$(CMP) -c -o $@ $&lt;
+</code></pre>
+					</p>
+				</section>
+
+				<!-- LECTURE 2 PROBLEMS -->
+				<section id="lecture2">
+					<h2 class="kor-text">
+						2강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 2 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. 구의 속성 계산하기 </h3>
+						<h3 class="eng-text"> 1. Evaluate Properties of Sphere</h3></p>
+					
+					<p class = "kor-text">
+						구의 반지름을 입력받아 구의 속성들을 계산해주는 프로그램을 작성해봅시다.
+						구의 속성들에는 구의 겉넓이와 부피가 포함됩니다.
+						관련 수식은 아래를 참고해주세요.
+					</p>
+					<p class = "eng-text">	
+						Let's make a program that prompts the user to enter a radius of a sphere and evaluate properties of the sphere.
+						The properties include its surface area and volume.
+						Please refer to the related equations.
+					</p>
+					<p style="font-size: 35pt; padding-top: 0; padding-bottom: 0; text-align: center;">$$A=4\pi r^{2},$$ $$V=\frac{4}{3} \pi r^{3}$$</p>
+
+					<p class = "kor-text">
+						위의 수식을 참고해 아래와 같은 입출력 결과가 도출되도록 프로그램을 짜봅시다.
+					</p>
+					<p class = "eng-text">	
+						Please implement a program to derive the expected input and output result like the below referring to the above equations.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Enter a Radius: 10
+Spherical Surface Area: 628.3186
+Spherical Volume: 1047.1976</code></pre>
+					</p>
+
+					<p> <h3 class="kor-text"> 2. Overflow와 Underflow 감지하기 </h3>
+						<h3 class="eng-text"> 2. Detect Overflow and Underflow</h3></p>
+
+					<p class = "kor-text">
+						You Can C++ 2강에서 배운 바와 같이 Overflow와 Underflow는 해당 프로그램에 매우 치명적인 영향을 끼칠 수 있습니다.
+						왜냐하면, 계산 결과 값 자체를 완전히 바꿔버릴 수 있기 때문입니다.
+						그렇다면 Overflow나 Underflow가 발생할 수 있을 것으로 예상이 가는 부분에서는 계산 결과로부터 Overflow나 Underflow 이슈를 확인해봐야 할 것입니다.
+						이번에는 특정 계산 결과에 대해서 Overflow가 발생했는지 혹은 Underflow가 발생했는지 아니면 안전한 값인지 확인하는 코드를 만들어봅시다.
+					</p>
+					<p class = "eng-text">	
+						As mentioned in the 2nd lecture, an overflow and underflow could give a very lethal impact on a program.
+						Because the computation result could be totally changed.
+						Therefore, a program should check the result of the part that the overflow or underflow are expected.
+						Let's make your own program to check if the computation value is overflowed, underflowed or secure.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (1)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (1)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: 999999999999
+Overflow</code></pre>
+					</p>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (2)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (2)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: -1
+Underflow</code></pre>
+					</p>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						출력 예시 (3)
+					</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0;">	
+						The Expected Result (3)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">Computation Result: 1234
+Secure</code></pre>
+					</p>
+
+					<p class = "kor-text">
+						Overflow와 Underflow를 감지하기 위해서는 각각의 Data Type이 나타낼 수 있는 최댓값과 최솟값이 몇인지 알아야 합니다.
+						이 최댓값과 최솟값을 구하는 코드를 직접 구현해도 되고 또는 아래의 코드에서 최댓값과 최솟값을 활용하는 방식을 참고하면 되겠습니다.
+						여러분들이 확인하셔야 하는 Data Type은 정수형으로 고정된다고 가정합니다. 또한, Overflow와 Underflow를 발생시킬만한 연산은 아래의 코드를 참고해주세요.
+						(참고: <a href="https://www.cplusplus.com/reference/climits/">&lt;limits.h&gt;</a>)
+					</p>
+					<p class = "eng-text">	
+						First of all, you must know what the maximum and minimum value of each data type is, to detect the overflow and underflow.
+						You can implement this functionality for the maximum and minimum value or refer to the following code to get the values.
+						Let assume that the data type you should check is fixed on integer data types.
+						Also, please refer to the computations expected to cause the overflow or underflow.
+						(Reference: <a href="https://www.cplusplus.com/reference/climits/">&lt;limits.h&gt;</a>)
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						참조 코드: <code id="code-word">p2_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Reference Code: <code id="code-word">p2_2.cpp</code></p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="cpp" id="code-canvas">#include &lt;limits.h&gt;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int main(){
+	std::cout &lt;&lt; INT_MAX &lt;&lt; std::endl; // for the maximum of int
+	std::cout &lt;&lt; INT_MIN &lt;&lt; std::endl; // for the minimum of int
+
+	int a=1, b=-2, c=5;
+	int i=5, j=7, k=15, x=9;
+
+	a &lt;&lt; (sizeof(int)*4 - 1); 	// Expected Computation Warning 1
+	b &gt;&gt; 1;				// Expected Computation Warning 2
+	exp(k);				// Expected Computation Warning 3
+	120*log2(1+exp(i)*pow(3,j)/k);	// Expected Computation Warning 4
+	c*pow(x,3) + b*pow(x,2) + a*x;	// Expected Computation Warning 5
+	
+	return 0;
+}</code></pre>
+					</p>
+
+					<p> <h3 class="kor-text"> 3. 대출의 액면가 구하기 </h3>
+						<h3 class="eng-text"> 3. Evaluate a Face Value of Loan</h3></p>
+
+					<p class = "kor-text">
+						이번 문제는 경제와 수학에 가까운 문제입니다. 소비자 대출 협상은 그렇게 간단하지만은 않다.
+						대출의 한 형태는 다음과 같이 작용하는 할인 할부 대출이라고 가정하자. 한 대출이 액면가 <span>$</span>1,000에 5% 이자율과 24개월의 존속 기간을 가지고 있다.
+						이자는 액면가 <span>$</span>1,000에 0.05를 곱한 <span>$</span>50이다. 전체 이자는 이자 <span>$</span>50에 존속기간 2년을 곱해 <span>$</span>100이다.
+						액면가로부터 이 액수를 공제하면, 소비자의 대출금은 <span>$</span>900이다.
+						액면가를 기반으로 계산한 월 할부금은 <span>$</span>1,000를 24로 나눈 <span>$</span>41.67이다.
+						액면가만을 통해 계산한 소비자 대출금은 <span>$</span>900를 필요로 하는 소비자에게는 좋겠지만, <span>$</span>2,000를 필요로 하는 소비자에게는 다른 방식으로 액면가를 계산해야한다.
+						즉, 소비자 대출금 <span>$</span>2,000에 맞추어서 계산을 달리해야 한다.
+						소비자가 받기 원하는 액수, 이자율, 대출 존속 기간 이렇게 3개의 입력을 받은 후, 소비자를 위해 요구되는 액면가를 계산하는 프로그램을 만들어보자.
+						(입출력 예시를 참고해주시기 바랍니다.)
+					</p>
+					<p class = "eng-text">	
+						This problem is close to the economy and mathematics. A negotiation of a customer loan is not that simple.
+						Suppose that one form of loan is operated as a discount installment loan. The loan policy has a face value <span>$</span>1,000, an interest rate 5% and 24 months of duration.
+						Interest is <span>$</span>50 that the face value of <span>$</span>1,000 is multiplied by 0.05. Total interest is a value, <span>$</span>50 in interest multiplied by 2 years of life, equal to <span>$</span>100.
+						If the total interest is deducted from the face value, the loan of the client is <span>$</span>900.
+						The monthly installment based on the face value is <span>$</span>41.67, which is <span>$</span>1,000 divied by 24.
+						It is good for a client who want to loan <span>$</span>900, however the face value is evaluted in another way for a client who needs <span>$</span>2,000.
+						In other words, the face value should be calculated for the standard of the client loan of <span>$</span>2,000.
+						Let's make a program that computes the required face value for the client after receiving 3 values of the amount of the loan the client wants, installment rate, and the loan period.
+						(Please, refer to the expected input and output example.)
+					</p>
+
+					<p class="kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						입출력 예시 (1)
+					</p>
+					<p class="eng-text" style="margin-left: 10vw; padding-bottom: 0;">
+						The expected IO example (2)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">A retail baking loan amount ($): 2000
+An interest rate (%): 5
+A loan period (month): 24
+
+&lt;Expectated Info&gt;
+A face value ($): 2222.22
+A monthly installment ($): 83.33</code></pre>
+					</p>
+
+					<p class="kor-text" style="margin-left: 10vw; padding-bottom: 0;">
+						입출력 예시 (2)
+					</p>
+					<p class="eng-text" style="margin-left: 10vw; padding-bottom: 0;">
+						The expected IO example (3)
+					</p>
+					<p style="margin-top: 0; padding-bottom: 0; padding-top: 0;">
+						<pre><code class="bash" id="code-canvas">A retail baking loan amount ($): 0
+An interest rate (%): -1
+A loan period (month): 24
+
+&lt;Expectated Info&gt;
+ERROR: Wrong Input</code></pre>
+					</p>
+				</section>
+
+				<!-- LECTURE 3 PROBLEMS -->
+				<section id="lecture3">
+					<h2 class="kor-text">
+						3강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 3 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. 패턴 분석하기</h3>
+						<h3 class="eng-text"> 1. Analyze a Pattern</h3></p>
+					
+					<p class = "kor-text">
+						숫자 하나를 층으로써 입력을 받아 다음과 같은 패턴을 출력해주는 프로그램을 구성해보자.
+						다음의 출력 예시를 참고해서 패턴을 분석하여 정상 동작하는 프로그램을 만들어 보자.
+					</p>
+					<p class = "eng-text">	
+						Let's make your own program that the user is promted to enter one number as a height and it displays a pattern such as the following example.
+						Please refer to the expected output for a normal operation.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입출력 예시</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						The Expected Input & Output Result</p>
+					<pre><code class="bash" id="code-canvas">Enter a Height: 4
+1010101
+ 10101
+  101
+   1
+Enter a Height: 3
+10101
+ 101
+  1
+Enter a Height: -1
+Program Terminated.</code></pre>
+
+
+					<p> <h3 class="kor-text"> 2. 변형된 FizzBuzz 게임</h3>
+						<h3 class="eng-text"> 2. A Variation of FizzBuzz Game</h3></p>
+					
+					<p class = "kor-text">
+						혹시 FizzBuzz 게임에 대해서 들어보셨나요? FizzBuzz게임은 3의 배수에서는 <code id="code-word">Fizz</code>를, 5의 배수에서는 <code id="code-word">Buzz</code>를 그리고 3과 5의 공배수에서는 <code id="code-word">FizzBuzz</code>를 출력하는 게임입니다.
+						이 FizzBuzz 게임을 약간 변형시켜 <code id="code-word">Fizz</code>,<code id="code-word">Buzz</code> 또는 <code id="code-word">FizzBuzz</code>에 해당하는 경우에 해당 숫자가 홀수인지 짝수인지 그 옆에 같이 출력해줄 수 있는 프로그램을 작성해봅시다.
+						여러분들의 프로그램은 FizzBuzz 게임을 실행할 영역을 지정해주기 위해 두 개의 숫자를 입력받아야 합니다.
+					</p>
+					<p class = "eng-text">	
+						A FizzBuzz game is a game which print <code id="code-word">Fizz</code> at multiples of 3, <code id="code-word">Buzz</code> at multiples of 5, and <code id="code-word">FizzBuzz</code> at common multiples of 3 and 5.
+						Let's make a slight variation of this FizzBuzz game.
+						Write a program next to <code id="code-word">Fizz</code>,<code id="code-word">Buzz</code>, or <code id="code-word">FizzBuzz</code> that can print out if the number is odd or even.
+						Please refer to the expected input and output result. 
+						Your program must prompt the user to enter two input numbers to specify a range to execute the FizzBuzz game.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입출력 예시</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						The Expected Input & Output Result</p>
+					<pre><code class="bash" id="code-canvas">From 10
+Up to 20
+Buzz even
+11
+Fizz even
+13
+14
+FizzBuzz odd
+16
+17
+Fizz even
+19
+Buzz even</code></pre>
+
+
+
+					<p> <h3 class="kor-text"> 3. 변형된 카이사르 암호 풀기 (심화)</h3>
+						<h3 class="eng-text"> 3. Solve a Variation of Caesar Cipher (Advanced)</h3></p>
+					
+					<p class = "kor-text">
+						카이사르 암호는 여러분들이 살아가면서 한 번쯤은 들어봤은 고전 암호 기법입니다.
+						카이사르 암호는 알파벳을 일정 칸만큼 밀어서 다른 알파벳에 대응시키는 암호화 방식입니다.
+						다시 말해, abcde...를 오른쪽으로 3칸을 민다고 가정하면, xyzab...의 순서로 알파벳을 사용하는 방식입니다.
+						예를 들어, LOVE라는 단어를 암호화하면, ORZH라는 글자가 나오게 됩니다.
+					</p>
+					<p class = "eng-text">	
+						Caesar cipher is an ancient encryption method that you have heard at least once in your whole life.
+						This cipher is a method to shift and replace alphabets as many times as a constant number.
+						In other words, if the alphabets abcde... are shifted right three, the alphabets of the order of xyzab... are generated and replaced.
+						For example, we can encrypt a word of 'LOVE' into 'ORZH'.
+					</p>
+
+					<p class = "kor-text">
+						이제 이 카이사르 암호를 변형하고자 합니다.
+						가장 먼저, 일반적인 카이사르 암호는 대소문자를 구분하지 않지만 여러분들의 프로그램은 대소문자를 구분할 수 있어야 합니다.
+						즉, ABCDE...vwxyz 알파벳을 오른쪽으로 3칸 밀면, xyzAB...stuvw의 알파벳으로 변경되어야 합니다.
+						추가적으로 알파벳을 알파벳으로 변경하는 것이 아닌 알파벳을 숫자로 대체하셔야 합니다.
+						아래의 예시를 보면, ABCDE를 xyzAB로 대치한 후에 50/51/52/1/2로 다시 숫자로 암호화해야 합니다.
+						대문자 그리고 소문자 알파벳 순서대로 1,2,3,...50,51,52의 값으로 대치되어야 합니다.
+						따라서 원본 문자와 암호 문자를 비교해보면, Shift Right 3를 한 경우에 A는 50, B는 51, ... 의 값을 가져야 합니다.
+					</p>
+					<p class = "eng-text">	
+						From now, this Caesar cipher will be variated.
+						Most of all, the general Caesar cipher does not distinguish upper and lower cases, however your program should be able to distinguish them.
+						Therefore, if the alphabets ABCDE...vwxyz is shifted right by three, they will be replaced with xyzAB...stuvw.
+						Your program must additionally replace the alphabets with not the alphabets but the numbers.
+						For the following example, after replacing ABCDE with xyzAB, your program should encrypt it into the number like 50/51/52/1/2.
+						The alphabets should be replaced by 1,2,3,...50,51,52 in order of uppercase and lowercase.
+						Therefore, in the case of shifting right 3, A has 50, B has 51, ..., comparing it with the original alphabets.
+					</p>
+
+					<p style="text-align: center;"><img src="../img/caesar_1.png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						카이사르 암호의 변형 과정</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						A Procedure of Variation of Caesar Cipher</p>
+					<pre><code class="bash" id="code-canvas">ABCDE -&gt; xyzAB -&gt; 50,51,52,1,2</code></pre>
+
+					<p class = "kor-text">
+						아래의 출력 예시와 예시 코드를 참고해서 다음과 같은 프로그램을 만들어봅시다.
+						하나의 문자열을 입력받은 후에 <code id="code-word">SHIFT_P</code>와 <code id="code-word">SHIFT_R</code>의 값을 이용해 위에서 설명한 변형된 형태의 카이사르 암호로 암호화하는 프로그램을 만들자.
+						문자열을 입력받는 코드는 예시 코드에 구현되어 있습니다.
+						(단, 띄어쓰기가 없는 문자열만을 고려한다.)
+					</p>
+					<p class = "eng-text">	
+						Refering to the following the expected result and example code, please make a program to follow the following rules.
+						After the user entering one character sequence, your program should encrypt the input string into the variated Caesar cipher mentioned above through <code id="code-word">SHIFT_P</code>and <code id="code-word">SHIFT_R</code>.
+						An operation for the user to be prompted to enter the character sequence is implemented in the example code.
+						(However, consider a string only which does not have any space.)
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입출력 예시</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						The Expected Input & Output Result</p>
+					<pre><code class="bash" id="code-canvas">Shift: right 5
+Original Letters: iLOVEu
+After Encryption: 30 7 10 17 52 42</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 코드: <code id="code-word">p3_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Code: <code id="code-word">p3_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+
+#define SHIFT_P 5 // For the shift position
+#define SHIFT_R true // If (true), shift right. If not, shift left.
+
+int main(){
+    char origin[100];
+
+	std::cout &lt;&lt; "Shift: " &lt;&lt; (SHIFT_R == true ? "right " : "left ") 
+						   &lt;&lt; SHIFT_P &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Original Letters: ";
+    std::cin &gt;&gt; origin;
+	std::cin.clear();
+
+    /* Your Encryption Code */
+
+    return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_3_3')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_3_3')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_3_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						코드에 갑자기 배우지 않았던 코드가 있어서 놀라셨죠? 
+						우리가 배우지 않았던 코드 <code id="code-word">char origin[100]</code>는 6강에서 배우게 됩니다.
+						하지만, 한 번 경험을 해보시면, 조금 더 친숙하게 다가가실 수 있지 않을까 싶어서 이번 문제에 포함을 시켰습니다. 
+						이 코드의 의미는 <code id="code-word">char</code> 타입의 데이터를 100개까지 수용할 수 있는, 즉 단일 문자 100개까지를 수용할 수 있는 변수를 의미합니다.
+						예를 들어, 여러분들이 배웠던 문자열을 생각해봅시다. 만약 <code id="code-word">abc</code>을 입력으로 넣었다면, <code id="code-word">"abc" = 'a' + 'b' + 'c' + '\0'</code>에 의해서 길이를 4개로 갖습니다. 따라서 <code id="code-word">origin</code> 변수에 4개의 문자를 맨 앞쪽부터 채워넣습니다.
+						<code id="code-word">char origin[100]</code>과 같은 문자열 변수를 출력하기 위해서는 <code id="code-word">std::cout &lt;&lt; origin &lt;&lt; std::endl;</code>과 같은 형식을 사용하면, 스스로 <code id="code-word">\0</code>을 만날 때까지 출력을 합니다.
+						(이제부터는 아래의 코드를 참조해주세요) 추가적으로 origin 변수에 저장된 i-번째 문자를 수정하거나 그 값을 가져올 수 있습니다. 이를 위해서는 <code id="code-word">origin[0]</code>와 같이 대괄호를 사용할 수 있습니다. 
+						우리는 100개의 문자를 수용할 수 있도록 했지만, 그 순서는 0번째부터 시작합니다. 따라서 0번째 ~ 99번째까지만 가능합니다.
+						또한, 대괄호 안에는 1,2와 같은 상수 뿐만 아니라 변수도 들어갈 수 있습니다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_3_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Weren't you very surprised because of the new syntax?
+						The new syntax that we didn't learn yet, <code id="code-word">char origin[100]</code>, will be learned in the Lecture 6.
+						However, once you experiencing it, I guess you can get close to the syntax more familiarly so that I've included it on this problem.
+						The code means a variable that contains upto 100 data of <code id="code-word">char</code> data type, in other words, has a capability of 100 characters.
+						For example, consider the string you've learned. If you input a string <code id="code-word">abc</code> into the variable, then it has a length of 4 because of a fact <code id="code-word">"abc" = 'a' + 'b' + 'c' + '\0'</code>. Thus, <code id="code-word">origin</code> variable fills the 4 characters into itself from the front.
+						To print out a string like <code id="code-word">char origin[100]</code>, you can use a format of <code id="code-word">std::cout &lt;&lt; origin &lt;&lt; std::endl;</code> then your computer will print out the characters in the variable until it faces the terminator character <code id="code-word">\0</code>.
+						(From now, please refer to the below codes) Additionally, you can also modify or get a i-th charcter stored in the origin variable. For this, you have to use brackets like <code id="code-word">origin[0]</code>.
+						The variable can contain upto 100 characters, but the order starts from 0. Therefore, it has an order of from 0-th to 99-th.
+						Plus, not only a constant but also a variable can be placed in the brackets.
+					</p>
+					<pre class="answer-sheet" id="prob_3_3"><code class="cpp" id="code-canvas">char str[100];
+std::cin >> str;                    // Assume: the input is 'ABCD'
+str[0] = 'a';                       // Assignment: Okay
+std::cout &lt;&lt; str[100] &lt;&lt; std::endl; // Get: Error 
+std::cout &lt;&lt; str[1] &lt;&lt; std::endl;   // Get: Okay
+std::cout &lt;&lt; str &lt;&lt; std::endl;</code></pre>
+
+					<p class="kor-text prob_3_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						위의 코드에서 3번째 줄은 에러가 발생합니다. 따라서 해당 줄을 주석 처리하고 실행한다면, 4번째 줄은 <code id="code-word">B</code>를, 5번째 줄은 <code id="code-word">aBCD</code>
+						라는 결과를 얻을 수 있게 됩니다.
+						이러한 기능을 잘 참고해서 프로그램을 짜봅시다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_3_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						The above code occurs an error on the third line. Thus, making the line a comment, the result of the fourth line will be <code id="code-word">B</code> and the fifth line will be <code id="code-word">aBCD</code>.
+						Remembering this functionality, let's make a good program.
+					</p>
+
+
+				</section>
+
+				<!-- LECTURE 4 PROBLEMS -->
+				<section id="lecture4">
+					<h2 class="kor-text">
+						4강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 4 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. 코드 결과 유추하기</h3>
+						<h3 class="eng-text"> 1. Guess The Result of a Program</h3></p>
+					
+					<p class = "kor-text">
+						다음 코드의 결과를 유추해보자.
+						그리고 각각의 라인 <code id="code-word">PTE_ADDR</code>, <code id="code-word">PTE_FLAGS</code>, <code id="code-word">FLAG_STATE</code> 각각이 무엇을 의미하는지 서술해보자.
+					</p>
+					<p class = "eng-text">	
+						Let's guess the result of the following code.
+						Also, try describing the meanings of each line <code id="code-word">PTE_ADDR</code>, <code id="code-word">PTE_FLAGS</code>, and <code id="code-word">FLAG_STATE</code>.
+					</p>
+
+					<p class = "kor-text">
+						문제 코드의 결과를 유추하기 이전에 <code id="code-word">&lt;bitset&gt;</code> 라이브러리의 사용법을 알아야 합니다.
+						이 라이브러리의 한 함수는 정수를 2진수의 문자열로 변환해 리턴합니다.
+						가령, <code id="code-word">std::bitset&lt;4&gt;(5)</code>와 같은 형식으로 사용한다면, 5는 2진수로 <code id="code-word">00101</code>이지만 하위 4개의 비트를 리턴해야 하므로 <code id="code-word">0101</code>을 리턴합니다.
+						또 다른 예시로, <code id="code-word">std::bitset&lt;8&gt;(100)</code>은 <code id="code-word">01100100</code>을 리턴합니다.
+					</p>
+					<p class = "eng-text">	
+						Before guessing the result of the following problem code, you must understand how to utilize a library of <code id="code-word">&lt;bitset&gt;</code>.
+						One function of this library returns a character sequence which an integer number is converted into.
+						For example, in the case of <code id="code-word">std::bitset&lt;4&gt;(5)</code>, 5 is equal to <code id="code-word">00101</code> as a binary basis, but the function should return a character sequence number of the least significant 4 bits.
+						Plus, <code id="code-word">std::bitset&lt;8&gt;(100)</code> returns the <code id="code-word">01100100</code>.
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						문제 코드: <code id="code-word">p4_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Problem Code: <code id="code-word">p4_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;bitset&gt;
+
+
+/* Macro Constants */
+#define PTE_P 0x001 // PTE_P stands for Page Table Entry_Present 
+#define PTE_W 0x002 // PTE_W stands for Page Table Entry_Writeable
+#define PTE_U 0x004 // PTE_U stands for Page Table Entry_User
+
+/* Macro Function */
+#define PTE_ADDR(pte) ((unsigned int)(pte) & ~0xFFF)
+#define PTE_FLAGS(pte) ((unsigned int)(pte) & 0xFFF)
+
+/* Normal Function */
+const int flag_check(const unsigned int pte){ return PTE_FLAGS(pte); }
+
+
+int main(){
+	unsigned int addr1 = 0x45bd3aa1; // Binary: 01000101101111010011101010100001 (32 bits)
+	unsigned int addr2 = 0x193acd1e; // Binary: 00011001001110101100110100011110 (32 bits)
+
+	printf("PTE_ADDR:   %X\n",  PTE_ADDR(addr1));
+	std::cout &lt;&lt; "PTE_FLAGS:  " &lt;&lt; std::bitset&lt;12&gt;(flag_check(addr1)) &lt;&lt; std::endl;
+	std::cout &lt;&lt; "FLAG STATE: " &lt;&lt; std::bitset&lt;4&gt;((addr1 & PTE_P) + (addr1 & PTE_W) + (addr1 & PTE_U)) &lt;&lt; std::endl;
+						
+	printf("\nPTE_ADDR:   %X\n",  PTE_ADDR(addr2));
+	std::cout &lt;&lt; "PTE_FLAGS:  " &lt;&lt; std::bitset&lt;12&gt;(flag_check(addr2)) &lt;&lt; std::endl;
+	std::cout &lt;&lt; "FLAG STATE: " &lt;&lt; std::bitset&lt;4&gt;((addr2 & PTE_P) + (addr2 & PTE_W) + (addr2 & PTE_U)) &lt;&lt; std::endl;
+	
+	return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_4_1')">정답</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_4_1')">ANSWER</button></p>
+					
+<pre class="answer-sheet" id="prob_4_1"><code class="bash" id="code-canvas">곧 공개됩니다.
+Released Soon</code></pre>
+<!--Korean Answer-->
+					<p class="kor-text prob_4_1_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(83, 134, 228); display: none;">
+						곧 공개됩니다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_4_1_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(83, 134, 228); display: none;">
+						Released Soon.
+					</p>					
+
+					<p> <h3 class="kor-text"> 2. 중복되는 이름의 서로 다른 함수 독립시키기 (코드 채워넣기)</h3>
+						<h3 class="eng-text"> 2. Separate the Different Functions of the Same Name (Filling the Code)</h3></p>
+
+					<p class = "kor-text">
+						이번 문제는 중복되는 이름의 서로 다른 기능을 분리하는 연습문제입니다.
+						예를 들어, 택시와 버스 사용에 대한 프로그램을 만든다고 가정해봅시다.
+						택시와 버스는 모두 대중교통이므로 운행 거리에 따른 비용과 운행 거리에 따라 걸리는 시간이 존재합니다.
+						하지만, 택시와 버스는 적용되는 정책이 다르기 때문에 구현을 서로 다르게 해야 합니다.
+						이 둘은 모두 동일한 이름의 함수들인 운행 거리에 따른 비용 <code id="code-word">fareByDistance(distance)</code> 그리고 운행 거리에 따라 걸리는 시간 <code id="code-word">timeCostByDistance(distance)</code>이 각각 존재합니다.
+					</p>
+					<p class = "eng-text">	
+						This problem has an objective to separate the functions which have the duplicated names but the different functionalities.
+						For example, let it suppose that you make a program on using taxis or buses.
+						They are included in public transportations so that there are a fare by the distance and a time cost by the distance.
+						However, the implementations for them should not be identical because they have different policies.
+						They respectively have two functions of the same names, <code id="code-word">fareByDistance(distance)</code> and <code id="code-word">timeCostByDistance(distance)</code>.
+					</p>
+
+					<p class = "kor-text">
+						택시와 버스에 적용되는 정책은 다음의 설명과 아래의 수식을 참고하면 됩니다.
+						택시의 경우, 운용 요금 책정은 다음과 같습니다. 운행 거리가 1km 이하라면 기본요금 3$를, 그 이상이라면 1-c의 계산식을 통해 요금이 계산됩니다.
+						또한 예상 소요 시간은 운행 거리를 예상되는 택시의 평균 속력인 45[km/h]로 나눈 값(2-c)입니다.
+						버스의 운용 요금 책정은 운행 거리가 1.5km 이하라면 기본요금 1$를, 그 이상이라면 1-c의 계산식을 통해 요금이 계산됩니다.
+						또한 예상 소요 시간은 운행 거리를 예상되는 버스의 평균 속력인 45[km/h]로 나눈 값에 정류장에서의 예상 지연시간을 더한 값(2-c)으로 계산 됩니다.
+					</p>
+					<p class = "eng-text">	
+						Please refer to the following explanation and below equation about the applied policies for the taxis and buses.
+						In the case of the taxis, it follows a basic charge 3$ for a movement distance shorter than 1km and 1-c evaluating equation for the movement distance longer than 1km.
+						Also, the expected time cost is evaluted by dividing the movement distance by the expected average speed of a taxi, 45[km/h] (2-c).
+						In the case of the buses, it follos a basic charge 1$ for a movement distance shorter than 1.5km and 1-c evaluating equation for the movement distance longer than 1.5km.
+						Also, the expected time cost is evaluted by dividing the movement distance by the expected average speed of a bus, 45[km/h] and adding the expected delay time at some bus stops (2-c).
+					</p>
+
+					<pre><code class="sh" id="code-canvas">Taxi Case
+	1. const float fareByDistance(const int d);
+		a. d = distance [m]
+		b. (d &lt; 1km) -&gt; 3&#36;
+		c. (d &gt; 1km) -&gt; 3&#36; + (d - 1000)*0.5/200&#36;
+	2. const float timeCostByDistance(const int d);
+		a. d = distance [m]
+		b. t = time cost [min]
+		c. t =  d*60/45000
+
+Bus Case
+	1. const float fareByDistance(const int d);
+		a. d = distance [m]
+		b. (d &lt; 1.5km) -&gt; 1&#36;
+		c. (d &gt; 1.5km) -&gt; 1&#36; + (d - 1000)*0.3/400&#36;
+	2. const float timeCostByDistance(const int d);
+		a. d = distance [m]
+		b. t = time cost [min]
+		c. t =  d*60/45000 + d*0.8/400
+</code></pre>
+
+					<p class = "kor-text">
+						이렇게 동일한 이름의 함수가 필요하지만 구현을 다르게 해야 할 때, 일반적으로 <code id="code-word">namespace</code>를 사용하기도 합니다.
+						아래의 코드는 이 아이디어를 통해 구조적으로 일부를 구현한 모습입니다. 
+						<code id="code-word">/* Fill The Code */</code>라고 적혀있는 부분을 정상적으로 동작하도록 구현해봅시다.
+					</p>
+					<p class = "eng-text">	
+						Like the explanation when a program requires some functions of the identical names but should be implemented differently, generally <code id="code-word">namespace</code> might be used.
+						The following skeleton code is structurely and partially implemented through this idea.
+					</p>
+
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+namespace TAXI{
+	const float fareByDistance(const int d);
+	const float timeCostByDistance(const int d);
+}
+
+namespace BUS{
+	const float fareByDistance(const int d);
+	const float timeCostByDistance(const int d);
+}
+
+const float TAXI::fareByDistance(const int d){
+	/* Fill The Code */
+}
+
+const float BUS::fareByDistance(const int d){
+	/* Fill The Code */
+}
+
+const float TAXI::timeCostByDistance(const int d){
+	/* Fill The Code */
+}
+
+const float BUS::timeCostByDistance(const int d){
+	/* Fill The Code */
+}
+
+int main(){
+	/*      This Section Is For The Test      */
+	/* You Do Not Have To Revise This Section */
+
+	const int taxi_d_1 = 800, taxi_d_1 = 2500; 
+	std::cout &lt;&lt; "TAXI Case --- Test 1" &lt;&lt; std::endl;
+	std::cout &lt;&lt; "Fare     : " &lt;&lt; std::setprecision(3) &lt;&lt; TAXI::fareByDistance(taxi_d_1) &lt;&lt; "$" &lt;&lt; std::endl;  
+	std::cout &lt;&lt; "Time Cost: " &lt;&lt; std::setprecision(3) &lt;&lt; TAXI::timeCostByDistance(taxi_d_1) &lt;&lt; "min" &lt;&lt; std::endl;
+
+	std::cout &lt;&lt; "\nTAXI Case --- Test 2" &lt;&lt; std::endl;
+	std::cout &lt;&lt; "Fare     : " &lt;&lt; std::setprecision(3) &lt;&lt; TAXI::fareByDistance(taxi_d_2) &lt;&lt; "$" &lt;&lt; std::endl;  
+	std::cout &lt;&lt; "Time Cost: " &lt;&lt; std::setprecision(3) &lt;&lt; TAXI::timeCostByDistance(taxi_d_2) &lt;&lt; "min" &lt;&lt; std::endl;
+
+	const int bus_d_1 = 2000, bus_d_2 = 65000;
+	std::cout &lt;&lt; "\nBus Case --- Test 1" &lt;&lt; std::endl;
+	std::cout &lt;&lt; "Fare     : " &lt;&lt; std::setprecision(3) &lt;&lt; BUS::fareByDistance(bus_d_1) &lt;&lt; "$" &lt;&lt; std::endl;  
+	std::cout &lt;&lt; "Time Cost: " &lt;&lt; std::setprecision(3) &lt;&lt; BUS::timeCostByDistance(bus_d_1) &lt;&lt; "min" &lt;&lt; std::endl;
+
+	std::cout &lt;&lt; "\nBus Case --- Test 2" &lt;&lt; std::endl;
+	std::cout &lt;&lt; "Fare     : " &lt;&lt; std::setprecision(3) &lt;&lt; BUS::fareByDistance(bus_d_2) &lt;&lt; "$" &lt;&lt; std::endl;  
+	std::cout &lt;&lt; "Time Cost: " &lt;&lt; std::setprecision(3) &lt;&lt; BUS::timeCostByDistance(bus_d_2) &lt;&lt; "min" &lt;&lt; std::endl;
+	return 0; 
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 결과</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						The Expected Result</code></p>
+					<pre><code class="bash" id="code-canvas">TAXI Case --- Test 1
+Fare     : 3.00$
+Time Cost: 1.07min
+
+TAXI Case --- Test 2
+Fare     : 6.75$
+Time Cost: 3.33min
+
+BUS Case --- Test 1
+Fare     : 1.75$
+Time Cost: 6.67min
+
+BUS Case --- Test 2
+Fare     : 49.0$
+Time Cost: 216min
+</code></pre>
+
+				</section>
+				
+				<!-- LECTURE 5 PROBLEMS -->
+				<section id="lecture5">
+					<h2 class="kor-text">
+						5강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 5 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. OX 퀴즈</h3>
+						<h3 class="eng-text"> 1. OX Quiz</h3></p>
+					
+					<p class = "kor-text">
+						다음의 문장이 옳다면 <code id="code-word">O</code>를, 아니라면 <code id="code-word">X</code>를 표시하라.
+						해당 OX 문제들은 이론적 배경에 대한 이해를 돕기위한 문제들입니다.
+					</p>
+					<p class = "eng-text">	
+						If the following statements are true, write <code id="code-word">O</code>, and if false write <code id="code-word">X</code>.
+						The following T/F quizzes were set to encourage the learner to understand the theoretical backgrounds.
+					</p>
+					
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						1. Unmanaged Language가 필요한 이유는 대체적으로 속도가 더 빠르기 때문이다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						1. The unmanaged Languages are required because generally faster than other languages.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3em; padding-bottom: 0; width: 50vw;">
+						2. 성능이 가장 좋은 저장 장치는 Cache Memory이다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3em; padding-bottom: 0; width: 50vw;">
+						2. The Cache Memory has the best performance among the memory hardwares.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						3. CPU는 DRAM에 가장 빨리 접근할 수 있다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						3. CPU can access DRAM fastest.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						4. Clock Frequency가 1.6GHz인 Multi-Core CPU는 1초에 $$1.6\times 10^{9}$$개까지의 Instruction (연산)이 가능하다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						4. A multi-core CPU which has a clock frequency 1.6GHz can operate upto $$1.6\times 10^{9}$$ instructions (operations) in 1 second.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						5. C++ 프로그램을 만든 후에 실행시키면, 해당 프로세스(프로그램)의 메모리 영역에 존재하는 Code Section (Text Section)이 프로그램 실행중에 수정될 수 있다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						5. When a C++ program is executed after made, a code section (text section) on its memory realm of the process (program) can be modified during the execution.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						6. CPU가 Main Memory에 접근하는 횟수가 적을 수록 프로그램 속도가 빠르다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3; padding-bottom: 0; width: 50vw;">
+						6. The less a CPU access the main memory, the faster the speed of the program is.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0.3; width: 50vw;">
+						7. 비교 조건이 많은 경우에는 <code id="code-word">if ~ else</code> 문보다 <code id="code-word">switch ~ case</code> 문을 사용하는 것이 더 좋다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0.3; width: 50vw;">
+						7. In the case that has many comparison conditions, <code id="code-word">switch ~ case</code> is better than <code id="code-word">if ~ else</code>.</p>
+					
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_5_1')">정답</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_5_1')">ANSWER</button></p>
+						
+					<p class="answer-sheet" id = "prob_5_1" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(83, 134, 228); display: none;">
+						1.O  2.X  3.X  4.X  5.X  6.O  7.O
+					</p>
+
+
+					<p> <h3 class="kor-text"> 2. 코드 재구성하기</h3>
+						<h3 class="eng-text"> 2. Restruct the Program Code</h3></p>
+					
+					<p class = "kor-text">
+						다음 코드는 실시간으로 시간이 변하는 시계를 만든 프로그램이다.
+						코드를 대략적으로 살펴보고 Coding Style을 참고해서 이상한 점이 있다면 동일한 기능을 수행하면서 더 좋은 코딩 스타일로 바꾸는 연습을 해보자. 
+						(각 코드 라인이 어떤 동작을 하는지 분석할 필요는 없다. 그것을 방지하기 위해 일부러 어려운 코드를 넣어 놓았다. 간단한 주석과 코드의 흐름을 보는 방식으로 살펴보면 된다.)
+						그리고, 모든 기능이 하나의 파일에 구현되어 있다. 이는 실제 프로젝트에서 좋은 습관이 절대 아니다.
+						<code id="code-word">main.cpp</code>에 구현되어 있는 함수들을 헤더 파일로 빼내어서 <code id="code-word">clock.h</code>, <code id="code-word">clock.cpp</code>의 파일들을 재구성하는 연습을 하자.
+						단, 기능 자체를 수정할 필요는 없다. 즉, 프로그램의 구조를 재구성하는 것이다.
+						궁극적으로 다음의 총 3개의 파일인 <code id="code-word">main.cpp</code>, <code id="code-word">clock.h</code>, <code id="code-word">clock.cpp</code>로 코드를 분리해서 프로그램을 구성해야 한다.
+						(고급 단계, 옵션) 각 함수에 주석을 다는 연습도 함께 해보자.
+					</p>
+					<p class = "eng-text">	
+						The following code is a program that a clock which changes the time in real-time is implemented.
+						Practice restructing the code for a better coding style maintaining the identical functions, as referring to the coding style guide and after looking around the code.
+						(You need not to analyze all operations of each code line. To protect it, I have made the program with the difficult syntax on purpose. You can check the simple comments and the flow of the code.)
+						Also, all functions are implemented in one file. This is never a good habit for the realistic projects.
+						Extract and separate the functions which is implemented in <code id="code-word">main.cpp</code> into two files, <code id="code-word">clock.h</code> and <code id="code-word">clock.cpp</code> so that restruct the program structure.
+						However, you do not have to revise the functionalities themselves.
+						Ultimately, you need to separate the given codes into the following three files (<code id="code-word">main.cpp</code>, <code id="code-word">clock.h</code>, and <code id="code-word">clock.cpp</code>) and constitute the program.
+						Practice adding some comments for each function (for advanced and optional).
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<code id="code-word">main.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<code id="code-word">main.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;ctime&gt; // for time_t
+#include &lt;chrono&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+							
+void BackspaceN(const unsigned int n){
+	for (int i=0; i&lt;n; ++i) printf("\b"); // cursor backspace
+	for (int i=0; i&lt;n; ++i) printf(" ");  // fill space
+	for (int i=0; i&lt;n; ++i) printf("\b");
+}
+							
+void DisplayCurrentTime12(){
+	std::chrono::time_point&lt;std::chrono::system_clock&gt; now;
+	now = std::chrono::system_clock::now(); // get current system clock
+								
+	std::time_t now_time, old_time;
+	now_time = std::chrono::system_clock::to_time_t(now); // change system clock into time
+								
+	while(1){
+		std::cout &lt;&lt; std::put_time(std::localtime(&now_time), "%r") &lt;&lt; std::flush; // print local time with a format of 12-hour clock.
+		old_time = now_time; // to check change of time
+		do{ // check polling
+			now = std::chrono::system_clock::now();
+			now_time = std::chrono::system_clock::to_time_t(now);
+		} while (now_time == old_time);
+		BackspaceN(12); // backspace
+	}
+}
+							
+void DisplayCurrentTime24(){
+	std::chrono::time_point&lt;std::chrono::system_clock&gt; now;
+	now = std::chrono::system_clock::now(); // get current system clock
+								
+	std::time_t now_time, old_time;
+	now_time = std::chrono::system_clock::to_time_t(now); // change system clock into time
+									
+	while(1){
+		std::cout &lt;&lt; std::put_time(std::localtime(&now_time), "%T") &lt;&lt; std::flush; // print local time with a format of 12-hour clock.
+		old_time = now_time; // to check change of time
+		do{ // check polling
+			now = std::chrono::system_clock::now();
+			now_time = std::chrono::system_clock::to_time_t(now);
+		} while (now_time == old_time);
+		BackspaceN(9); // backspace
+	}
+}
+							
+void DisplayCurrentTime(bool toggle_12_hour){
+	// toggle_12_hour == True  : 04:52:34 PM
+	// toggle_12_hour == False : 16:52:34
+	if (toggle_12_hour) DisplayCurrentTime12(); // 12-hour clock
+	else DisplayCurrentTime24(); // 24-hour clock
+}
+							 
+int main(){
+	char ans;
+	std::cout &lt;&lt; "Toggle AM/PM? (Y/n)";
+	std::cin &gt;&gt; ans;
+								
+	if (ans == 'Y' || ans == 'y') DisplayCurrentTime(true); // toggle on
+	else if (ans == 'N' || ans == 'n') DisplayCurrentTime(false); // toggle off
+	else{ // Error Message
+		fprintf(stderr, "(Wrong Input) usage: &lt;y/N&gt;\n");
+		return 1;
+	}
+							
+	return 0;
+}							
+
+// Reference: https://en.cppreference.com/w/cpp/io/manip/put_time</code></pre>
+					
+
+				</section>
+
+				<!-- LECTURE 6 PROBLEMS -->
+				<section id="lecture6">
+					<h2 class="kor-text">
+						6강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 6 Exercises
+					</h2>
+
+<!-- 6-1 -->
+					<p> <h3 class="kor-text"> 1. 16진수의 비트 분해</h3>
+						<h3 class="eng-text"> 1. Bits Separation for Hexadecimal</h3></p>
+					
+					<p class = "kor-text">
+						6번째 강의에서 2진수를 분해하는 예시를 보고 공부한 적이 있다.
+						이번 문제는 확장된 예시로 16진수를 분해하는 문제이다.
+						16진수 숫자는 16진수 숫자임을 나타내는 접두어 <code id="code-word">0x</code>를 사용해서 표현한다.
+						예를 들어, <code id="code-word">0xABC123</code>이라는 숫자에서 <code id="code-word">0x</code>는 그 이후의 값인 <code id="code-word">ABC123</code>가 16진수 표현임을 의미한다.
+						이 숫자를 10진수로 변환하면, 다음과 같은 과정을 통해서 10진수 값을 얻을 수 있다.
+					</p>
+					<p class = "eng-text">	
+						We've learned about the bit separation for a binary number from the 6th lecture.
+						This problem represents the bit separation for a hexadecimal number as an extended example.
+						Hexadecimal numbers are expressed with a prefix <code id="code-word">0x</code>.
+						For example, for a number <code id="code-word">0xABC123</code>,  <code id="code-word">0x</code> means that <code id="code-word">ABC123</code> after the prefix is written by the hexadecimal number system.
+						We translating this number into a decimal number, then the decimal value is calculated following the below step.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{5} \times 10 + 16^{4} \times 11 + 16^{3} \times 12 + 16^{2} \times 1 + 16^{1} \times 2 + 16^{0} \times 3 = 11,256,099 $$$
+					</p>
+
+					<p class = "kor-text">
+						주어진 수인 <code id="code-word">0xABC123</code>를 16진수 형태에서 이분할하면, <code id="code-word">0xABC</code> 그리고 <code id="code-word">0x123</code>으로 나눌 수 있다.
+						이분할한 16진수는 아래의 계산식을 참고하면 10진수로 각각 2,748과 291을 나타낸다.
+					</p>
+					<p class = "eng-text">	
+						If separating the given hexadecimal number <code id="code-word">0xABC123</code> into two parts with the hexadecimal form, we can get numbers, <code id="code-word">0xABC</code> and <code id="code-word">0x123</code>.
+						These hexadecimal numbers respectively represent 2,748 and 291 with the decimal form referring to the following equation.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{2} \times 10 + 16^{1} \times 11 + 16^{0} \times 12 = 2,748 $$$
+						$$$ 16^{2} \times 1 + 16^{1} \times 2 + 16^{0} \times 3 = 291 $$$
+					</p>
+
+					<p class = "kor-text">
+						<code id="code-word">0xFE987</code>과 같이 16진수 자릿수($$n$$)가 홀수개인 경우에는 주어진 수의 앞쪽을 $$\frac{n-1}{2}$$개로 그리고 뒤쪽을 $$\frac{n+1}{2}$$개로 분할해야 한다.
+						즉, <code id="code-word">0xFE</code>와 <code id="code-word">0x987</code>과 같이 앞쪽을 짧게, 뒤쪽을 길게 분할하면 된다.
+						그리고 이렇게 이분할한 16진수는 아래의 계산식을 참고해 10진수로 각각 254와 2,439를 나타낸다.
+					</p>
+					<p class = "eng-text">	
+						Plus, hexadecimal numbers like <code id="code-word">0xFE987</code>, which have odd hexadecimal digits, must be separated into $$\frac{n-1}{2}$$ hexadecimal digits for the front part and $$\frac{n+1}{2}$$ hexadecimal digits for the rear part.
+						Therefore, this hex number can be partitioned, shorter for the front and longer for the rear, with <code id="code-word">0xFE</code> and <code id="code-word">0x987</code>.
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ 16^{2} \times 0 + 16^{1} \times 15 + 16^{0} \times 14 = 254 $$$
+						$$$ 16^{2} \times 9 + 16^{1} \times 8 + 16^{0} \times 7 = 2,439 $$$
+					</p>
+
+					<p class = "kor-text">
+						사용자로부터 문자열의 형태로 16진수를 입력받은 뒤에 그 수를 분할하고 아래의 입출력 예시처럼 출력하는 프로그램을 만들어보아라.
+						16진수를 분할하는 방식은 위에서 설명된 방식을 따른다.
+						단, 16진수의 크기는 128bit(2진수 변환시)로 제한한다.
+						또한, 16진수를 나타내는 접두어(<code id="code-word">0x</code> 또는 <code id="code-word">0X</code>) 유무 그리고 숫자의 대소문자에 상관없이 16진수로 간주한다.
+						프로그램 구현을 위해서 주어진 스켈레톤 코드를 참조하라(스켈레톤 코드에는 프로그램 구현에 도움이 될 수 있는 함수가 작성되어 있고 그 예시가 있으며 더 자세한 설명을 위해서는 참조 버튼을 통해 확인하라).
+					</p>
+					<p class = "eng-text">	
+						Write a program to print out the partitioned numbers after prompting the user to enter a hexadecimal number with a character sequence form like the following examples.
+						There are some constraints for the hexadecimal separation.
+						First, the size of the hexadecimal number is limited to up to 128 bits for the maximum.
+						Second, the input numbers are considered as hexadecimal numbers regardless of the prefix(<code id="code-word">0x</code> or <code id="code-word">0X</code>)'s existance and case-sensitivity.
+						Please refer to the skeleton code for the program implementation (some functions, which might be helpful, are implemented).
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입출력 예시</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Input & Output</p>
+					<pre><code class="bash" id="code-canvas">Enter a Hexadecimal Number: 0XABC123
+[1] 0xabc = 2748
+[2] 0x123 = 291
+
+Enter a Hexadecimal Number: 0xfe987
+[1] 0xfe = 254
+[2] 0x987 = 2439
+
+Enter a Hexadecimal Number: 123456
+[1] 0x123 = 291
+[2] 0x456 = 1110
+
+Enter a Hexadecimal Number: abcdefgh
+[Error] Out of Range</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;algorithm&gt; // for std::transform
+#include &lt;cctype&gt;    // for ::tolower, ::toupper
+
+#define MAX_LEN /*Your Implementation*/
+#define LOWER(C) std::transform(C, C+MAX_LEN, C, ::tolower)
+#define UPPER(C) std::transform(C, C+MAX_LEN, C, ::toupper)
+
+int main(){
+	char hex[MAX_LEN];
+	std::cout &lt;&lt; "Enter a Hexadecimal Number: ";
+	std::cin &gt;&gt; hex;
+
+	/* Your Implementation */
+
+	/* ## You Can Use the Given Function like the Following Example ##
+	 * char str[10] = "HellO";
+	 * LOWER(str);
+	 * std::cout &lt;&lt; str &lt;&lt; std::endl; // Result: hello
+	 * // or //
+	 * char str[10] = "HellO";
+	 * UPPER(str);
+	 * std::cout &lt;&lt; str &lt;&lt; std::endl; // Result: HELLO
+	 */
+
+	/* Your Implementation */
+	return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_1')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_1')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_6_1_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						정의된 매크로 함수인 <code id="code-word">LOWER(C)</code>와 <code id="code-word">UPPER(C)</code>함수는 각각 인자로 주어진 문자열을 모두 소문자와 대문자로 바꿔주는 함수이다.
+						리턴값은 신경쓰지 않아도 가능하며 인자로 들어간 문자열 자체가 바뀐다.
+						가령, 스켈레톤 코드의 예시에서 <code id="code-word">LOWER(str)</code>의 결과는 <code id="code-word">str</code> 변수에 저장된 문자열 자체가 <code id="code-word">hello</code>로 바뀐 형태이다.
+						또한, 함수가 구현된 방식은 고려하지 않아도 된다. 
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_6_1_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						The defined macro functions <code id="code-word">LOWER(C)</code> and <code id="code-word">UPPER(C)</code> respectively have a function to change the given string into totally lower cases and upper cases.
+						The return value does not matter because the argument string variable is changed itself.
+						For example, the result of <code id="code-word">LOWER(str)</code> from the skeleton code is <code id="code-word">hello</code>, which the value of the argument variable <code id="code-word">str</code> itself is changed into.
+						Additionally, you need not to focus on the way that implement these functions.
+					</p>
+					<pre class="answer-sheet" id="prob_6_1"><code class="cpp" id="code-canvas">char str[10] = "HeLlO";
+LOWER(str);
+std::cout &lt;&lt; str &lt;&lt; std::endl;</code></pre>
+
+
+<!-- 6-2 -->
+					<p> <h3 class="kor-text"> 2. 포인터로 배열 접근하기 (이미지 처리)</h3>
+						<h3 class="eng-text"> 2. Access to Array with Pointer (Image Processing) </h3></p>
+					
+					<p class = "kor-text">
+						컴퓨터에서 어떠한 파일을 저장할 때는 크게 2가지의 영역으로 나뉜다.
+						바로 메타데이터(Metadata)라고 불리는 영역과 실제 데이터(Data) 영역이다.
+						이 영역 분할은 거의 모든 파일 포맷에 대해서 공통적으로 적용이 되는데, 메타데이터는 해당 파일과 데이터 영역에 대한 속성 정보를 지닌다.
+						이미지 파일의 경우, 메타데이터에는 해당 이미지가 가로-세로 몇 픽셀을 갖는지, 흑백 이미지인지, 데이터 크기가 얼마나 되는지 등등의 정보를 지닌다.
+					</p>
+					<p class = "eng-text">	
+						When the computer save any files, they roughly consists of two parts, which are metadata section and data section.
+						This section separation is applied to almost all file formats and metadata has information for the file and the data section.
+						In the case of an image file, the metadata might have information about what pixels it has for a width and height, if it has gray scale, how big size it has and etc.
+					</p>
+
+					<p class = "kor-text">
+						파일 확장자에 따라서 '메타데이터+데이터'형식과 '데이터+메타데이터'형식으로 존재할 수 있다.
+						컴퓨터는 파일 확장자와 메타데이터의 정보에 따라서 데이터 해석 방식을 정한다.
+						이미지의 경우 가장 간단한 형태중의 하나가 <code id="code-word">비트맵(Bitmap)</code> 이미지인데, 확장자는 <code id="code-word">.bmp</code>를 가지며 '메타데이터+데이터'의 형식을 갖는다.
+						이번 문제에서는 복잡한 컬러 이미지지 대신 흑백 이미지를 가공하고자 한다.
+						흑백의 비트맵 이미지는 실제 데이터 영역의 데이터 값이 흑백 명암 세기를 나타낸다.
+						이 흑백 명암 세기는 0~255 중 하나의 값을 가지며 255가 밝은 백색이며 0이 어두운 흑색이다.
+						(정확히는 이렇게 보이는 것이다.)
+						따라서, 가로-세로에 대한 2차원 배열로 흑백의 비트맵 이미지를 표현할 수 있다.
+					</p>
+					<p class = "eng-text">	
+						According to the file formats, the files take one type of 'metadata+data' and 'data+metadata'.
+						The Computer decides a method to analyze the data with the file extension type and metadata.
+						In the case of images, a <code id="code-word">bitmap</code> image is the simplest method, which has <code id="code-word">.bmp</code> for the extension type and a type of 'metadata+data'.
+						This problem drives you process a gray-scale image instead of complex color images.
+						In the case of the gray-scale bitmap image, the numbers of the data section represent the intensity of light and shade for the gray scale.
+						One pixel of the data section can have one value from 0 to 255, which is light white for 255 and dark black for 0.
+						(It just looks like this, if describing accurately.)
+						Therefore, this data section can be expressed with a 2-dimensional array for the width and height.
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex6_2(1).png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class = "kor-text">
+						이번 문제는 이러한 흑백 비트맵 이미지에 대해서 <code id="code-word">binarization</code> 및 <code id="code-word">threshold</code> 기능을 구현하는 것이 목표이다.
+						<code id="code-word">ROW x COLUMN</code>(행x열) 크기의 흑백 비트맵 이미지에 대해 실제 데이터 영역에 존재하는 2차원 배열을 고려해보자.
+						실제 데이터는 숫자의 일자 나열이라고 생각하면 되는데, 프로그램 코드 상에서 <code id="code-word">ROW x COLUMN</code>의 형태로 읽어들여 변수에 저장해 사용한다고 생각하면 쉽다.
+						<code id="code-word">threshold</code>란, 어떤 변수가 특정 기준값 이상일 때는 특정 유효 범위 내의 최댓값을, 미만일 때는 특정 유효 범위의 최솟값을 갖도록 만드는 동작에서 이 특정 기준값을 의미한다.
+						그리고 이 동작을 <code id="code-word">이진화(Binarization)</code>이라고 부른다.
+						가령, 어떤 변수 $$x$$가 $$ 1 \leq x \leq 10 $$의 값을 가질 수 있을때 <code id="code-word">threshold</code> 값을 4로 설정했다고 가정하자.
+						변수 $$x$$가 2의 값을 갖는다면 4보다 작으므로 1을 $$x$$에 대입하고, 8의 값을 갖는다면 4보다 크므로 10을 $$x$$에 대입한다.
+						따라서, 이러한 동작을 <code id="code-word">Binarization</code>이라고 부르며 이 Binarization에 필요한 기준값을 <code id="code-word">Threshold</code>라고 할 수 있다.
+						이러한 기능을 하는 프로그램을 작성하라.
+						(단, 함수를 사용하지 않아도 된다. main 함수에 모든 동작을 구현해도 좋다. 스켈레톤 코드를 참고하면 매우 좋다.)
+					</p>
+					<p class = "eng-text">	
+						An ultimate goal of this problem is to implement two functionalities of <code id="code-word">binarization</code> and <code id="code-word">threshold</code> on the grayscale bitmap images.
+						Suppose that there is an array of <code id="code-word">ROW x COLUMN</code> for the real data to exist in the data section of the grayscale bitmap image.
+						Like mentioned, though the real data is a sequence of numbers in a single line, it is read with a format of <code id="code-word">ROW x COLUMN</code> by the program code and stored to a variable.
+						The <code id="code-word">threshold</code> is defined as a special reference value that lets a variable take a maximum or minimum value of a valid range.
+						And, this operation letting the variable get a maximum or minimum value is <code id="code-word">binarization</code>.
+						For example, suppose that the <code id="code-word">threshold</code> is set as 4 when a variable $$x$$ can take a number of $$ 1 \leq x \leq 10 $$.
+						If $$x$$ has a value of 2, it is less than 4 so that 1 is substituted into $$x$$. Vice versa, if $$x$$ has a value of 8, it is greater than 4 so that 10 is substituted into $$x$$.
+						Thus, this operation is called <code id="code-word">Binarization</code> and the reference value for the binarization is called <code id="code-word">Threshold</code>.
+						Write a program to have these functionalities.
+						(Hint: You need not to use functions. It is better to implement all operations in the main function and refer to the skeleton code.)
+					</p>
+						
+					<p style="text-align: center;"><img src="../img/ex6_2(2).png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class = "kor-text">
+						스켈레톤 코드의 <code id="code-word">Do Not Touch Section</code>에 해당하는 부분에 작성된 코드는 전혀 분석할 필요가 없다.
+						추후 공부하게 되는 부분이며, 분석을 하고자하면 오히려 개념 이해에 혼동을 줄 수 있다.
+						이미지의 순수 데이터는 스켈레톤 코드에 존재하는 변수 <code id="code-word">read_image</code>에 존재하며, <code id="code-word">unsigned char</code> 자료형을 지닌 <code id="code-word">[ROW][COLUMN]</code> 크기의 배열이다.
+						<code id="code-word">Your Binarization Implementation</code> 부분에 여러분 만의 Binarization 코드를 작성하면 된다.
+						스켈레톤 코드에서 활용할 변수와 상수는 <code id="code-word">read_image</code>와 <code id="code-word">THRESHOLD</code>가 전부이며 추가로 변수가 필요하다면 추가로 생성해도 괜찮다.
+						또한 <code id="code-word">THRESHOLD</code> 값을 변경해가면서, Binarization 변화 양상을 관찰해보자.
+						문제에 사용할 이미지 파일은 아래의 다운로드 버튼을 통해 다운로드 받을 수 있다.
+					</p>
+					<p class = "eng-text">	
+						You should not analyze the code written in the <code id="code-word">Do Not Touch Section</code> of the skeleton code.
+						You will study this section later so that it can drive you into some difficulties for the understanding if you try to figure out those sections against the advice.
+						The real data of the given image is stored to a variable, <code id="code-word">read_image</code>, on the skeleton code.
+						Also, it is an array of the <code id="code-word">[ROW][COLUMN]</code> size which takes <code id="code-word">unsigned char</code> for the data type.
+						You must implement your own binarization code into the <code id="code-word">Your Binarization Implementation</code> section.
+						The utilizable variables or constants from the skeleton codes are only a variable <code id="code-word">read_image</code> and a constant <code id="code-word">THRESHOLD</code>.
+						If something is required, it is allowed to add some variables or functions too.
+						Plus, observe the change aspects of the binarization according to the changes of the <code id="code-word">THRESHOLD</code> value.
+						You can download the image file for the problem from the below download button.
+					</p>
+
+					<p class="kor-text" style="text-align: center;"><a href="../img/lena_gray.bmp" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/lena_gray.bmp" download>download</a></p>
+
+					<p style="text-align: center;"><img src="../img/ex6_2(3).png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cassert&gt;
+
+#define THRESHOLD 150
+
+/** Do Not Touch Section : START **/
+#define ROW 512
+#define COLUMN 512
+
+constexpr char readfilename[30] = "lena_gray.bmp";
+constexpr char r_writefilename[30] = "random_input.bmp";
+constexpr char writefilename[30] = "output.bmp";
+char header[2048]; // Meta Data
+unsigned char read_image[ROW][COLUMN], image_buffer[ROW][COLUMN];
+
+void copyToBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = read_image[i][j];
+}
+void clearBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = 0;
+}
+/** Do Not Touch Section : END **/
+
+
+int main(){
+
+/** Do Not Touch Section : START **/
+	FILE *fpread, *fpwrite, *r_fpwrite;
+	fpread = fopen(readfilename, "rb");   // file open for read
+	fpwrite = fopen(writefilename, "wb"); // file open for write
+
+	assert((fpread != NULL) || (fpwrite != NULL));
+
+	fread(header, 1, 1078, fpread);
+	fread(read_image, 1, ROW*COLUMN, fpread);
+/** Do Not Touch Section : END **/
+
+	//bool random = true;  // for random (line 39)
+	bool random = false; // for lena image (line 40)
+
+/** Do Not Touch Section : START **/
+	if (random) { // for random
+		r_fpwrite = fopen(r_writefilename, "wb"); // file open for random write
+		assert(r_fpwrite != NULL); // check r_fpwrite
+
+		srand(1); // Set a Random Seed
+		for (int idx=0; idx&lt;ROW*COLUMN; ++idx) // Assign Random Values to read_image
+			*(*(read_image + idx/COLUMN) + idx%COLUMN) = rand()%256;
+
+		copyToBuffer();
+		fwrite(header, 1, 1078, r_fpwrite);             // Store Header
+		fwrite(image_buffer, 1, ROW*COLUMN, r_fpwrite); // Store Random Image Data 
+		fclose(r_fpwrite); // Save and Close
+
+		clearBuffer();
+	}
+/** Do Not Touch Section : END **/
+
+
+	/* Your Binarization Implementation */
+
+
+/** Do Not Touch Section : START **/
+	copyToBuffer();
+	fwrite(header, 1, 1078, fpwrite);           // Store Header
+	fwrite(image_buffer, 1, ROW*COLUMN, fpwrite); // Store Random Image Data
+	fclose(fpwrite); // Save and Close 
+	fclose(fpread);
+/** Do Not Touch Section : END **/
+
+	return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_2')">참고</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_6_2')">CONSULATION</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_6_2_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						스켈레톤 코드에서 <code id="code-word">Do Not Touch Section : START</code> ~ <code id="code-word">Do Not Touch Section : END</code>에 해당하는 영역들은 절대 건드리지 않는다.
+						<code id="code-word">Threshold</code> 값은 코드 위쪽에 Macro Constant로 정의되어 있다.
+						<code id="code-word">39~40</code>번째 라인에서 <code id="code-word">Line 39</code>를 활성화시키면 값이 랜덤으로 할당된 랜덤 이미지 <code id="code-word">random_input.bmp</code>가 생성되며 랜덤 이미지에 대한 <code id="code-word">Binarization</code>이 진행된 결과 <code id="code-word">output.bmp</code>가 생성된다.
+						그리고 <code id="code-word">Line 40</code>를 활성화시키면 기존의 <code id="code-word">lena_gray.bmp</code>의 이미지를 통해 <code id="code-word">Binarization</code>을 진행해 결과 이미지 <code id="code-word">output.bmp</code>가 생성된다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_6_2_e answer-sheet" style="width: 48vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Please do not touch the <code id="code-word">Do Not Touch Section : START</code> ~ <code id="code-word">Do Not Touch Section : END</code> section from the skeleton code.
+						<code id="code-word">Threshold</code> is defined as a macro constant.
+						At line <code id="code-word">39~40</code>, activating the line 39 makes the program create a grayscale bitmap image <code id="code-word">random_input.bmp</code> to have random values and binarize it for the result image <code id="code-word">output.bmp</code>.
+						And activating the line 40 makes the program binarize the given and existing bitmap image <code id="code-word">lena_gray.bmp</code> and create the output image file <code id="code-word">output.bmp</code>.
+					</p>
+					
+
+<!-- 6-3 -->
+					<p> <h3 class="kor-text"> 3. 포인터와 배열의 융합 (페이징 기법, 고급) </h3>
+						<h3 class="eng-text"> 3. Combination of Pointer and Array (Paging Technique, Advanced) </h3></p>
+
+					<p class = "kor-text">
+						<span style="background-color: rgba(255, 251, 0, 0.5);">(주의: Computer Science 분야의 개발자 혹은 연구자를 목표하는 분이 아니시라면 도전하지 않는 것을 추천드립니다.)<br></span>
+						컴퓨터 운영체제를 비롯한 컴퓨터 과학 분야에는 '페이징'이라는 기법이 존재한다.
+						이 기법은 주어진 메모리를 고정된 크기로 일정하게 잘라서 각각의 칸을 용도에 맞게 데이터를 저장 및 이용한다.
+						따라서, Page들의 모임이 메모리라고 생각하면 쉽다.
+						이러한 Page는 Address Entry 혹은 Page Entry라고 지칭되는 데이터가 저장될 수 있는 메모리 공간들이 페이지 크기에 맞게 1개 이상 존재한다.
+						(예를 들어, 이번 문제에서는 32Byte 크기의 Page와 4Byte의 Page Entry들을 상정했으므로 한 개의 Page에는 8개의 Page Entry가 존재할 수 있다.)
+						메모리를 일정 크기로 자를 때 그 크기는 구현하기에 따라 결정되며 그 외에 여러가지 조건과 구현들이 있다.
+						이 페이징 기법은 Virtual Memory, Address Space, Address Translation 등의 개념을 알아야 정확하게 이해할 수 있다.
+						그러므로 이 페이징 기법을 매우 단순화시킨 에뮬레이터(Emulator)를 구현하고자 한다. 
+					</p>
+					<p class = "eng-text">	
+						<span style="background-color: rgba(255, 251, 0, 0.5);">(CAUTION: Recommend to skip solving this problem if you do not aim to a developer or researcher in computer science.)<br></span>
+						There is a technique called 'paging' in the computer science field such as operating system.
+						The paging method has the given memory be divided by a fixed size of 'page' and utilize each page for purposes of the data.
+						The gathering of these pages can be understood as the memory simply.
+						This page consists of one or more memory spaces where data called <code id="code-word">Address Entry</code> or <code id="code-word">Page Entry</code> can be stored.
+						(For instance, in this problem, the page size and page entry size are respectively assummed with 32Byte and 4Byte so that one page can have at most up to eight page entries.)
+						Except for assumptions of this problem, there are other conditions and implementations for the paging.
+						To understand the concept of the paging method requires knowing about <code id="code-word">Virtual Memory</code>, <code id="code-word">Address Space</code>, <code id="code-word">Address Translation</code> and etc.
+						Thus, this problem will ask the solvers to implement an emulator which has drastically simplified this paging technique.
+					</p>
+
+					<p class = "kor-text">
+						이러한 페이징 기법을 사용하는 이유는 주어진 메모리 공간을 더욱 효율적으로 사용할 수 있으며 가상이지만 더 많은 양의 데이터 저장이 가능해지기 때문이다.
+						이러한 페이징 기법을 여러개 겹쳐서 사용할 수 있는데 다중페이징(Multi-level Paging) 기법이라고 부른다.
+						가장 간단한 페이징 기법인 First Level Paging 기법의 에뮬레이터 동작은 다음의 설명과 같이 동작한다.
+						해당 설명은 MEMORY READ 혹은 WRITE가 일어나야 하는 Physical Address 위치를 찾아가는 동작에 대한 과정이다.
+					</p>
+					<p class = "eng-text">	
+						The paging method is widely used because efficiently utilizing the given memory space and enabling to store bigger ammount of data virtually.
+						Actually, multiple paging methods could be overwrapped then it is called <code id="code-word">Multi-level Paging</code>.
+						The emulator of the simplest paging method, <code id="code-word">First Level Paging</code>, for this problem follows the below explanation.
+						The following explanation states the operation to find and go to a location of <code id="code-word">Physical Address</code> where <code id="code-word">MEMORY READ</code> or <code id="code-word">MEMORY WRITE</code> have to be invoked.
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex6_3(1).png" alt="No-Img" style="width: 60vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						1. First Level Paging의 구현을 위해 3단계의 메모리를 상정한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						1. Suppose three step memories to implement the first level paging.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						2. 각 단계의 메모리 이름은 Process Address, Page Table, Physical Memory이며 각 1개씩 존재한다. Page Table은 Code에 의해서 결정되며 Execution Time(실행중)에는 바뀌지 않는다고 가정한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						2. The memories of each step are respectively named <code id="code-word">Process Address</code>, <code id="code-word">Page Table</code>, and <code id="code-word">Physical Memory</code> and each has one. The page table is determined by the code and cannot be changed on the execution time.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						3. Page Table을 제외한 메모리는 모두 페이지 구조를 사용하며 페이지의 크기는 32Byte이다. 그리고 각각의 data는 4Byte이므로 각 페이지에는 총 8개의 page entry가 들어갈 수 있다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						3. All the memories except for the page table use the page architecture and the page size is defined by 32Byte. In addition, each data is regarded as 4Byte size so that one page can include totoally eight page entries.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						4. 각 메모리는 프로그램 구현에 있어 배열로 대체한다.</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						4. All memories are replaced with arrays for the implementation.</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						5. Process Address로부터 주어진 Address Entry(주소, 그림 상의 0xf32ed027)에서 하위 3bits를 무시한다. 
+						하위 3bits를 무시한 상태에서 8로 나누었을 때의 나머지 값에 해당하는 index의 Page Table Entry로 향한다.
+						가령, Process Address로부터 주어진 Address Entry가 <code id="code-word">0xf32ed027 = 0b111100[skip]100111</code>인 경우, 하위 3bits를 무시하면 <code id="code-word">0b111100[skip]100</code>이다.
+						(<code id="code-word">0b</code>는 이진수임을 나타내는 접두사이다)
+						이 값을 8로 나누면, <code id="code-word">0b100 = 4</code>이므로 index값이 4인 Page Table Entry를 향하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						5. First, the least significant 3 bits of an <code id="code-word">Address Entry</code> from the <code id="code-word">Process Address</code> (0xf32ed027 on the figure ) are ignored. The operation must head to the <code id="code-word">Page Table Entry</code> of the index, which is the remainder of the result that the address (the 3bits are ignored) is divided by 8. 
+						For instance, the given <code id="code-word">Address Entry</code> is <code id="code-word">0xf32ed027 = 0b111100[skip]100111</code> so that the address for the 3bits to be ignored is <code id="code-word">0b111100[skip]100</code>.
+						(<code id="code-word">0b</code> is a prefix for the binary base number system.)
+						If it divided by 8, the remainder is <code id="code-word">0b100 = 4</code>.
+						Thus, the operations head to the <code id="code-word">Page Table Entry</code> of the index value 4.
+						</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						6. 그리고 향한 Page Table Entry에 저장된 값과 동일한 index에 존재하는 Physical Memory의 페이지를 향한다.
+						향한 Physical Address의 Page 내부에서 기존에 주어진 Address Entry를 8로 나누었을 때의 나머지 값에 해당하는 index의 Page Entry로 다시 향한다.
+						가령, 향한 Page Table Entry에 저장된 값은 <code id="code-word">0xd1 = 209</code>이므로 Physical Address에서 index가 209인 Page를 향한다.
+						그 다음에 기존에 주어졌던 Address Entry <code id="code-word">0xf32ed027 = 0b[skip]100111</code>를 8로 나누면 나머지는 <code id="code-word">0b111 = 7</code>이므로 209번째 Page 내부의 index 값 7에 해당하는 주소 공간을 향하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						6. And, the opreation must head to the page of <code id="code-word">Physical Memory</code> where exist at the index page identical with the stored value on the heading <code id="code-word">Page Table Entry</code>.
+						Inside of the heading page of <code id="code-word">Physical Address</code>, the operation must head to the <code id="code-word">page entry</code> of the index value, which is the remainder of that the given <code id="code-word">Address Entry</code> is divided by 8.
+						For example, the stored value at the heading <code id="code-word">Page Table Entry</code> is <code id="code-word">0xd1 = 209</code> so that the operation heads to the page of index value 209.
+						If the given address entry <code id="code-word">0xf32ed027 = 0b[skip]100111</code> is divided by 8,then the remainder is <code id="code-word">0b111 = 7</code>. Therefore, the operation heads to the 7th index ([6]) <code id="code-word">Page Entry</code> inside of the 209th index ([208]) physical address page.
+						</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						7. 향한 주소 공간에서 READ 또는 WRITE 동작을 수행하면 된다. </p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-top: 0; width: 50vw;">
+						7. Finally, the operation,READ or WRITE, is performed at the heading address space.</p>
+
+					<p class = "kor-text">
+						즉, MEMORY READ 함수와 MEMORY WRITE 함수는 각각 <code id="code-word">read(ADDRESS_ENTRY)</code>, <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>와 같은 형식으로 사용된다.
+						예를 들어, <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>의 경우에, <code id="code-word">ADDRESS_ENTRY</code>는 Process Address에 저장된 값을 의미한다.
+						그 값을 위의 과정을 통해 최종적으로 도달하는 위치인 Physical Address 부분에 <code id="code-word">VALUE</code>로 주어진 값을 쓰면 된다(이미 값이 있는 경우에는 덮어 쓴다).
+					</p>
+					<p class = "eng-text">	
+						That is, <code id="code-word">MEMORY READ</code> and <code id="code-word">MEMORY WRITE</code> functions are used follwing <code id="code-word">read(ADDRESS_ENTRY)</code> and <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code> formats.
+						For example, in the case of <code id="code-word">write(ADDRESS_ENTRY, VALUE)</code>, <code id="code-word">ADDRESS_ENTRY</code> means any stored value at <code id="code-word">Process Address</code>.
+						The function operation has <code id="code-word">VALUE</code> written to the <code id="code-word">Physical Address</code> space to reach finally through the above procedure (If any value is already written on the space, then the operation should overwrite the space.).
+					</p>
+
+					<p class = "kor-text">
+						스켈레톤 코드를 참고해 에뮬레이터를 만들어보자.
+						그리고, <code id="code-word">main</code>함수에 작성된 코드가 read, write를 통해 어떤 동작을 의미하고 있는지 생각해보자.
+						더 나은 이해를 위해 각 Physical Address 마다 read, write 발생 여부와 저장된 값을 출력해볼 수도 있다(옵션이므로 출력 형식은 정해져있지 않다.). 이거 풀면 천재로 인정함.
+					</p>
+					<p class = "eng-text">	
+						Referring to the <code id="code-word">Skeleton Code</code>, write the emulator.
+						Also, try to figure out the meaning of the operations that the read and write functions are gathered in <code id="code-word">main</code> function.
+						For better understanding, you can try printing which function is called between read and write function and the stored value at each physical address (This suggestion is optional so that the printing format is not fixed).
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p6_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p6_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+
+// Base Converter: https://bit.ly/3uMc1yD				
+/** Do Not Touch Section : START **/
+#define uint unsigned int
+
+uint proc_addr[8096] = {};			// process address
+uint physc_addr[8096] = {};			// physical address
+constexpr uint page_table[8] = {	// page table
+    0x2a3, // 0 - page table index
+    0x50,  // 1 
+    0x00,  // 2
+    0x3a1, // 3
+    0xd1,  // 4
+    0xff,  // 5
+    0x00,  // 6
+    0x2db, // 7
+};
+
+void preproc(){ // preprocessing
+    proc_addr[8*200]   = 0x01ff8040; proc_addr[8*200+1] = 0x09ff8e41;
+    proc_addr[8*122+3] = 0xf32aa01a; proc_addr[8*122+4] = 0xf03aae1b;
+    proc_addr[8*122+5] = 0x06d15f9c; proc_addr[8*122+6] = 0xabc4439d;
+    proc_addr[8*122+7] = 0x10cef19e; proc_addr[8*123]   = 0xe11cd71f;
+}
+/** Do Not Touch Section : END **/
+
+uint read(uint addr_entry){
+    /** Your Implementation **/
+    return 0;
+}
+
+void write(uint addr_entry, uint value){
+    /** Your Implementation **/
+    return;
+}
+
+int main(){
+/** Do Not Touch Section : START **/
+    preproc(); // preprocessing
+    uint temp; // temporary varaible
+
+    // Try to analyze these operations
+    write(proc_addr[8*200+1], 0);
+    for (int i=0; i&lt;5; ++i){
+        temp = read(proc_addr[8*200+(i+1)%2]);
+        write(proc_addr[8*200+i%2], temp+1);
+    }
+    write(proc_addr[979], 1);
+    for (int i=5; i&gt;0; --i){
+        temp = read(proc_addr[984-i]);
+        write(proc_addr[985-i], temp*i);
+    }
+/** Do Not Touch Section : END **/
+
+    // You Can Add Other Read and Write Functions
+    // For the Tests.
+    // It Will Improve Your Abilities Intensely.
+
+    return 0;
+}</code></pre>
+
+				</section>
+
+				<!-- LECTURE 7 PROBLEMS -->
+				<section id="lecture7">
+					<h2 class="kor-text">
+						7강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 7 Exercises
+					</h2>
+
+<!-- 7-1 -->
+					<p> <h3 class="kor-text"> 1. 진수 변환기</h3>
+						<h3 class="eng-text"> 1. Base System Converter</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제는 2진수, 10진수, 16진수를 서로 변환하는 문제이다.
+						<code id="code-word">2진수&lt;-&gt;10진수</code>, <code id="code-word">2진수&lt;-&gt;16진수</code>, <code id="code-word">10진수&lt;-&gt;16진수</code> 총 6개의 함수를 구현하면 된다. 
+						아래의 공식은 0과 자연수를 표현하는 2진수, 그리고 16진수 표현법에 대한 수식이다(10진수는 우리가 일반적으로 사용하는 숫자 체계이다).
+						이 진수변환 프로그램은 2진수 기준으로 32bit 체제를 사용한다고 가정한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; font-size: 30pt;">
+						$$$ Binary:\; \left\{ 0,1 \right\}\cdot 2^{31}+\left\{ 0,1 \right\}\cdot 2^{30}+ \cdots +\left\{ 0,1 \right\}\cdot 2^{1}+\left\{ 0,1 \right\}\cdot 2^{0}$$$
+						$$$Hexadecimal:\; \left\{ 0,1,...,15 \right\}\cdot 16^{7}+\left\{ 0,1,...,15 \right\}\cdot 16^{6}+ \cdots +\left\{ 0,1,...,15 \right\}\cdot 16^{1}+\left\{ 0,1,...,15 \right\}\cdot 16^{0}$$$
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						위의 식에서 $$\left\{ 0,...,n \right\}$$ 표현은 중괄호 내의 정수들 중에 1개의 값만이 선택적으로 올 수 있다는 표현이다.
+						추가적인 제약 조건은 아래의 스켈레톤 코드 <code id="code-word">p7_1.cpp</code>에 명시된 라이브러리 외에 다른 라이브러리의 include는 허용되지 않는다.
+						(출력 결과는 제공되지 않으며 시중의 진수 변환기를 이용해 직접 확인해보아라.)
+						2진수 혹은 16진수에 대해서 32bit 전체 표현과 유효 범위 표현 모두 허용된다.
+						(<code id="code-word">1101</code>, <code id="code-word">000[SKIP]1101</code> 모두 허용이 된다.)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;math.h&gt;
+#include &lt;iostream&gt;
+
+char* fromBINtoDEC(/* Your Implemenation */);
+char* fromBINtoHEX(/* Your Implemenation */);
+char* fromDECtoHEX(/* Your Implemenation */);
+char* fromHEXtoDEC(/* Your Implemenation */);
+char* fromHEXtoBIN(/* Your Implemenation */);
+char* fromDECtoBIN(/* Your Implemenation */);
+
+int main(){
+    char BD[33]="00000111010110111100110100010101", BH[33]="10010001101001111111011011100",
+    DH[11]="2882343476", HD[9]="3ade68b1", HB[9]="08f3cf1", DB[11]="4042264335", DB2[11]="9999999999";
+
+    std::cout &lt;&lt; fromBINtoDEC(BD) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromBINtoHEX(BH) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoHEX(DH) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromHEXtoDEC(HD) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromHEXtoBIN(HB) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoBIN(DB) &lt;&lt; std::endl;
+    std::cout &lt;&lt; fromDECtoBIN(DB2) &lt;&lt; std::endl; // ERROR: Out of Range
+
+    /* Test Your Other Examples!! */
+
+    return 0;
+}
+
+char* fromBINtoDEC(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromBINtoHEX(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromDECtoHEX(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromHEXtoDEC(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromHEXtoBIN(/* Your Implemenation */){
+    /* Your Implemenation */
+}
+char* fromDECtoBIN(/* Your Implemenation */){
+    /* Your Implemenation */
+}</code></pre>
+
+<!-- 7-2 -->
+					<p> <h3 class="kor-text"> 2. 문자열을 위한 함수들 </h3>
+						<h3 class="eng-text"> 2. Functions for String</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						프로그램 개발을 하다보면, 문자열을 사용해야 하는 경우가 많다.
+						그러한 경우에 문자열 가공을 위해서는 사용하는 함수들이 꽤 있다.
+						그 중에 2 종류의 함수를 구현하는 것이 이번 문제의 목표이다.
+						그 두 종류의 함수들은 각각 <code id="code-word">insert</code>, <code id="code-word">find</code>이다.
+						이 두 함수는 Global Namespace에 정의된 문자열에 대해서 동작한다고 간주한다.
+						(std::size_t는 0과 양의 정수만을 허용하는 자료형으로 음수가 될 경우 프로그램이 비정상 종료된다.)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						<code id="code-word">find</code> 함수는 오버로딩되어 있어 총 3가지의 형태를 띈다.
+						인자 형태는 <code id="code-word">find(char* str)</code>(Overload 1)과 <code id="code-word">find(std::size_t s, char* str, std::size_t e = 0)</code>(Overload 2), 마지막 <code id="code-word">find(char* ref_str, std::size_t pos, std::size_t n)</code>(Overload 3)으로 나눌 수 있다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 1'은 주어진 Global String에서 왼쪽부터 인자로 들어온 문자열 <code id="code-word">str</code>을 찾기 시작한다. 그리고 찾았을 때 Global String에서 <code id="code-word">str</code>이 위치한 index를 리턴하며 남은 문자열에 대해서는 스캔하지 않는다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 2'는 조금 더 디테일한 설정을 줄 수 있는 인자들을 갖고 있다. <code id="code-word">s</code>는 start index를 의미하며 이 위치부터 <code id="code-word">str</code>을 찾기 시작한다. 
+						<code id="code-word">e</code>는 end index를 의미하며 default 값인 0이 주어진다면, start index 이후 전 영역에 대해서 그리고 다른 값이 주어진다면 $$s \leq index &lt; e$$ 영역에 대해서 <code id="code-word">str</code>을 찾으면 된다.
+						해당 영역내에서의 find 동작은 'Overload 1'과 동일하다.
+						즉, 원하는 문자열을 찾으면 그 이후는 탐색하지 않아도 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						'Overload 3'는 조금 특이한 인자를 갖고 있다.
+						세 번째 오버로딩된 함수는 Global String의 index <code id="code-word">pos</code>부터 <code id="code-word">ref_str</code>의 index 0 ~ <code id="code-word">n-1</code>에 해당하는 문자열을 찾으면 된다.
+						가령, <code id="code-word">ref_str</code>이 <code id="code-word">"I Love You"</code>이고 <code id="code-word">n</code>이 <code id="code-word">6</code>이라고 가정하면, Global String에서 <code id="code-word">pos</code>의 위치부터 <code id="code-word">"I Love"</code>를 찾으면 된다.
+						그리고, 찾은 문자열이 시작되는 Global String의 index를 return하면 된다.
+						찾기만 하면, 그 이후는 더 이상 탐색하지 않아도 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						함수 insert는 <code id="code-word">insert(std::size_t pos, char* str, bool wrap=false)</code>와 같은 형식을 갖는다.
+						이 함수는 이렇게 동작한다.
+						Global String의 <code id="code-word">pos</code> index에 str을 삽입한다.
+						이때, <code id="code-word">wrap = false</code>이라면, 겹쳐 쓰지않고 Global String 뒤쪽을 밀어서 삽입한다.
+						<code id="code-word">wrap = true</code>이라면, 밀지않고 덮어쓰는 방식으로 문자열을 삽입한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						위와 같은 함수들이 정상적으로 동작하는 프로그램을 만들어라.
+						위의 함수를 구현을 위해서 제공된 스켈레톤 코드와 예상 출력 결과를 참고하라.
+						또한, 이 2가지의 함수를 이용해 또 다른 활용된 함수로 사용할 수 있는데, 어떤 함수로 응용할 수 있을지 생각해보자.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;math.h&gt;
+#include &lt;iostream&gt;
+
+char test_str[101] = "You have two girlfriends now though you have never committed to one before.";
+char g_string[501] = "Indeed, most of these real-time AI applications are requested on end devices such as smartphones. However, for mobile or embedded devices, the important issues would be energy consumption and processing capability.";
+
+int find(char* str){/* Your Implementation*/ }
+int find(std::size_t s, char* str, std::size_t e = 0){/* Your Implementation*/ }
+int find(char* ref_str, std::size_t pos, std::size_t n){/* Your Implementation*/ }
+char* insert(std::size_t pos, char* str, bool wrap=false);
+
+int main(){
+    int found;
+    
+    found = find("have");
+    std::cout &lt; "The first \'have\' found at " &lt; found &lt; std::endl;
+
+    found = find(found+1, "have");
+    std::cout &lt; "The second \'have\' found at " &lt; found &lt; std::endl;
+    found = find(found+1, "have", found+3);
+    std::cout &lt; "\'have\' found at " &lt; found &lt; std::endl; // -1, It means an error (exception)
+
+    found = find("you look so beautiful", 0, 3);
+    std::cout &lt; "The first \'you\' found at " &lt; found &lt; std::endl;
+
+    std::cout &lt; insert(9, "one", true) &lt; std::endl;
+    std::cout &lt; insert(28, "even ", false) &lt; std::endl;
+
+    // TTest Your Other Examples!!! //
+
+    return 0;
+}
+
+char* insert(std::size_t pos, char* str, bool wrap=false){
+    /* Your Implementation */
+}</code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="bash" id="code-canvas"> The first 'have' found at 4
+The second 'have' found at 40
+'have' found at -1
+The first 'you' found at 36
+You have one girlfriends now though you have never committed to one before.
+You have two girlfriends now even though you have never committed to one before.</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_7_2')">정답</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_7_2')">Answer</button></p>
+					
+<!--Korean Answer-->
+					<p class="kor-text prob_7_2_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						주어진 두 함수를 통해서 <code id="code-word">replace</code>, <code id="code-word">split</code> 등의 역할을 하는 함수를 응용해 만들어낼 수 있다.
+					</p>
+<!--English Answer-->
+					<p class="eng-text prob_7_2_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Being Prepared
+					</p>
+
+
+<!-- 7-3 -->
+					<p> <h3 class="kor-text"> 3. 행렬 제곱 계산하기</h3>
+						<h3 class="eng-text"> 3. Square of Matrix</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						컴퓨터 분야는 수학과 떨어지려고 해도 떨어질 수가 없는 분야이다.
+						대표적으로 컴퓨터 분야에서는 행렬을 많이 사용한다.
+						그에 따라서 행렬 계산을 할 수 있는 함수를 만들어 보아라.
+						다음과 같이 $$n\times n$$ 크기의 행렬 $$A$$가 있다고하자.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						
+					</p>
+					
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ A=\begin{pmatrix}
+						a_{11} & a_{12} & \cdots & a_{1n} \\
+						a_{21} & a_{22} &        & \vdots \\
+						\vdots &        & \ddots & \vdots \\
+						a_{n1} & \cdots & \cdots & a_{nn} \\
+						\end{pmatrix} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						그리고 행렬 $$B$$는 $$A^{2}$$으로 정의한다. ($$B\overset{\underset{\mathrm{def}}{}}{=} A^{2}$$)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0; margin-top: 0;">
+						
+					</p>
+
+					<p style="font-size: 30pt;">
+						$$$ B=A^{2}=\begin{pmatrix}
+						b_{11} & b_{12} & \cdots & b_{1n} \\
+						b_{21} & b_{22} &        & \vdots \\
+						\vdots &        & \ddots & \vdots \\
+						b_{n1} & \cdots & \cdots & b_{nn} \\
+						\end{pmatrix}  $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						행렬 $$B$$의 원소 값들은 다음의 수식을 통해 계산될 수 있다.
+						아래의 계산식은 행렬곱의 정의에 따른 계산식을 작성한 것이다.
+					</p>
+					<p class = "eng-text" style="margin-bottom: 0; margin-top: 0;">	
+						
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ b_{ij}=\sum_{k=1}^{n}a_{ik}\cdot a_{kj}$$$
+						$$$s.t.\; 1\leq i,j\leq n,\;\;\; i,j\in \mathbb{N} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0; margin-top: 0;">
+						위의 수식을 참고해 행렬 $$B$$를 구하는 구하는 프로그램을 작성하라.
+						정의에 따른 계산식보다 더 좋은 방식으로 계산할 수 있다면, 다른 방식으로 구현하는 것도 가능하다.
+						스켈레톤 코드의 <code id="code-word">square</code> 함수는 정상적인 행렬이 입력되어 정상적으로 계산이 되었을 때는 <code id="code-word">true</code>를 리턴하고 비정상적이라면 <code id="code-word">false</code>를 리턴한다.
+						그리고 행렬을 출력해주는 함수를 만들어 프로그램에 구현에 사용하라.
+						또한, 스켈레톤 코드와 예상 출력결과를 참고하여 프로그램을 만들어라.
+					</p>
+					<p class = "eng-text" style="margin-bottom: 0; margin-top: 0;">	
+						
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p7_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p7_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+#define ROW 5
+#define COL ROW
+
+bool square(int (&mtrx)[ROW][COL]){ //Reference Type for an Array
+    /** Your Implementation **/
+}
+/* Your Implementation */ printMatrix(/* Your Implementation */){
+    /* Your Implementation */
+}
+
+int main(){
+    int matrixA[ROW][COL] =
+    {
+        /** Define Your Own Square Matrix **/
+    };
+    /** Your Implementation **/
+    return 0;
+}
+</code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="bash" id="code-canvas">&lt;Test Case 1&gt;
+Matrix A
+[3]
+Matrix B
+[9]
+
+&lt;Test Case 2&gt;
+Matrix A
+┏  1 -1  1 ┓
+┃ -1  0 -1 ┃
+┗  1 -1  1 ┛
+Matrix B
+┏  3 -2  3 ┓
+┃ -2  2 -2 ┃
+┗  3 -2  3 ┛
+
+&lt;Test Case 3&gt;
+Matrix A
+┏ 1 2 3 ┓
+┗ 4 5 6 ┛
+Matrix B
+Error: Cannot Be Calculated
+</code></pre>
+
+
+				</section>
+				
+				<!-- LECTURE 8 PROBLEMS -->
+				<section id="lecture8">
+					<h2 class="kor-text">
+						8강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 8 Exercises
+					</h2>
+
+					<p> <h3 class="kor-text"> 1. 안전한 시스템이란?</h3>
+						<h3 class="eng-text"> 1. What is the Secure System?</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						일반적으로 안전한 시스템을 구축하기 위해서는 컴퓨터 과학 분야에서는 시스템에 민감한 부분과 둔감한 부분으로 나눈다.
+						그래서 어떤 사용자가 민감한 영역을 건드리려고 한다면, 시스템에 둔감한 영역 또는 중간 다리 역할을 하는 어떤 기능이 민감한 영역을 건드려도 괜찮을만큼 동작이 안전한지 확인한다.
+						따라서, 만약 사용자 동작이 안전하지 않다고 판단되면 사용자의 동작 요청을 막아낸다.
+						이번 문제는 이렇게 (매우 단순화되어있으면서) 안전한 시스템을 구축하는 방식에 대해 간단히 실습해보고자 한다.
+						이번 문제에서 가정할 시스템은 서버(Server), 몇 명의 사용자 PC, 몇 명의 사용자로 구성된다.
+						서버는 시스템에서 민감한 영역을, 사용자들의 PC는 시스템에서 둔감한 영역을, 그리고 사용자들은 main 함수에서 자신의 PC를 이용해 몇 가지 동작을 수행하는 역할을 담당한다고 가정한다.
+						그러므로 이 시스템에서는 사용자가 직접적인 서버 접근 자체가 접근 권한에 의해서 거절된다(어떤 동작 수행도 허용되지 않는다).
+						사용자가 어떤 동작을 서버에 수행하기 위해서는 무조건 자신의 PC를 통과해야 하며, PC에서 안전한 동작인지 확인하는 단계를 거쳐야 한다.
+						이에 대한 시스템 모델은 아래의 사진을 참고하면 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex8_1(1).png" alt="No-Img" style="width: 30vw;"></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						아래의 스켈레톤 코드를 참고하며, 다음의 설명을 읽으면 더욱 도움이 될 것이다.
+						서버에는 2차원 배열의 <code id="code-word">_data</code>와 서버에 대한 최근 사용자의 동작 에러 상태를 의미하는 <code id="code-word">error_state</code>가 민감한 영역으로 존재한다. 물론 서버에는 누구나 접근할 수 있는 함수도 존재하긴 한다.
+						이 값들을 접근해서 수정하기 위해서는 각 유저의 PC에 존재하는 <code id="code-word">bool checkSecure()</code>, <code id="code-word">bool changeDATA()</code> 기능을 이용해야 한다.
+						특히나 서버의 <code id="code-word">error_state</code> 변수는 PC에서 조차 접근만 가능할 뿐, 직접적인 대입은 불가능하다(<code id="code-word">SERVER::error_state = 1;</code> 형식은 불가능, <code id="code-word">something = SERVER::error_state;</code> 형식은 가능).
+						<code id="code-word">bool changeDATA(row, col, to)</code>는 PC에서만 사용이 가능하며 해당 함수는 서버에 존재하는 <code id="code-word">_data[row][col]</code>의 값을 <code id="code-word">to</code>로 변경하고자 시도한다.
+						해당 동작 시도시 PC는 이 동작이 Server에 안전한지 확인해야 한다(확인에는 <code id="code-word">bool checkSecure()</code>을 사용).
+						PC는 변경하고자 하는 값이 음수이거나 1000 이상이라면, 동작이 안전하지 않다고 판단하고  간접적으로 error_state를 1로 바꾸는 동시에 false를 리턴한다.
+						그리고 동작이 안전하다면, 동작 이후에 error_state를 0으로 바꾸고 true를 리턴한다.
+						(제가 만들었지만, 그렇게 좋은 문제는 아닌 것 같아요.)
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+//#include &lt;cstring&gt;
+#include &lt;iomanip&gt;
+
+#define _uint unsigned int
+
+namespace SERVER{
+	// Assume This Section is Authority-Limited.
+	_uint _data[3][3] = { {1,2,3},
+						  {4,5,6},
+					  	  {7,8,9} };
+	bool error_state = 0; // 1 = something wrong / 0 = secure
+	
+
+	// Assume This Section is Revealed for Public.
+	void checkDATA(){
+		for (std::size_t i=0; i&lt;3; ++i){ 
+			for (std::size_t j=0; j&lt;3; ++j)
+				std::cout &lt;&lt; " " &lt;&lt; std::setw(4) &lt;&lt;  _data[i][j];
+			std::cout &lt;&lt; std::endl;
+		}
+	}
+};
+
+
+namespace PC1{
+	// An operation such as 'SERVER::error_state = 1' is not allowed.
+	// That is, you cannot modify SERVER::error_state, however can only access to and get it by SERVER::error_state. 
+	
+	// !hint!
+	// Think of how to modify error_state indirectly in the namespace of PC
+
+	const bool checkSecure(std::size_t& row, std::size_t& col, _uint& val){ /** Your Implemenation **/ }
+
+	const bool changeDATA(std::size_t row, std::size_t col, _uint to){ /** Your Implemenation **/ }
+
+	void checkDATA(){ /** Your Implemenation **/ }
+};
+
+namespace PC2{
+	// It has an identical structure with a namespace PC1
+	// Implement this by yourself
+}
+
+int main(){
+	
+	SERVER::checkDATA(); // Allowed
+	//SERVER::_data[0][0] = 9; // Not Allowed by the Assumption
+
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; PC1::changeDATA(0,0, -10) &lt;&lt; std::endl;
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; PC2::changeDATA(1,1,5) &lt;&lt; std::endl;
+
+	// Test Your Own Cases
+
+	return 0;
+}</code></pre>
+
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="shell" id="code-canvas">   1   2   3
+   4   5   6
+   7   8   9
+false
+true</code></pre>
+
+					<p> <h3 class="kor-text"> 2. 잘 안 보이는 사진 해상도 복원</h3>
+						<h3 class="eng-text"> 2. To Recover Resolution to Have Bad Visibility</h3></p>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제는 Lecture 6의 2번 문제에 대한 연장선이다. 이미지 프로세싱 분야에서는 선명도가 낮은 사진을 해상도를 어느 정도 복구하는 기법이 존재한다.
+						이러한 기법을 Normalize (Normalization)이라고 부른다. Normalize 방식에는 여러가지 방식이 존재한다.
+						대표적인 예시로 Min/Max Normalization, Histogram Equalization, z-score Standardization 등이 존재하는데, 이는 상황에 따라 사용하는 기법이 다르기 때문이다.
+						이번 문제에서는 화질이 안 좋아진 사진에 대한 Min/Max Normalization 사용한 화질 복원이 목표이다.
+						Min/Max Normalization은 다음의 수식을 따른다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p style="font-size: 30pt;">
+						$$$ s_{k} = (L-1) \cdot \frac{r_{k} - r_{min}}{r_{max} - r_{min}}  $$$
+						$$$ s.t. \;\; k\in \mathbb{Z} , \; 0 \leq k \lt N $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						$$ k $$는 이미지 데이터에서 $$ k $$ 번째 인덱스를, $$ N $$은 주어진 사진의 <code id="code-word">ROW x COLUMN</code>의 최댓값을 의미한다. $$s_{k}$$는 $$ k $$번째 인덱스의 이미지 데이터 값이 바뀔 수치이고, $$ r_{k} $$는 $$ k $$번째 인덱스의 이미지 데이터 값이며 $$ r_{max} $$와 $$ r_{min} $$은 각각 주어진 이미지 데이터의 값들 중에서 최댓값과 최솟값을 의미한다. $$ L $$는 이미지 데이터가 가질 수 있는 최댓값을 의미하는데, 가령 8bit 체제에서는 255가 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="text-align: center;"><a href="../img/8_2.zip" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/8_2.zip" download>download</a></p>
+
+					<p style="text-align: center;"><img src="../img/ex8_2(1).png" alt="No-Img" style="width: 60vw;"></p>
+				
+					<p class="kor-text" style="margin-bottom: 0;">
+						Lecture 6의 2번 문제와 다른 점은 보다 안전한 데이터 계산 및 대입을 위해서 global namespace에서 사용하던 이미지 데이터 변수들을 main 함수 내부로 옮겼다. 이로인해 변수 수정을 위해서는 배열을 함수의 인자로 넘겨주어야 한다.
+						이 부분도 고려해서 코드를 짜야 한다.
+						아래의 스켈레톤 코드를 참고하라.
+						또한, 다른 테스트 케이스를 위해 이미지에 노이즈를 추가하는 함수를 만들어 Normalize하기도 해보는 것도 좋은 공부가 될 것이다. 다만, 이는 선택 사항이다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_2.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_2.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cassert&gt;
+
+#define THRESHOLD 150
+
+/** Do Not Touch Section : START **/
+#define ROW 512
+#define COLUMN 512
+unsigned char image_buffer[ROW][COLUMN];
+/** Do Not Touch Section : END **/
+
+
+// Uncompleted Function
+void copyToBuffer(/** Your Implementation **/){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j){ 
+		image_buffer[i][j] = image_data[i][j];
+	}
+}
+// Completed Function
+void clearBuffer(){
+	for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) image_buffer[i][j] = 0;
+}
+// Uncompleted Function
+void intensify(/** Your Implementation **/, int val){
+    if (val &gt; 255 || val &lt; -255) return;
+    
+    for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j){ 
+        int temp = image_data[i][j] + val;
+        image_data[i][j] = temp &lt; 0 ? 0 : temp &gt; 255 ? 255 : temp;
+    }
+}
+// Uncompleted Function
+void binarization(/** Your Implementation **/){
+    for (std::size_t i=0; i&lt;ROW; ++i) for (std::size_t j=0; j&lt;ROW; ++j) read_image[i][j] = read_image[i][j] &lt; THRESHOLD ? 0 : 255;
+}
+// Uncompleted Function
+void grayNormalize(/** Your Implementation **/){
+    /** Your Implementation **/
+}
+// Uncompleted Function
+void addNoise(/** Your Implemenation **/){
+	/** Your Implemenation **/
+}
+
+
+int main(){
+	constexpr char readfilename[30] = "lena_gray.bmp";
+ 	//constexpr char readfilename[30] = "train_gray.bmp";
+	constexpr char writefilename[30] = "output.bmp";
+	char header[2048]; // Meta Data
+	unsigned char read_image[ROW][COLUMN];
+
+
+/** Do Not Touch Section : START **/
+	FILE *fpread, *fpwrite, *r_fpwrite;
+	fpread = fopen(readfilename, "rb");   // file open for read
+	fpwrite = fopen(writefilename, "wb"); // file open for write
+
+	assert((fpread != NULL) || (fpwrite != NULL));
+
+	fread(header, 1, 1078, fpread);
+	fread(read_image, 1, ROW*COLUMN, fpread);
+/** Do Not Touch Section : END **/
+
+
+	/* Your Normalization Implementation */
+	//binarization();
+    //intensify(-120); // for image distortion
+    //addNoise();      // if you need other tests
+	grayNormalize();
+	
+
+
+/** Do Not Touch Section : START **/
+	copyToBuffer();
+	fwrite(header, 1, 1078, fpwrite);           // Store Header
+	fwrite(image_buffer, 1, ROW*COLUMN, fpwrite); // Store Random Image Data
+	fclose(fpwrite); // Save and Close 
+	fclose(fpread);
+/** Do Not Touch Section : END **/
+
+	return 0;
+}</code></pre>
+
+					<p> <h3 class="kor-text"> 3. 명령어 만들기 </h3>
+						<h3 class="eng-text"> 3. Make Commands</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제는 7강에서 풀었던 문제의 확장이다. 따라서 Lecture 6의 3번 문제의 설명 또한 이번 문제에서도 적용이 된다. Lecture 6의 3번 문제에서는 주어진 정방행렬에 대해서 제곱을 구하고 그 행렬을 출력해주는 프로그램을 구현했었다.
+						이번에는 프로그램을 실행할 때에 실행 옵션을 주어서 계산된 결과의 출력을 달리해주도록 프로그램을 재구현하는 것이 목표이다.
+						또한, Determinant 계산하는 코드도 추가하여야 한다.
+						Determinant 계산을 위해서는 아래의 수식을 참고하여라.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p style="font-size: 30pt; padding-top: 0; padding-bottom: 0;">
+						$$$ A\times C^{T} = det(A)\times I $$$
+						$$$ C=
+\begin{pmatrix}
+C_{1,1}&  C_{1,2}&      ...&  C_{1,j}&     ...&  C_{1,n} \\
+C_{2,1}&  C_{2,2}&      ...&  C_{2,j}&     ...&  C_{2,n} \\
+\vdots &  \vdots &   \ddots&   \vdots&        &   \vdots \\
+C_{i,1}&  C_{i,2}&      ...&  C_{i,j}&     ...&  C_{i,n} \\
+\vdots &  \vdots &         &   \vdots&  \ddots&   \vdots \\
+C_{n,1}&  C_{n,2}&      ...&  C_{n,j}&     ...&  C_{n,n} \\
+\end{pmatrix} $$$
+						$$$ C_{i,j} = (-1)^{i+j}M_{i,j} $$$
+						$$$ M_{i,j}=det
+\begin{pmatrix}
+a_{1,1}&  a_{1,2}&      ...&  \square&     ...&  a_{1,n} \\
+a_{2,1}&  a_{2,2}&      ...&  \square&     ...&  a_{2,n} \\
+\vdots &  \vdots &   \ddots&  \square&        &   \vdots \\
+\square&  \square&  \square&  \square& \square&  \square \\
+\vdots &  \vdots &         &  \square&  \ddots&   \vdots \\
+a_{n,1}&  a_{n,2}&      ...&  \square& ...& a_{n,n}\\
+\end{pmatrix} $$$
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						수식에 대한 부연설명을 하자면, C는 Cofactor (여인자), M은 Minor (소행렬식)을 의미한다. 그리고 $$M_{i,j}$$에서 $$\square$$가 의미하는 바는 해당 행(i번째 행)과 열(j번째 열)을 생략한다는 의미이다. 즉, $$M_{i,j}$$는 A행렬의 i행과 j열을 생략한 행렬의 Determinant (행렬식)을 의미한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						옵션에 대한 설명은 아래를 참고하라. 스켈레톤 코드는 7-3번 문제와 거의 다름이 없지만, 제공이 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -i</code>(ignore): 입력된 행렬 A와 A의 제곱이 계산된 행렬 B 중에 행렬 A의 출력을 무시한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -d</code>(determinant): 계산된 행렬 B의 Determinant(행렬식)을 출력한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -v</code>(value only): 행렬의 값만을 출력한다. 이 옵션은 <code id="code-word"> -sp</code>옵션을 무시하지 않는다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word"> -sp &lt;character&gt;</code>(separator): 입력된 <code id="code-word">&lt;character&gt;</code>를 기준으로 값을 구분해 출력한다. 해당 옵션은 <code id="code-word">character</code>가 항상 바로 뒤에 따라야 하며, 존재하지 않을 경우 에러로 간주한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+					
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_8_3')">힌트</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_8_3')">HINT</button></p>
+					
+<!--Korean Hint-->
+					<p class="kor-text prob_8_3_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						Determinant를 구하는 부분부터 문제가 만만치 않죠? Determinant 계산은 한 번 재귀함수 형식을 사용해본다면, 조금 더 쉽게 접근하실 수 있을 것 같습니다. 
+						실행시 입력하는 옵션은 main 함수에서 문자열 형식으로 들어오지만, 바로 활용(수정 또는 대입 등)하는 것은 불가능합니다. 따라서, 다른 방식으로 입력 옵션을 복사해서 활용해야 합니다. 이를 위해서는 동적할당 사용을 고려해볼 수 있습니다. 왜냐하면, 옵션이 무엇들이 올지 모르니까요.
+					</p>
+<!--English Hint-->
+					<p class="eng-text prob_8_3_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p8_3.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p8_3.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;string.h&gt;
+
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+#define ROW 5
+#define COL ROW
+
+/*Your Implementation*/ evalDet(/*Your Implementation*/){
+	/*Your Implementation*/
+}
+
+bool square(/*Your Implementation*/){
+    /*Your Implementation*/
+}
+
+/*Your Implementation*/ printMatrix(/*Your Implementation*/){
+    /* Your Implementation */
+}
+
+int main(const int argc, const char* argv[]){
+    int matrixB[ROW][COL];
+	memset(matrixB, 0, ROW*COL); // Just ignore. This code does not impact your program.
+								 // The line is added for a safe program.
+
+	int matrixA[ROW][COL] =
+    {
+		{1, -1, 1},
+		{-1, 0, -1},
+		{1, -1, 1}
+        /** Define Your Own Square Matrix 
+		    for Other Example Tests. **/
+    };
+
+    /** Your Implementation **/
+
+    return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 1</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 1</p>
+					<pre><code class="bash" id="code-canvas">./runfile -i -d -v -sp ,</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+  3, -2,  3
+ -2,  2, -2
+  3, -2,  3
+Det = 0
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 2</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 2</p>
+					<pre><code class="bash" id="code-canvas">./runfile -sp & -i</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+┏  3& -2&  3 ┓
+┃ -2&  2& -2 ┃
+┗  3& -2&  3 ┛
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 3</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 3</p>
+					<pre><code class="bash" id="code-canvas">./runfile -d -sp & -v -i</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix B
+  3& -2&  3
+ -2&  2& -2
+  3& -2&  3
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 4</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 4</p>
+					<pre><code class="bash" id="code-canvas">./runfile -sp & -v</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix A
+  1& -1&  1
+ -1&  0& -1
+  1& -1&  1
+Matrix B
+  3& -2&  3
+ -2&  2& -2
+  3& -2&  3
+</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예시 입출력 5</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Example Input/Output 5</p>
+					<pre><code class="bash" id="code-canvas">./runfile</code></pre>
+					<pre><code class="bash" id="code-canvas" style="margin-top: 3mm;">Matrix A
+┏  1 -1  1 ┓
+┃ -1  0 -1 ┃
+┗  1 -1  1 ┛
+Matrix B
+┏  3 -2  3 ┓
+┃ -2  2 -2 ┃
+┗  3 -2  3 ┛
+</code></pre>
+				</section>
+
+				<!-- LECTURE 9 PROBLEMS -->
+				<section id="lecture9">
+					<h2 class="kor-text">
+						9강 예제
+					</h2>
+					<h2 class="eng-text">
+						Lecture 9 Exercise
+					</h2>
+<!-- 9-1 -->
+					<p> <h3 class="kor-text"> 1. 순서 배열 </h3>
+						<h3 class="eng-text"> 1. Ordered Array</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						배열의 순서를 지켜주는 배열 클래스를 구현하는 것이 이번 문제의 목표이다.
+						<code id="code-word">OrderedArray</code>라는 이름의 배열 클래스는 그 안의 원소들이 정렬되어 있다.
+						즉, 원소들이 하나 하나 추가될 때 대소 비교가 되며 추가되기 때문에 순서상 적절한 위치에 원소가 추가된다.
+						순서는 기본적으로 오름차순을 택한다.
+						이 클래스에서 구현해야 하는 함수는 <code id="code-word">void add(const int val)</code>, <code id="code-word">void add(const int* array_val)</code>, <code id="code-word">const bool remove(const std::size_t index)</code>, <code id="code-word">const std::size_t size() const</code>, <code id="code-word">const std::size_t capacity() const</code>, <code id="code-word">const int at(const std::size_t index)</code> 그리고 <code id="code-word">const int at(const std::size_t index)</code> 등이 있다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">void add(const int val)</code>: 변수 <code id="code-word">val</code>의 값을 객체 내부 배열의 위치에 적절하게 추가한다. 만약 기존 배열이 최대로 가질 수 있는 용량인 <code id="code-word">capacity</code>를 초과하면 배열을 확장시킨다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">void add(const int* array_val)</code>: 변수 <code id="code-word">array_val</code> 배열에 존재하는 값들을 객체 내부 배열의 위치에 적절하게 추가한다. 만약 기존 배열이 최대로 가질 수 있는 용량인 <code id="code-word">capacity</code>를 초과하면 배열을 확장시킨다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">const bool remove(const std::size_t index)</code>: 변수 <code id="code-word">index</code>번째에 존재하는 값을 제거한다. index가 최대 사이즈를 벗어나면 <code id="code-word">Out of Range</code>라는 경고 문구를 출력해주며 <code id="code-word">false</code>를 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">const std::size_t size() const</code>: 현재 해당 객체가 지니고 있는 원소의 개수를 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">const std::size_t capacity() const</code>: 현재 해당 객체가 가질 수 있는 원소의 최대 개수를 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">const int at(const std::size_t index)</code>: 객체의 <code id="code-word">index</code>번째 값을 리턴한다. 만약 index가 사이즈의 범위를 벗어나면 <code id="code-word">std::numeric_limits<int>::min()</code>를 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">void printArray() const</code>: 객체의 원소들을 출력해준다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						이 외의 멤버 함수들도 구현할 때에 필요하다면 추가적으로 구현해도 좋다.
+						이 클래스는 초기화를 하는 방식으로 사용되지 않는다. 
+						단순히 클래스 초기화에 대한 방법을 아직 제대로 배우지 않아서이다.
+						아래의 스켈레톤 코드와 테스트 코드를 참고하라.
+						동적 할당을 써야할 것 같다면 <code id="code-word">~OrderedArray()</code> 부분의 주석을 해제해야 한다.
+						동적 할당을 사용하지 않고자 한다면, 주석을 해제할 필요는 없다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+						Being prepared
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code</p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;limits&gt;
+
+
+class OrderedArray{
+	/** Complete This Section **/
+	unsigned int _size
+	unsigned int _capacity 
+	int* _array
+public:
+	/** Do Not Touch Section **/
+	OrderedArray(const OrderedArray&) = delete;
+	OrderedArray& operator=(const OrderedArray&) = delete;
+	// this function exists for use of array[1];
+	const int operator[](const std::size_t index){
+		if (index &gt;= _size) return std::numeric_limits&lt;int&gt;::min();
+		else return _array[index];
+	}
+	/** If You Need **/
+	//~OrderedArray(){ delete[] _array; }
+
+public: // manipulation member functions 
+	/** Your Implementation Section **/
+	void add(const int val){ /** Your Code **/ }
+	void add(const int* array_val){ /** Your Code **/ }
+	const bool remove(const std::size_t index){ 
+		/** Your Code **/ 
+		// fprintf(stderr, "ERROR MESSAGE"); // Use for the error message
+	}
+
+public: // safe const member functions 
+	/** Your Implementation Section **/
+	const std::size_t size() const { /** Your Code **/ }
+	const std::size_t capacity() const { /** Your Code **/ }
+	const std::size_t at(const std::size_t index) const { /** Your Code **/ }
+	void printArray() const { /** Your Code **/ }
+
+private: // By your needs
+		 // Hint: Dynamic Allocation 
+		 //		 (what if add function operates more than the number of capacity?)
+};</code></pre>
+
+				<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+					테스트 코드 1</p>
+				<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+					Test Code 1</p>
+				<pre><code class="cpp" id="code-canvas">int main(){
+	// Do not use this format
+	// OrderedArray oa1;
+	// OrderedArray oa2(oa1); // Forbidden
+	
+	OrderedArray orderedArray;
+	orderedArray.add(1);
+	orderedArray.add(100);
+	orderedArray.add(5);
+	orderedArray.printArray();
+	std::cout &lt;&lt; "Capacity: " &lt;&lt; orderedArray.capacity() &lt;&lt; std::endl // It does not have to be 4.
+				 "Size    : " &lt;&lt; orderedArray.size() &lt;&lt; std::endl;    // It must be 3.
+
+	return 0;
+}</code></pre>
+
+				<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+					테스트 결과 1</p>
+				<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+					Test Result 1</p>
+				<pre><code class="shell" id="code-canvas">1, 5, 100
+Capacity: 4
+Size    : 3</code></pre>
+
+				<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+					테스트 코드 2</p>
+				<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+					Test Code 2</p>
+				<pre><code class="cpp" id="code-canvas">int main(){
+	int arr = {10, 3, 7, 5};
+	OrderedArray orderedArray;
+	orderedArray.add(8);
+	orderedArray.add(10);
+	orderedArray.add(arr);
+	orderedArray.add(1);
+	orderedArray.add(4);
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; orderedArray.remove(1) &lt;&lt; std::endl;
+	std::cout &lt;&lt; std::boolalpha &lt;&lt; orderedArray.remove(100) &lt;&lt; std::endl;
+	std::cout &lt;&lt; orderedArray.at(5) &lt;&lt; std::endl;
+	std::cout &lt;&lt; orderedArray.at(100) &lt;&lt; std::endl;
+	orderedArray.printArray()
+
+	return 0;
+}</code></pre>
+
+				<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+					테스트 결과 2</p>
+				<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+					Test Result 2</p>
+				<pre><code class="shell" id="code-canvas">true
+Out of Range
+false
+8
+-2147483648
+1, 3, 4, 5, 7, 8, 10, 10</code></pre>
+
+
+				</section>
+
+				<!-- LECTURE 10 PROBLEMS -->
+				<section id="lecture10">
+					<h2 class="kor-text">
+						준비중 (10)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (10)
+					</h2>
+				</section>
+
+				<!-- LECTURE 11 PROBLEMS -->
+				<section id="lecture11">
+					<h2 class="kor-text">
+						준비중 (11)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (11)
+					</h2>
+				</section>
+
+				<!-- LECTURE 12 PROBLEMS -->
+				<section id="lecture12">
+					<h2 class="kor-text">
+						준비중 (12)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (12)
+					</h2>
+				</section>
+
+				<!-- LECTURE 13 PROBLEMS -->
+				<section id="lecture13">
+					<h2 class="kor-text">
+						준비중 (13)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (13)
+					</h2>
+				</section>
+
+				<!-- LECTURE 13 PROBLEMS -->
+				<section id="lecture14">
+					<h2 class="kor-text">
+						준비중 (14)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (14)
+					</h2>
+				</section>
+
+				<!-- LECTURE 15 PROBLEMS -->
+				<section id="lecture15">
+					<h2 class="kor-text">
+						준비중 (15)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (15)
+					</h2>
+				</section>
+
+				<!-- LECTURE 16 PROBLEMS -->
+				<section id="lecture16">
+					<h2 class="kor-text">
+						준비중 (16)
+					</h2>
+					<h2 class="eng-text">
+						Being Prepared (16)
+					</h2>
+				</section>
+
+				<!-- FOOTER -->
+				<section id="footer">
+					<h2></h2>
+				</section>
+			</div>
+		
+		</div>
+	</body>
+</html>
