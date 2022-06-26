@@ -3392,14 +3392,196 @@ false</code></pre>
 					</p>
 				</section>
 
-				<!-- LECTURE 13 PROBLEMS -->
+				<!-- LECTURE 14 PROBLEMS -->
 				<section id="lecture14">
 					<h2 class="kor-text">
-						준비중 (14)
+						14강 예제
 					</h2>
 					<h2 class="eng-text">
-						Being Prepared (14)
+						Lecture 14 Exercise
 					</h2>
+
+					<p> <h3 class="kor-text"> 1. 정렬 클래스 </h3>
+						<h3 class="eng-text"> 1. Sorting Class</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						코딩을 하는 사람이라면 정렬 정도는 스스로 쉽게 구현할 수 있어야 한다.
+						여러가지 정렬 알고리즘이 구현되어 있는 정렬 클래스를 구현하라.
+						이 목표를 위해서 간단한 배열 클래스도 구현해야 한다. 다만, 배열 클래스는 모든 기능을 구현해야할 필요는 없으며 정렬 클래스를 정상 동작시키기 위한 최소한의 함수만을 구현하면 된다. 정렬 클래스는 이 배열 클래스를 상속하여 배열 클래스의 객체에 존재하는 원소들을 정렬하는 구조를 띈다. 따라서 C++의 클래스 상속 기능을 사용하지 않으면 안 된다.
+						(사실, 정렬 클래스를 가장 위의 부모 클래스로 두고 배열 클래스와 같이 데이터를 수용하는 클래스들이 정렬 클래스를 상속받는 형태의 구현이 가장 좋지만, 이번 문제는 특정상황을 가정했으므로 상속 관계를 반대로 지정했다.)
+						또한, 배열 클래스의 원소는 외부에서 함부로 접근이 불가능하며 특정 함수를 통해서만 출력 또는 접근이 가능하다(물론 정렬 클래스 내부의 함수를 통해서도 접근 가능하다). 
+						생성자와 접근을 위한 함수는 아래의 세부 사항을 참고하라. 덧붙여 이 함수들은 배열 클래스와 정렬 클래스에서 모두 지원이 되어야 한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">Array()<br>Array(int* init_arr, const std::size_t size)<br>~Array()</code>: Array 클래스의 생성자와 소멸자이다. 초기 배열로 들어온 <code id="code-word">init_arr</code> 배열을 Array 클래스의 원소들로 초기화시킨다. 동적할당한 메모리가 있다면 해제시켜주어야 한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">SortAlgo()<br>SortAlgo(int* init_arr, const std::size_t size)<br>~SortAlgo()</code>: SortAlgo 클래스의 생성자와 소멸자이다. 기능은 Array 클래스의 생성자와 소멸자와 동일하다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">const std::size_t size() const</code>: 클래스의 객체가 지닌 원소의 개수를 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">void add(int v)<br>void add(int* arr, const std::size_t size)</code>: 인자로 들어온 변수 <code id="code-word">v</code>의 값을 객체에 추가한다. 또는 인자로 들어온 배열 <code id="code-word">arr</code>을 객체에 추가한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+						<code id="code-word">int operator[](const std::size_t index)<br>int at(const std::size_t index)</code>: Array 클래스 객체내 <code id="code-word">index</code>번째에 존재하는 값을 리턴한다. 만약 객체가 지닌 원소의 개수 범위를 넘어간다면, <code id="code-word">int</code>타입의 최솟값을 리턴한다.
+					</p>
+					<p class = "eng-text" style="margin-left: 12vw; padding-bottom: 0.3; width: 50vw;">
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						정렬 클래스의 이름은 <code id="code-word">SortAlgo</code>이며, 이 클래스가 지녀야하는 정렬 알고리즘은 필수적으로 3가지가 있다. Insertion Sort(삽입 정렬), Selection Sort(선택 정렬), Bubble Sort(버블 정렬)이 그 세 가지이다. 그리고 선택적으로 1가지의 정렬 알고리즘을 포함시킬 수 있으며 해당 알고리즘은 Quick Sort(퀵 정렬)이다.
+						이 알고리즘들의 동작 기제를 배운 적이 없거나 잘 모른다면, 다음 링크의 설명을 참고하라(<a href="https://en.wikipedia.org/wiki/Insertion_sort">Insertion Sort</a>, <a href="https://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a>, <a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble Sort</a>, <a href="https://en.wikipedia.org/wiki/Quicksort">Quick Sort</a>).
+						알고리즘의 설명만을 보고 이해한 이후에 스스로 정렬 알고리즘을 코드로 작성할 수 있는 연습을 하자.
+						<code id="code-word">Array</code> 클래스의 스켈레톤 코드는 주어지지만 <code id="code-word">SortAlgo</code> 클래스의 스켈레톤 코드는 주어지지 않는다(두 클래스의 파일을 분리해야 한다).
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">Array.h</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">Array.h</code></p>
+					<pre><code class="cpp" id="code-canvas">#ifndef __ARRAY__
+#define __ARRAY__
+
+#include &lt;iostream&gt;
+
+class Array{
+public:
+	Array();
+	Array(int* init_arr, const std::size_t size);
+	virtual ~Array();
+
+public:
+	virtual void add(int v);
+	virtual void add(int* arr, const std::size_t size);
+
+public:
+	virtual const std::size_t size() const;
+	virtual int operator[](const std::size_t index);
+	virtual int at(const std::size_t index);
+
+private:
+	// If you need something additionally
+	// implement here.
+protected:
+	// If you need something additionally
+	// implement here.
+};
+
+#endif</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">Array.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">Array.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include "Array.h"
+
+// Constructor & Destructor
+Array::Array() { }
+Array::Array(int* init_arr, const std::size_t size) { }
+Array::~Array() { }
+
+// Other Manuplation Method
+void Array::add(int v) {}
+void Array::add(int* arr, const std::size_t size) {}
+
+// Access Methods
+const std::size_t Array::size() const { }
+int Array::operator[](const std::size_t index) { }
+int Array::at(const std::size_t index) { }
+
+// User-Defined Methods
+/* If you need something additionally, implement here */</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						테스트 코드</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Test Code</p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;random&gt;
+#include &lt;ctime&gt;
+
+#include "SortAlgo.h"
+
+#define ELEMENTS 1000 // The Number of Sorting Elements
+
+int main() {
+	srand(1); // random seed to fix randomness
+
+// Test Case 1 : Insertion Sort
+	Array* arr = new SortAlgo();
+	for (int i=0; i&lt;ELEMENTS; ++i) 
+		arr-&gt;add(rand()%(2*ELEMENTS));  // Add Elements
+	std::clock_t start = std::clock(); // Start Execution Time Measurment
+	dynamic_cast&lt;SortAlgo*&gt;(arr)-&gt;insertionSort(); // Sorting Elements
+	std::clock_t end = std::clock(); // End Execution Time Measurment
+	// Result
+	std::cout &lt;&lt; "Sort " &lt;&lt; arr-&gt;size() &lt;&lt; " Elements\n\tSorting Time: " &lt;&lt; static_cast&lt;double&gt;(end-start)/CLOCKS_PER_SEC &lt;&lt; " sec" &lt;&lt; std::endl;
+	delete arr;
+
+// Test Case 2 : Selection Sort
+	Array* arr = new SortAlgo();
+	int init1[ELEMENTS] = {};
+	for (int* ptr = init1; ptr &lt; init1+ELEMENTS; ++ptr) 
+		*ptr = rand()%(2*ELEMENTS); 
+	arr-&gt;add(init1, sizeof(init1)/sizeof(int) ); // add initiation array
+	std::clock_t start = std::clock(); // Start Execution Time Measurment
+	(SortAlgo*)(arr)-&gt;selectionSort(); // Sorting Elements
+	std::clock_t end = std::clock(); // End Execution Time Measurment
+	// Result
+	std::cout &lt;&lt; "Sort " &lt;&lt; arr-&gt;size() &lt;&lt; " Elements\n\tSorting Time: " &lt;&lt; static_cast&lt;double&gt;(end-start)/CLOCKS_PER_SEC &lt;&lt; " sec" &lt;&lt; std::endl;
+	delete arr;
+	delete[] init1;
+
+// Test Case 3 : Bubble Sort
+	int init2[ELEMENTS] = {};
+	for (int i = 0; i &lt; ELEMENTS; ++i) 
+		init2[i] = rand()%(2*ELEMENTS); 
+	SortAlgo* arr = new SortAlgo(init2, sizeof(init2)/sizeof(int) ); // add initiation array
+	std::clock_t start = std::clock(); // Start Execution Time Measurment
+	arr-&gt;bubbleSort(); // Sorting Elements
+	std::clock_t end = std::clock(); // End Execution Time Measurment
+	// Result
+	std::cout &lt;&lt; "Sort " &lt;&lt; arr-&gt;size() &lt;&lt; " Elements\n\tSorting Time: " &lt;&lt; static_cast&lt;double&gt;(end-start)/CLOCKS_PER_SEC &lt;&lt; " sec" &lt;&lt; std::endl;
+	delete arr;
+
+// Optional Test Case 4 : Quick Sort
+#define OPTIONAL // Uncomment to protect quick sort test case
+#ifdef OPTIONAL
+	int init3[ELEMENTS/2] = {};
+	for (int i = 0; i &lt; ELEMENTS/2; ++i) 
+		init2[i] = rand()%(2*ELEMENTS); 
+	SortAlgo* arr = new SortAlgo(init3, sizeof(init3)/sizeof(int) ); // add initiation array
+	for (int i = 0; i &lt; ELEMENTS/2; ++i) 
+		arr-&gt;add(rand()%(2*ELEMENTS)); // add values
+	std::clock_t start = std::clock(); // Start Execution Time Measurment
+	arr-&gt;quickSort(); // Sorting Elements
+	std::clock_t end = std::clock(); // End Execution Time Measurment
+	// Result
+	std::cout &lt;&lt; "Sort " &lt;&lt; arr-&gt;size() &lt;&lt; " Elements\n\tSorting Time: " &lt;&lt; static_cast&lt;double&gt;(end-start)/CLOCKS_PER_SEC &lt;&lt; " sec" &lt;&lt; std::endl;
+	delete arr;
+#endif
+	return 0;
+}
+</code></pre>
+
 				</section>
 
 				<!-- LECTURE 15 PROBLEMS -->
