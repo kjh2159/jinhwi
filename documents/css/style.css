@@ -49,6 +49,11 @@ span {
 	tab-size: 4;
 }
 
+.wrapper{
+	height: auto;
+	min-height: calc(95vh + 1pt);
+}
+
 /** SIDE MENU **/
 .wrapper .sidemenu{
 	position: fixed;
@@ -440,4 +445,20 @@ span {
 .doc-content .up-date{
 	color: #777;
 	font-size: 16pt;
+}
+
+/* Footer */
+.footer{
+	width: auto;
+	height: 0.5in;
+
+	background-color: rgb(148, 148, 148);
+
+	position : relative;
+  	z-index: -5;
+
+	color: rgb(221, 221, 221);
+	text-align: center;
+	padding-top: 0.1in;
+	padding-left: 10vw;
 }
