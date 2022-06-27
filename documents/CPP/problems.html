@@ -2272,6 +2272,7 @@ Det = 0
   3& -2&  3
  -2&  2& -2
   3& -2&  3
+Det = 0
 </code></pre>
 
 					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
@@ -3579,29 +3580,273 @@ int main() {
 	delete arr;
 #endif
 	return 0;
-}
-</code></pre>
+}</code></pre>
 
 				</section>
 
 				<!-- LECTURE 15 PROBLEMS -->
 				<section id="lecture15">
 					<h2 class="kor-text">
-						준비중 (15)
+						15강 예제
 					</h2>
 					<h2 class="eng-text">
-						Being Prepared (15)
+						Lecture 15 Exercise
 					</h2>
+
+					<p> <h3 class="kor-text"> 1. 텍스트 파일을 입력으로 받는 행렬 프로그램 </h3>
+						<h3 class="eng-text"> 1. Matrix Program for a Text File to Be Input</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						이번 문제에서 구현할 행렬 프로그램은 8-3 예제와 거의 동일하다. 명령어 동작도 동일하게 진행이 된다.
+						다만, 차이점은 입력할 행렬을 텍스트 파일로 다루기 때문에 여러 개의 행렬도 한번에 입력할 수 있다는 점이다.
+						행렬에 대해서 각 행은 줄로 구분이 되며, 각 열은 띄어쓰기로 구분이 된다.
+						또한, 각 행렬은 세미콜론(;)으로 구분이 된다. 즉, 세미콜론 이전과 이후의 값들은 서로 다른 행렬의 원소라는 점이다.
+						좀 더 쉬운 구현을 위해 텍스트 파일에 작성되는 입력행렬은 정방행렬로 제한한다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						텍스트 파일을 통해 입력된 행렬들의 계산과 명령어는 8-3 예제의 명령어 형식을 따른다.
+						다만, 출력 형식은 입력 행렬의 순번을 주는 형태만 추가되었다.
+						아래의 예시를 참고하면, 이해하기 어렵지 않을 것이다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						입력 텍스트 파일: <code id="code-word">input.txt</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Input Text File: <code id="code-word">input.txt</code></p>
+					<pre><code class="txt" id="code-canvas">1 -1 1
+-1 0 1
+1 -1 1;
+1 0 4 -6
+2 5 0 3
+-1 2 3 5
+2 1 -2 3;
+
+1 2
+3 4;</code></pre>
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						실행 명령어</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Execution Command</p>
+					<pre><code class="bash" id="code-canvas">./runfile -d -i</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						예상 출력 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="shell" id="code-canvas">&lt;Input Matrix 1&gt;
+[Output Matrix]
+┏  3 -2  3 ┓
+┃ -2  2 -2 ┃
+┗  3 -2  3 ┛
+Det = 0
+
+&lt;Input Matrix 2&gt;
+[Output Matrix]
+┏ -15   2  28  -4 ┓
+┃  18  28   2  12 ┃
+┃  10  21  -5  42 ┃
+┗  12   4  -4 -10 ┛
+Det = 318
+
+&lt;Input Matrix 3&gt;
+[Output Matrix]
+┏  7 10 ┓
+┗ 15 22 ┛
+Det = -2</code></pre>
+					
+					<p class="kor-text" style="margin-bottom: 0;">
+						스켈레톤 코드는 예제 8-3과 크게 다른 점은 없지만, 참고할 수 있도록 주어진다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p15_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p15_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cmath&gt;
+#include &lt;string&gt;
+
+/*Your Implementation*/ evalDet(/*Your Implementation*/){
+	/*Your Implementation*/
+}
+
+bool square(/*Your Implementation*/){
+    /*Your Implementation*/
+}
+
+/*Your Implementation*/ printMatrix(/*Your Implementation*/){
+    /* Your Implementation */
+}
+
+// Implemet Your Own Other Functions if you need
+
+
+int main(const int argc, const char* argv[]){
+    const std::string filename = "input.txt";
+
+    int* matrix;
+    //double* matrix; // If you evaluate floating point also,
+
+    std::ifstream ifs(filename, std::ios::in);
+    /** Your Implementation **/
+    // If you utilize dynamic allocation, then you must delete the heap memory space.
+    ifs.close();
+
+    return 0;
+}</code></pre>
+
 				</section>
 
 				<!-- LECTURE 16 PROBLEMS -->
 				<section id="lecture16">
 					<h2 class="kor-text">
-						준비중 (16)
+						16강 예제
 					</h2>
 					<h2 class="eng-text">
-						Being Prepared (16)
+						Lecture 16 Exercise
 					</h2>
+
+					<p> <h3 class="kor-text"> 1. 숫자 인식 </h3>
+						<h3 class="eng-text"> 1. Digits Recognition</h3></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						인공 지능(Artificial Intelligence)에 대해서 누구나 들어본 적이 있을 것이다. 하지만, 인공 지능을 매우 거창한 개념으로 오해하는 사람들이 생각보다 많다. 인공 지능은 머신 러닝(Machine Learning), 딥러닝(Deep Learning), 강화 학습(Reinforcement Learning)을 사용해야만 하는 그런 거창한 개념이 아니다. 어떤 입력에 대해서 컴퓨터나 프로그램의 프로세스가 스스로 추론과 판단을 통해 결론을 도출해낼 수 있다면, 그것또한 인공 지능이라고 칭할 수 있다.
+						따라서, 우리는 이번 문제에서 간단한 숫자 인식 인공 지능 프로그램을 만드는 것이다. 아래와 같이 0부터 9까지의 숫자가 적힌 <code id="code-word">.bmp</code> 파일의 이미지가 존재한다.
+						지금까지 배웠던 내용을 토대로 이 숫자들을 인식하는 프로그램을 작성하면 된다. 별다른 제약은 없으며, 아래의 숫자들을 여러분의 프로그램이 인식할 수만 있으면 된다.
+						그리고 그 인식 결과는 변수 <code id="code-word">ans</code>에 저장하면 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex16_1(1).png" alt="No-Img" style="width: 40vw;"></p>
+
+					<p class="kor-text" style="text-align: center;"><a href="../img/16_1.zip" download>다운로드</a></p>
+					<p class="eng-text" style="text-align: center;"><a href="../img/16_1.zip" download>download</a></p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						클래스로 구현해도 좋으며, 클래스 없이 함수만으로 구현해도 괜찮다. 다만, 테스트를 위해서 <code id="code-word">main()</code>함수와 실행 결과를 참고하라.
+						지금까지 배웠던 내용을 최대한 활용하는 것이 좋으며, <code id="code-word">std::vector</code>, <code id="code-word">iterator</code>, <code id="code-word">algorithm</code>을 활용하면 보다 도움이 될 수 있다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p class="kor-text" style="margin-bottom: 0;">
+						하지만, 주어진 BMP 파일들을 그대로 읽게된다면 약간의 문제가 생길 수 있다. 주어진 BMP 파일을 메타데이터 부분을 제외한 데이터 영역을 흑색은 0으로 백색은 1로 설정해 출력하면, 아래와 같은 결과가 나온다(터미널의 폰트 크기를 매우 줄임. VSC 터미널에서는 동작이 느리거나 버벅일 수가 있으니 본래의 터미널에서 실행한다). 해당 결과는 스켈레톤 코드의 <code id="code-word">#ifdef CHECK ~ #endif</code> 영역을 활성화하면 나오는 결과이다(이 동작을 원하지 않는다면, 주석을 해제하면 된다).
+						따라서, 주어진 파일을 역순으로 데이터를 읽어내야 한다. 이는 재정렬 또는 File Pointer를 통해 해결할 수 있으며 이를 참고해 코드를 작성해야 한다. 추가적으로 스켈레톤 코드를 참고하며 제대로 된 테스트를 진행하기 위해서는 <code id="code-word">#ifdef TEST ~ #endif</code>영역을 활성화시키면 된다.
+					</p>
+					<p class="eng-text" style="margin-bottom: 0;">
+					</p>
+
+					<p style="text-align: center;"><img src="../img/ex16_1(2).png" alt="No-Img" style="width: 20vw; height: 20vw;"></p>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						스켈레톤 코드: <code id="code-word">p16_1.cpp</code></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Skeleton Code for <code id="code-word">p16_1.cpp</code></p>
+					<pre><code class="cpp" id="code-canvas">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;vector&gt;
+#include &lt;random&gt;
+#include &lt;cassert&gt;
+
+#define ROW 256
+#define COL 256
+#define TEST_TIME 15
+
+// Do Something by Yourself for Your Recognition Program.
+
+int main(){
+    std::vector&lt;std::string&gt; digits;
+    std::vector&lt;int&gt; answers;
+    std::string filetype = ".bmp";
+    std::ifstream ifs;
+    char data[ROW][COL];
+    std::memset(data, 0, ROW*COL); // ignore this line.
+
+#define CHECK // Comment to protect the execution of the checking code
+#ifdef CHECK
+    ifs.open(std::to_string(1)+filetype,       // Set Reading File as 1.bmp
+             std::ios::in | std::ios::binary); // Set File Open Mode
+    ifs.seekg(1078, std::ios::beg); // for header
+    ifs.read(&data[0][0], ROW*COL); // read and store file data to the variable data
+
+    // Print Values
+    for (int i=0; i&lt;ROW; ++i){
+        for (int j=0; j&lt;COL; ++j) std::cout &lt;&lt; (data[i][j] == 0);
+        std::cout &lt;&lt; std::endl;
+    }
+
+    ifs.close();
+#endif
+
+#define TEST // Uncomment for the test.
+#ifdef TEST
+    srand(1); // random seed
+
+    int ans;
+    for (int i=0; i&lt;TEST_TIME; ++i){
+        std::string digit = std::to_string(random()%10);
+        digits.push_back(digit);
+        ifs.open(digit+filetype,                   // Randomly Set BMP file name.
+                 std::ios::in | std::ios::binary); // Set File Open Mode
+        ifs.seekg(1078, std::ios::beg); // for header
+        ifs.read(&data[0][0], ROW*COL); // read and store file data to the variable data
+
+        /* 
+            Implement Your Code for Recognition
+            Please, store the result of the recognition to the variable 'ans'!!!!
+        */
+
+        answers.push_back(ans);
+
+        ifs.close();
+    }
+
+    std::cout &lt;&lt; "   ORIGINAL DIGITS: ";
+    for (int i=0; i&lt;digits.size(); ++i) std::cout &lt;&lt; digits[i] &lt;&lt; " ";
+    std::cout &lt;&lt; std::endl;
+    std::cout &lt;&lt; "RECOGNITION RESULT: ";
+    for (int i=0; i&lt;answers.size(); ++i) std::cout &lt;&lt; answers[i] &lt;&lt; " ";
+    std::cout &lt;&lt; std::endl;
+#endif
+    return 0;
+}</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						실행 결과</p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						Expected Output</p>
+					<pre><code class="shell" id="code-canvas">   Original Digits: 3 6 7 5 3 5 6 2 9 1 2 7 0 9 3
+Recognition Result: 3 6 7 5 3 5 6 2 9 1 2 7 0 9 3</code></pre>
+
+					<p class = "kor-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">
+						<button class="answer" onclick="changeAnswerDisplay('prob_16_1')">힌트</button></p>
+					<p class = "eng-text" style="margin-left: 10vw; padding-bottom: 0; font-weight: bold;">	
+						<button class="answer" onclick="changeAnswerDisplay('prob_16_1')">HINT</button></p>	
+<!--Korean Hint-->
+					<p class="kor-text prob_16_1_k answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+						이 문제를 해결함에 있어서 16강에서 배운 <code id="code-word">std::vector</code>를 사용하고자 할 수도 있다. 하지만, vector는 기본적으로 1차원만 지원한다. 하지만, 약간의 속임수를 사용해 다차원 vector로 만들 수가 있다. 아래의 코드를 참고하자.
+					</p>
+<!--English Hint-->
+					<p class="eng-text prob_16_1_e answer-sheet" style="width: 55vw; margin-left: 12vw; padding-top: 0; padding-bottom: 0; color: rgb(104, 104, 104); display: none;">
+					</p>
+					<pre class="answer-sheet" id="prob_16_1"><code class="cpp" id="code-canvas">#include &lt;vector&gt;
+
+std::vector&lt;std::vector&lt;char&gt;&gt; v;
+std::vecotr&lt;char&gt; e = {'a', 'b', 'c'};
+v.push_back(e);
+v.push_back(e);</code></pre>
 				</section>
 
 				<!-- FOOTER -->
