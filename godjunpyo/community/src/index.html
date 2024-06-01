@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godjunpyo AI Service Commands List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            padding: 20px;
+            /*color*/
+            background-color: #282C34FF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            /*color*/
+            color: white;
+        }
+
+        .command{
+          font-weight: bold;
+          color: #F4F4F4; /*smooth white*/
+        }
+
+        .command-exp{
+            text-align: center;
+            color: #F4F4F4; /*smooth white*/
+            font-size: 15pt;
+        }
+
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .language-switcher button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+            max-width: 70vw;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /*color*/
+            background-color: #282C34FF; /*background color*/
+            color: white; /* after input */
+        }
+
+        .footer{
+            text-align: center;
+            /* color */
+            color: grey;
+
+            margin-top: 10vh;
+            margin-bottom: 5vh;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /*color*/
+            color: #BBBBBB; /*bright grey*/
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            /*color*/
+            background-color: #000000;
+            color: #CECA40; /*smooth yellow*/
+        }
+
+        @media (max-width: 768px) {
+            table, tbody, th, td, tr {
+                display: block;
+                width: 100%;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+            }
+
+            td {
+                text-align: left;
+                padding: 10px;
+                position: relative;
+                padding-left: 50%;
+                box-sizing: border-box;
+                background-color: #21252B;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                padding-right: 10px;
+                font-weight: bold;
+                white-space: nowrap;
+                /*color*/
+                color: #5198B1;
+            }
+
+            .search-container input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Godjunpyo AI Service Documents</h1>
+
+        <!-- Lang Switcher -->
+        <div class="language-switcher">
+            <button onclick="setLanguage('en')">🇺🇸</button>
+            <button onclick="setLanguage('ko')">🇰🇷</button>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input id="command-search" type="text" placeholder="Search for any command" data-en="Search for any command" data-ko="명령어 검색">
+        </div>
+
+        <!-- Command Description  -->
+        <div class="command-exp">
+            <p id="command-exp" type="text" data-en="[~] : Essential Option, (~) : Selective option" data-ko="[~] : 필수 옵션, (~) : 선택 옵션">[~] : Essential Option, (~) : Selective option</p>
+        </div>
+
+        <!-- TA Yoon  -->
+        <img src="ta_yoon_c.png" alt="ta_yoon_c.png" style="padding-left: 20px; width: min(13vw, 13vh);"/>
+
+
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/registration" data-ko="/registration">/registration</td>
+                    <td data-label="Description" data-en="Auto registration system to Godjunpyo AI service server." data-ko="갓준표 AI 서비스 서버에 자동 등록">Auto registration system to Godjunpyo AI service server.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/check_membership_expiration" data-ko="/check_membership_expiration">/check_membership_expiration</td>
+                    <td data-label="Description" data-en="TA Yoon will check the expected expiration date of your membership." data-ko="요청자의 예상 멤버십 만료 기한을 알려줍니다.">TA Yoon will check the expected expiration date of your membership.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask [question] (url)" data-ko="/ask [question] (url)">/ask [question] (url)</td>
+                    <td data-label="Description" data-en="You can ask a question to TA Yoon. Optionally with a website." data-ko="윤조교에게 질문할 수 있습니다. 선택적으로 URL 첨부가 가능합니다.">You can ask a question to TA Yoon. Optionally with a website.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/list" data-ko="/list">/ask_followup [question]</td>
+                    <td data-label="Description" data-en="You can ask a followup question to TA Yoon thinking of the previous Q&A." data-ko="이전의 문답을 고려하면서 윤조교에게 연이은 질문을 할 수 있습니다.">You can ask a followup question to TA Yoon considering the previous Q&A.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_with_image [question]" data-ko="/ask_with_image [question]">/ask_with_image [question]</td>
+                    <td data-label="Description" data-en="You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon." data-ko="먼저 이미지 파일을 업로드하셔야 합니다. 윤조교님이 💾로 저장 여부를 알려줍니다. 이후, 윤조교에게 이미지와 관련된 질문을 할 수 있습니다.">You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_with_document [question]" data-ko="/ask_with_document [question]">/ask_with_document [question]</td>
+                    <td data-label="Description" data-en="Document version of /ask_with_image command." data-ko="/ask_with_image 명령어의 문서 버전">Document version of /ask_with_image command.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_lab [question]" data-ko="/ask_lab [question]">/ask_lab [question]</td>
+                    <td data-label="Description" data-en="TA Yoon will answer a question about given laboratory." data-ko="윤조교님이 주어진 연구실에 대한 질문에 답합니다.">TA Yoon will answer a question about given laboratory.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_researcher [question] [english_name]" data-ko="/ask_researcher [question] [english_name]">/ask_researcher [question] [english_name]</td>
+                    <td data-label="Description" data-en="TA Yoon will answer questions about the given researcher." data-ko="윤조교님이 입력된 연구자에 대한 질문에 답합니다.">TA Yoon will answer questions about the given researcher.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_paper [keyword]" data-ko="/search_paper [keyword]">/search_paper [keyword]</td>
+                    <td data-label="Description" data-en="TA Yoon will find out papers related to the given keywords." data-ko="윤조교님이 주어진 키워드에 연관된 논문들을 찾아줍니다.">TA Yoon will find out papers related to the given keywords.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_internet [question]" data-ko="/search_internet [question]">/search_internet [question]</td>
+                    <td data-label="Description" data-en="General internet searching." data-ko="일반적인 인터넷 검색">General internet searching.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_image [desired_image]" data-ko="/generate_image [desired_image]">/generate_image [desired_image]</td>
+                    <td data-label="Description" data-en="TA Yoon will make an image related to your request, desired_image." data-ko="윤조교님이 요청과 연관된 이미지를 생성합니다.">TA Yoon will make an image related to your request, desired_image.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_img_to_img [request]" data-ko="/generate_img_to_img [request]">/generate_img_to_img [request]</td>
+                    <td data-label="Description" data-en="TA Yoon will make an image referring to the previously uploaded image." data-ko="윤조교님이 앞서 업로드된 이미지를 참고해 이미지를 생성합니다.">TA Yoon will make an image referring to the previously uploaded image.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- TA Yoon  -->
+        <img src="music_c.png" alt="msusic_c.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
+
+
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search deezer [query] (priority)" data-ko="/search deezer [query] (priority)">/search deezer [query] (priority)</td>
+                    <td data-label="Description" data-en="Search for tracks on Deezer music with priority. Playing YouTube link is prohibitted by a policy of global Discord." data-ko="Deezer 뮤직에서 음악 트랙을 검색하고 플레이 합니다. 가수와 노래 제목을 같이 적어 검색을 추천합니다. K-POP 노래가 검색되지 않는다면 해당 노래의 영문명으로 검색해보길 바랍니다.유튜브 링크 실행은 디스코드 정책으로 금지되었습니다.">Search for tracks on Deezer music with priority. Playing YouTube link is prohibitted by a policy of global Discord.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/play" data-ko="/play">/playlist play [name]</td>
+                    <td data-label="Description" data-en="Play a saved playlist." data-ko="미리 저장된 플레이리스트를 플레이합니다.">Play a saved playlist.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/list" data-ko="/list">/list</td>
+                    <td data-label="Description" data-en="Display a list of the current songs in the queue." data-ko="현재 대기열에 있는 노래 목록을 표시합니다.">Display a list of the current songs in the queue.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/playlist list" data-ko="/playlist list">/playlist list</td>
+                    <td data-label="Description" data-en="Display the server's saved playlists." data-ko="서버에 저장된 플레이리스트를 보여줍니다.">Display the server's saved playlists.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/playlist list-tracks [name] (page)" data-ko="/playlist list-tracks [name] (page)">/playlist list-tracks [name] (page)</td>
+                    <td data-label="Description" data-en="List the tracks from the specified playlist." data-ko="특정 플레이리스트의 트랙들을 보여줍니다.">List the tracks from the specified playlist.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/nowplaying" data-ko="/nowplaying">/nowplaying</td>
+                    <td data-label="Description" data-en="Display the currently playing track." data-ko="현재 재생 중인 트랙을 표시합니다.">Display the currently playing track.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/skip first" data-ko="/skip first">/skip first</td>
+                    <td data-label="Description" data-en="Skip one or more tracks in the beginning of the queue." data-ko="대기열의 시작 부분에서 하나 이상의 트랙을 건너뜁니다.">Skip one or more tracks in the beginning of the queue.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/stop" data-ko="/stop">/stop</td>
+                    <td data-label="Description" data-en="Stop the player and clear the queue." data-ko="플레이어를 정지시키고 대기열을 정리합니다.">Stop the player and clear the queue.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/pause on/off" data-ko="/pause on/off">/pause on/off</td>
+                    <td data-label="Description" data-en="on to pause the player and off to resume." data-ko="플레이어를 일시정지하거나 이어서 재생할 수 있습니다.">on to pause the player and off to resume.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/shuffle on/off" data-ko="/shuffle on/off">/shuffle on/off</td>
+                    <td data-label="Description" data-en="on to active shuffle mode and off to deactive shuffle mode." data-ko="셔플 모드를 키고 끕니다.">on to active shuffle mode and off to deactive shuffle mode.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/reshuffle" data-ko="/reshuffle">/shuffle on/off</td>
+                    <td data-label="Description" data-en="Reshuffle the queue." data-ko="재생 대기열을 다시 섞습니다.">Reshuffle the queue.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/repeat all" data-ko="/repeat all">/repeat all</td>
+                    <td data-label="Description" data-en="Repeat all tracks" data-ko="대기열의 모든 트랙을 반복합니다.">Repeat all tracks</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/repeat single" data-ko="/repeat single">/repeat single</td>
+                    <td data-label="Description" data-en="Repeat the same track." data-ko="현재 재생중인 트랙만 반복합니다.">Repeat the same track.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/repeat off" data-ko="/repeat off">/repeat off</td>
+                    <td data-label="Description" data-en="Play the queue normally." data-ko="대기열을 정상적으로 실행합니다.">Play the queue normally.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/reposition [current-position] [new-position]" data-ko="/reposition [current-position] [new-position]">/reposition [current-position] [new-position]</td>
+                    <td data-label="Description" data-en="Change the position of a track in the queue." data-ko="현재 대기열에서 current-position번째의 트랙을 new-position번째로 바꿉니다.">Change the position of a track in the queue.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/skip first (count)" data-ko="/skip first (count)">/skip first (count)</td>
+                    <td data-label="Description" data-en="Skip one or more tracks in the beginning of the queue." data-ko="현재 대기열의 앞에서부터 트랙을 하나 또는 그 이상을 스킵합니다. 스킵된 트랙은 대기열에서 없어집니다.">Skip one or more tracks in the beginning of the queue.</td>
+                </tr>
+              </tbody>
+          </table>
+
+
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer">
+        &copy; 2024 (주)갓준표/갓준표 AI.<br>
+        All rights reserved. Designed by Jinhwi Kim.
+    </div>
+
+
+    <script>
+        function setLanguage(lang) {
+            var elements = document.querySelectorAll('[data-en]');
+            elements.forEach(function(el) {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+
+            var placeholders = document.querySelectorAll('input[placeholder]');
+            placeholders.forEach(function(el) {
+                el.placeholder = el.getAttribute('data-' + lang);
+            });
+        }
+
+        document.getElementById('command-search').addEventListener('keyup', function() {
+            var input = this.value.toLowerCase();
+            var rows = document.querySelectorAll('#commands-table tbody tr');
+
+            rows.forEach(function(row) {
+                var command = row.querySelector('td[data-label="Command"]').textContent.toLowerCase();
+                var description = row.querySelector('td[data-label="Description"]').textContent.toLowerCase();
+
+                if (command.includes(input) || description.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
