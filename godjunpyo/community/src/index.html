@@ -181,55 +181,83 @@
                     <td data-label="Description" data-en="TA Yoon will check the expected expiration date of your membership." data-ko="요청자의 예상 멤버십 만료 기한을 알려줍니다.">TA Yoon will check the expected expiration date of your membership.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask [question] (web search)" data-ko="/질문 [질문] (링크)">/ask [question] (web_search)</td>
+                    <td class="command" data-label="Command" data-en="/ask [question] (web_search)" data-ko="/질문 [질문] (링크)">/ask [question] (web_search)</td>
                     <td data-label="Description" data-en="You can ask a question to TA Yoon. Optionally with a website." data-ko="윤조교에게 질문할 수 있습니다. 선택적으로 URL 첨부가 가능합니다.">You can ask a question to TA Yoon. Optionally with a website.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask_followup [question]" data-ko="/이어서질문 [질문]">/ask_followup [question]</td>
-                    <td data-label="Description" data-en="You can ask a followup question to TA Yoon thinking of the previous Q&A." data-ko="이전의 문답을 고려하면서 윤조교에게 연이은 질문을 할 수 있습니다.">You can ask a followup question to TA Yoon considering the previous Q&A.</td>
+                    <td class="command" data-label="Command" data-en="/ask_followup [question]" data-ko="/질문_이어서 [질문]">/ask_followup [question]</td>
+                    <td data-label="Description" data-en="You can ask a followup question to TA Yoon considering the previous Q&A." data-ko="이전의 문답을 고려하면서 윤조교에게 연이은 질문을 할 수 있습니다.">You can ask a followup question to TA Yoon considering the previous Q&A.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="//ask_with_image [question]" data-ko="/사진질문 [질문]">/ask_with_image [question]</td>
-                    <td data-label="Description" data-en="You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon." data-ko="먼저 이미지 파일을 업로드하셔야 합니다. 윤조교님이 💾로 저장 여부를 알려줍니다. 이후, 윤조교에게 이미지와 관련된 질문을 할 수 있습니다.">You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon.</td>
+                    <td class="command" data-label="Command" data-en="/ask_concept [question]" data-ko="/질문_개념 [질문]">/ask_concept [question]</td>
+                    <td data-label="Description" data-en="TA Yoon will describe the concept of the question with a conversation style." data-ko="윤조교님이 대화체형식으로 질문에 대한 개념을 설명해주십니다.">TA Yoon will describe the concept of the question with a conversation style.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask_with_doc [question]" data-ko="/문서질문 [질문]">/ask_with_document [question]</td>
-                    <td data-label="Description" data-en="Document version of /ask_with_image command." data-ko="/사진질문 명령어의 문서 버전">Document version of /ask_with_image command.</td>
+                    <td class="command" data-label="Command" data-en="/ask_with_image [question]" data-ko="/질문_사진 [질문]">/ask_with_image [question]</td>
+                    <td data-label="Description" data-en="You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon. Supported file extension types are .jpg, .jpeg, .png, .gif, .webp, .bmp." data-ko="먼저 이미지 파일을 업로드하셔야 합니다. 윤조교님이 💾로 저장 여부를 알려줍니다. 이후, 윤조교에게 이미지와 관련된 질문을 할 수 있습니다. 이미지는 .jpg, .jpeg, .png, .gif, .webp, .bmp 확장자가 지원됩니다.">You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon. Supported file extension types are .jpg, .jpeg, .png, .gif, .webp, .bmp.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask_lab [question]" data-ko="/연구실찾기 [질문]">/ask_lab [question]</td>
+                    <td class="command" data-label="Command" data-en="/ask_with_document [question]" data-ko="/질문_문서 [질문]">/ask_with_document [question]</td>
+                    <td data-label="Description" data-en="Document version of /ask_with_image command. Supported file extension types are .pdf, .docx, and .txt." data-ko="/질문_사진 명령어의 문서 버전. 문서는 .pdf, .docx, .txt 확장자가 지원됩니다.">Document version of /ask_with_image command. Supported file extension types are .pdf, .docx, and .txt.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_paper [request] (priority)" data-ko="/검색_논문 [질문] (우선순위)">/search_paper [request] (priority)</td>
+                    <td data-label="Description" data-en="TA Yoon will search papers related to the given request. The option priority includes 'Latest' or 'Relevance'." data-ko="윤조교님이 주어진 질문에 관련된 논문들을 찾아줍니다. 우선순위는 최신순 혹은 연관성을 선택이 가능합니다.">TA Yoon will search papers related to the given request. The option priority includes 'Latest' or 'Relevance'.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_lab [question]" data-ko="/검색_연구실 [질문]">/search_lab [question]</td>
                     <td data-label="Description" data-en="TA Yoon will answer a question about given laboratory." data-ko="윤조교님이 주어진 연구실에 대한 질문에 답합니다.">TA Yoon will answer a question about given laboratory.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask_researcher [question] [english_name]" data-ko="/연구자찾기 [질문] [영문성함]">/ask_researcher [question] [english_name]</td>
-                    <td data-label="Description" data-en="TA Yoon will answer questions about the given researcher." data-ko="윤조교님이 입력된 연구자에 대한 질문에 답합니다.">TA Yoon will answer questions about the given researcher.</td>
+                    <td class="command" data-label="Command" data-en="/search_researcher [question] [english_name]" data-ko="/검색_연구자 [질문] [영문성함]">/search_researcher [question] [english_name]</td>
+                    <td data-label="Description" data-en="TA Yoon will answer questions about the given researcher." data-ko="윤조교님이 주어진 연구자에 대한 질문에 답합니다.">TA Yoon will answer questions about the given researcher.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/search_paper [keyword]" data-ko="/논문검색 [키워드]">/search_paper [keyword]</td>
-                    <td data-label="Description" data-en="TA Yoon will find out papers related to the given keywords." data-ko="윤조교님이 주어진 키워드에 연관된 논문들을 찾아줍니다.">TA Yoon will find out papers related to the given keywords.</td>
+                    <td class="command" data-label="Command" data-en="/search_news [request]" data-ko="/검색_뉴스 [요청]">/search_news [request]</td>
+                    <td data-label="Description" data-en="TA Yoon will search for news relevant to the given request." data-ko="윤조교님이 요청과 연관된 뉴스를 검색합니다.">TA Yoon will search for news relevant to the given request.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_english_video [sentence]" data-ko="/검색_영어영상 [문장]">/search_english_video [sentence]</td>
+                    <td data-label="Description" data-en="TA Yoon will search a short English video, which speaks the entered sentence." data-ko="윤조교님이 입력된 문장을 말하는 짧은 영어 영상을 찾습니다.">TA Yoon will search a short English video, which speaks the entered sentence.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_text_to_speech [request] (accent)" data-ko="/영어발음 [영어텍스트] (발음선택)">/generate_text_to_speech [request] (accent)</td>
+                    <td data-label="Description" data-en="TA Yoon will pronounce the input texts as following American, British, or Australian accent optionally." data-ko="윤조교님이 입력한 영어 텍스트를 발음하여 알려주십니다. 선택사항으로 미국, 영국, 호주 발음을 선택할 수 있습니다.">TA Yoon will pronounce the input texts as following American, British, or Australian accent optionally.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_listening_script [request] (accent)" data-ko="/영어리스닝 [요청] (발음선택)">/generate_listening_script [request] (accent)</td>
+                    <td data-label="Description" data-en="TA Yoon will generate a listening script considering the request as following American, British, or Australian accent optionally." data-ko="윤조교님이 요청에 대한 리스닝 스크립트를 생성합니다. 선택사항으로 미국, 영국, 호주 발음을 선택할 수 있습니다.">TA Yoon will generate a listening script considering the request as following American, British, or Australian accent optionally.</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/generate_image [request] (aspect_rate)" data-ko="/이미지생성 [요청] (종횡비)">/generate_image [request] (aspect_rate)</td>
-                    <td data-label="Description" data-en="TA Yoon will make an image related to your request, desired_image." data-ko="윤조교님이 요청과 연관된 이미지를 종횡비에 맞추어 생성합니다.">TA Yoon will make an image related to your request with the given aspect rate.</td>
+                    <td data-label="Description" data-en="TA Yoon will make an image related to your request with the given aspect rate." data-ko="윤조교님이 요청과 연관된 이미지를 종횡비에 맞추어 생성합니다.">TA Yoon will make an image related to your request with the given aspect rate.</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/generate_img_to_img [request] (aspect_rate)" data-ko="/이미지로이미지생성 [요청] (종횡비)">/generate_img_to_img [request] (aspect_rate)</td>
-                    <td data-label="Description" data-en="TA Yoon will make an image referring to the previously uploaded image." data-ko="윤조교님이 앞서 업로드된 이미지를 참고해 종횡비에 맞추어 이미지를 생성합니다.">TA Yoon will make an image of the given aspect rate by referring to the previously uploaded image.</td>
+                    <td data-label="Description" data-en="TA Yoon will make an image of the given aspect rate by referring to the previously uploaded image." data-ko="윤조교님이 앞서 업로드된 이미지를 참고해 종횡비에 맞추어 이미지를 생성합니다.">TA Yoon will make an image of the given aspect rate by referring to the previously uploaded image.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/change_nickname" data-ko="/사용자명변경">change_nickname</td>
+                    <td class="command" data-label="Command" data-en="/record_study [study_content] (study_hour) (study_minutes) (feedback) (achievement_rate)" data-ko="/기록_공부 [공부_내용] (공부_시간) (공부_분) (피드백) (달성률)">/record_study [study_content] (study_hour) (study_minutes) (feedback) (achievement_rate)</td>
+                    <td data-label="Description" data-en="Your study will be recorded in the Godjunpyo x AI-Study sheet. The options 'study_hour', 'study_minutes', and 'achievement_rate' allow only integer numbers." data-ko="갓준표xAI공부인증 시트에 공부 내용을 기록합니다. '공부 시간', 공부 분', '달성률'은 정수값만 허용합니다.">Your study will be recorded in the Godjunpyo x AI-Study sheet. The options 'study_hour', 'study_minutes', and 'achievement_rate' allow only integer numbers.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/record_study_alarm [study_content] (study_hour) (study_minutes)" data-ko="/기록_공부알람 [공부_내용] (공부_시간) (공부_분)">/record_study_alarm [study_content] (study_hour) (study_minutes)</td>
+                    <td data-label="Description" data-en="Set a timer, alert the end of study session after the time, and record the studying content. You should allow DM from anyone in the server. The options 'study_hour' and 'study_minutes' allow only integer numbers." data-ko="지정된 시간이 지난 후에 공부 종료 알림을 주고, 공부 내용을 기록합니다. DM이 허용되어 있어야 합니다. 선택 사항들은 정수값만 허용합니다.">Set a timer, alert the end of study session after the time, and record the studying content. You should allow DM from anyone in the server. The options 'study_hour' and 'study_minutes' allow only integer numbers.</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/change_nickname" data-ko="/사용자명변경">/change_nickname</td>
                     <td data-label="Description" data-en="Change the nickname saved in the server with the membership code into the current nickname." data-ko="서버에 회원번호로 등록된 닉네임을 현재 닉네임으로 변경합니다.">Change the nickname saved in the server with the membership code into the current nickname.</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/help" data-ko="/도움말">/help</td>
-                    <td data-label="Description" data-en="You can find this page with this command. (same with /help)" data-ko="갓준표 AI 서비스에서 지원하는 명령어 목록인 이 페이지의 주소를 확인할 수 있습니다.">You can find this page with this command.</td>
+                    <td data-label="Description" data-en="You can find this page with this command. (same with /help)" data-ko="갓준표 AI 서비스에서 지원하는 명령어 목록인 이 페이지의 주소를 확인할 수 있습니다.">You can find this page with this command. (same with /help)</td>
                 </tr>
 
             </tbody>
         </table>
 
 
-        <!-- TA Yoon  -->
+        <!-- Music Player  -->
         <img src="../img/music_c.png" alt="../img/msusic_c.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
 
 
