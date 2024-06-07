@@ -1,4 +1,14 @@
 var colorModeLight = true;
+const scrollUpBtn = document.getElementById("scorll-up");
+console.log(scrollUpBtn);
+// scroll up smoothly
+scrollUpBtn.addEventListener("click", () => {
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth"
+	});
+});
+
 
 function switchLang(){
 	let langBtn = document.getElementById("l-switch");
@@ -29,16 +39,16 @@ function switchLang(){
 		// right: Eng
 		for(var i=0; i<engText.length; i++){
 			// handling a bug for Documents List
-			if ( (engText[i].classList.contains("answer-sheet") || engText[i].classList.contains("doc-content")) 
+			if ( (engText[i].classList.contains("answer-sheet") || engText[i].classList.contains("doc-content"))
 				&& engText[i].style.display === "none" ){
-				// handling a bug for answer-sheet class 
+				// handling a bug for answer-sheet class
 				if (korText[i].style.display === "none"){ continue; }
 				else{ engText[i].style.display = "inline-block"; }
 			}
 			engText[i].style.display = "inline-block";
 		}
 		for(var i=0; i<korText.length; i++){
-			
+
 			korText[i].style.display = "none";
 		}
 	} else {
@@ -48,9 +58,9 @@ function switchLang(){
 		// left: Kor
 		for(var i=0; i<korText.length; i++){
 			// handling a bug for Documents List
-			if ((korText[i].classList.contains("answer-sheet") || korText[i].classList.contains("doc-content")) 
+			if ((korText[i].classList.contains("answer-sheet") || korText[i].classList.contains("doc-content"))
 				&& korText[i].style.display === "none"){
-				// handling a bug for answer-sheet class 
+				// handling a bug for answer-sheet class
 				if (engText[i].style.display === "none"){ continue; }
 				else{ korText[i].style.display = "inline-block"; }
 			}
@@ -70,7 +80,7 @@ function switchColorMode(){
 function switchLight2Dark(){
 	// (home-heading) background color
 	let home_head = document.getElementsByClassName("home-heading")
-	home_head[0].style.backgroundColor = "#313131"
+	home_head[0].style.backgroundColor = "#000000"
 	home_head[0].style.color = "#000000"
 
 	// (main) background color
@@ -84,14 +94,14 @@ function switchLight2Dark(){
 	code_titles.forEach(element => {
 		element.style.color = "#000000"
 	});
-	
+
 	// (code word)
 	let code_words = document.querySelectorAll('[id=code-word]')
 	code_words.forEach(element => {
 		element.style.backgroundColor = "#cccccc" // dark gray
 		element.style.color = "#000000"
 	});
-	
+
 	// answer button text
 	let answers = document.getElementsByClassName("answer")
 	for(var i=0; i<answers.length; ++i){
@@ -145,4 +155,19 @@ function switchDark2Light(){
 	// Post-Processing
 	document.body.style.backgroundColor = "#FFFFFF"
 	colorModeLight = true
+}
+
+
+// This function is used for only light->dark mode in doc list file.
+function switchColorMode4DocList(){
+	// siwtch color mode once.
+	switchColorMode();
+
+	// fix wrong coloration in the process of light -> dark
+	let docTitleElements = document.getElementsByClassName('doc-title');
+	console.log(docTitleElements);
+
+	Array.from(docTitleElements).forEach(docTitle => {
+		docTitle.style.color = "#000000";
+	});
 }

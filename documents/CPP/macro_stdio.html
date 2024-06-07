@@ -18,8 +18,6 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 
-		<!-- External JavaScript -->
-		<script src="../js/script.js"></script>
 	</head>
 
 	<body>
@@ -30,10 +28,10 @@
 
 				<!--  -->
 				<button type="button" class="button contents" onclick="location.href='#'">C</button>
-				<button type="button" class="button contents" onclick="location.href='#'">C++</button>
+				<button type="button" class="button contents" onclick="location.href='./index.html'">C++</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Python</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Swift</button>
-				<button type="button" class="button contents" onclick="location.href='#'">MATLAB</button>
+				<button type="button" class="button contents" onclick="location.href='../MATLAB/index.html'">MATLAB</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Com. Architecture</button>
 				<button type="button" class="button contents" onclick="location.href='#'">OS</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Computer Network</button>
@@ -49,7 +47,7 @@
 
 				<!-- Social Media -->
 				<div class="social-media">
-					<a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="https://youtube.com/@MutexLock" style="color: white;"><i class="fab fa-youtube"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
@@ -59,10 +57,10 @@
 
 			<!-- home heading -->
 			<div class="home-heading">
-				<p class="spacing"> 
-					<a href="#" style="color: white;"><i class="fas fa-home"></i></a>
-					<a href="#" style="color: white;"><i class="fas fa-chevron-up"></i></a>
-					<a href="#" style="color: white;"><i class="far fa-id-card"></i></a>
+				<p class="spacing">
+					<<a class="head-btn" style="color: white;"><i class="fas fa-home"></i></a>
+					<a id="scorll-up" class="head-btn" style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a class="head-btn" style="color: white;"><i class="far fa-id-card"></i></a>
 				</p>
 				<h1>Jinhwi Kim: Docs</h1>
 			</div>
@@ -93,17 +91,17 @@
 					</p>
 					<p class="eng-text">
 					Most C++ coders feel inconvenient to type the std::cout, std::cin and std::endl all and skip the part of std:: with using namespace std;. However, the longer codes the program has, the more this method should be unrecommended. It's because the isolated and independent namespaces can be conflicted together so that the program might not work as you have intended. Then, should you write whole words everywhen making programs?
-					<br><br>No, you can handle this issue with a very good means called Macro function. If using Macro functions, then you can make the codes shorter and resolve the namespaces-conflict issue. If you already know about the Macro function, then please read the section of 2. Application  and if not, please read the section of 1. Macro Function. 
+					<br><br>No, you can handle this issue with a very good means called Macro function. If using Macro functions, then you can make the codes shorter and resolve the namespaces-conflict issue. If you already know about the Macro function, then please read the section of 2. Application  and if not, please read the section of 1. Macro Function.
 					</p>
 
 					<p> <h3 class="kor-text"> 1. 매크로 함수 (Macro Function)</h3>
 						<h3 class="eng-text"> 1. Macro Function</h3></p>
-					<p class="kor-text">	
+					<p class="kor-text">
 						Macro 함수의 문법은 매우 쉽습니다. Macro와 관련된 모든 문법은 C/C++에서 <code id="code-word">#define A B</code>의 형식으로 사용하게 됩니다.
 						이 <code id="code-word">#define</code>의 의미를 한 단어로 생각하시면 됩니다. 바로 '대체한다'입니다.
 						여러분들이 Macro Constant 또는 Macro Function을 사용할 때에는 항상 'A를 B로 대체한다'의 의미를 갖고 가시면 절대 헷갈릴 일이 없습니다.
 					</p>
-					<p class="eng-text">	
+					<p class="eng-text">
 						A syntax for the macro function is very easy. In C/C++, all syntaxes for the macro has a format of <code id="code-word">#define A B</code>.
 						You must consider the meaning of <code id="code-word">#define</code>, which means 'replace'.
 						Whenever using macro constants or macro functions, you should keep it in mind 'to replace A into B'.
@@ -122,7 +120,7 @@ int main(){
 }</code></pre>
 					</p>
 
-					
+
 					<p> <h3 class="kor-text"> 2. 솔루션 (Soltuion)</h3>
 						<h3 class="eng-text"> 2. Application (Soltuion)</h3></p>
 					<p class="kor-text">
@@ -145,16 +143,19 @@ int main(){
 #define endl std::endl
 
 int main(){
-  cout &lt;&lt; "Hello, World" &lt;&lt; endl; 
+  cout &lt;&lt; "Hello, World" &lt;&lt; endl;
   return 0;
 }</code></pre>
 					</p>
 				</section>
 			</div>
-		
+
 		</div>
 
 		<!-- FOOTER -->
 		<div class="footer">© Copyright 2022 Jinhwi Kim | Designed by Jinhwi Kim </div>
 	</body>
+
+	<!-- External JavaScript -->
+	<script src="../js/script.js"></script>
 </html>

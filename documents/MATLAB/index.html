@@ -6,9 +6,11 @@
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--FIX HTTPS ERROR-->
 		<title>Jinhwi Kim</title>
 
+
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/lecture.css">
 		<link rel="stylesheet" href="../css/navigator.css">
+		<link rel="stylesheet" href="../css/doc-list.css">
 
 		<!-- For Icon -->
 		<script src="https://kit.fontawesome.com/35a4560683.js" crossorigin="anonymous"></script>
@@ -19,9 +21,9 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 
-		<!-- External JavaScript -->
-		<script src="../js/script.js"></script>
-		<script src="../js/navigator.js"></script>
+
+		<!--  -->
+
 	</head>
 
 	<body>
@@ -32,10 +34,10 @@
 
 				<!--  -->
 				<button type="button" class="button contents" onclick="location.href='#'">C</button>
-				<button type="button" class="button contents" onclick="location.href='#'">C++</button>
+				<button type="button" class="button contents" onclick="location.href='../CPP/index.html'">C++</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Python</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Swift</button>
-				<button type="button" class="button contents" onclick="location.href='../MATLAB/index.html'">MATLAB</button>
+				<button type="button" class="button contents" onclick="location.href='./index.html'">MATLAB</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Com. Architecture</button>
 				<button type="button" class="button contents" onclick="location.href='#'">OS</button>
 				<button type="button" class="button contents" onclick="location.href='#'">Computer Network</button>
@@ -51,7 +53,7 @@
 
 				<!-- Social Media -->
 				<div class="social-media">
-					<a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="https://youtube.com/@MutexLock" style="color: white;"><i class="fab fa-youtube"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
 					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
@@ -60,10 +62,10 @@
 
 			<!-- home heading -->
 			<div class="home-heading">
-				<p class="spacing"> 
-					<a href="#" style="color: white;"><i class="fas fa-home"></i></a>
-					<a href="#" style="color: white;"><i class="fas fa-chevron-up"></i></a>
-					<a href="#" style="color: white;"><i class="far fa-id-card"></i></a>
+				<p class="spacing">
+					<a class="head-btn" style="color: white;"><i class="fas fa-home"></i></a>
+					<a id="scorll-up" class="head-btn" style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a class="head-btn" style="color: white;"><i class="far fa-id-card"></i></a>
 				</p>
 				<h1>Jinhwi Kim: Docs</h1>
 			</div>
@@ -74,12 +76,13 @@
 					<button id="l-switch" onclick="switchLang()" class="lang-detail">한글</button>
 				</div>
 				<div>
-					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="icomoon-free:sun" id="mode-light"></span></button>
+					<button id="color-mode-change" onclick="switchColorMode4DocList()"><span class="iconify" data-icon="icomoon-free:sun" id="mode-light"></span></button>
 					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="bi:moon-stars" id="mode-dark"></span></button>
 					<i class="fa fa-brightness"></i>
 				</div>
 
 				<section id = "section1">
+					<!-- Page title -->
 					<h2 class="eng-text">
 						MATLAB Documents List
 					</h2>
@@ -87,28 +90,22 @@
 						MATLAB 문서 목록
 					</h2>
 
-<!-- 01 -->
-					<div class="kor-text doc-content" data-order="1"><span class="up-date">[01] 2022/06/17 ></span> 
-						<a href="ode_solver.html" class="doc-list">MATLAB으로 미분방정식풀기</a></div>
-					<div class="eng-text doc-content" data-order="1"><span class="up-date">[01] 2022/06/17 ></span> 
-						<a href="ode_solver.html" class="doc-list">Solve ODE (Ordinary Differential Equation) with MATLAB</a></div>
+					<!-- Documents List -->
+					<div id="document-list" class="document-list">
+	            <!-- JavaScript will populate this section -->
+	        </div>
+	        <div id="pagination" class="pagination">
+	            <!-- JavaScript will populate this section -->
+	        </div>
 <!-- 02 -->
-<!-- 
+<!--
 [Example]
-					<div class="kor-text doc-content" data-order="2"><span class="up-date">[02] 2022/06/17 ></span> 
+					<div class="kor-text doc-content" data-order="2"><span class="up-date">[02] 2022/06/17 ></span>
 						<a href="#" class="doc-list">Hello, World!</a></div>
-					<div class="eng-text doc-content" data-order="2"><span class="up-date">[02] 2022/06/17 ></span> 
+					<div class="eng-text doc-content" data-order="2"><span class="up-date">[02] 2022/06/17 ></span>
 						<a href="#" class="doc-list"></a></div>
 -->
 				</section>
-
-				<!-- Documents List-->
-				<div class="doc-navigator">
-					<button type="button" onclick="changeDocList(1)" class="navigator-clicked">1</button>
-				<!--
-					<button type="button" onclick="changeDocList(2)" class="navigator-unclicked">2</button>
-					<button type="button" onclick="changeDocList(3)" class="navigator-unclicked">3</button>
-				-->
 				</div>
 			</div>
 		</div>
@@ -116,4 +113,9 @@
 		<!-- FOOTER -->
 		<div class="footer">© Copyright 2022 Jinhwi Kim | Designed by Jinhwi Kim </div>
 	</body>
+
+	<!-- External JavaScript from my directory -->
+	<script src="../js/script.js"></script>
+	<script src="../js/navigator.js"></script>
+	<script src="../js/doc-list.js"></script>
 </html>
