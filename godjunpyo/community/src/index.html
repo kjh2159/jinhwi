@@ -82,7 +82,6 @@
             border-collapse: collapse;
             margin-top: 20px;
             margin-bottom: 20px;
-            table-layout: fixed;
             /*color*/
             color: #BBBBBB; /*bright grey*/
         }
@@ -99,13 +98,14 @@
             color: #CECA40; /*smooth yellow*/
         }
 
+        a {
+            color: #4d80ff;
+        }
+
         @media (max-width: 768px) {
             table, tbody, th, td, tr {
                 display: block;
                 width: 100%;
-            }
-            table {
-                table-layout: fixed;
             }
 
             thead {
@@ -122,7 +122,6 @@
                 position: relative;
                 padding-left: 50%;
                 box-sizing: border-box;
-                word-wrap: break-word;
                 background-color: #21252B;
             }
 
@@ -174,95 +173,280 @@
                 <tr>
                     <th>Command</th>
                     <th>Description</th>
+                    <th>Example</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="command" data-label="Command" data-en="/registration" data-ko="/첫회원등록">/registration</td>
                     <td data-label="Description" data-en="Auto registration system to Godjunpyo AI service server." data-ko="갓준표 AI 서비스 서버에 자동 등록">Auto registration system to Godjunpyo AI service server.</td>
+                    <td data-label="Example" data-en="/registration" data-ko="/첫회원등록">/registration</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/check_membership_expiration" data-ko="/결제마감일확인">/check_membership_expiration</td>
                     <td data-label="Description" data-en="TA Yoon will check the expected expiration date of your membership." data-ko="요청자의 예상 멤버십 만료 기한을 알려줍니다.">TA Yoon will check the expected expiration date of your membership.</td>
+                    <td data-label="Example" data-en="/check_membership_expiration" data-ko="/결제마감일확인">/check_membership_expiration</td>
+                </tr>
+
+                <!-- Ask -->
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask [question] (web_search)" data-ko="/질문 [question] (web_search)">/ask [question] (web_search)</td>
+                    <td data-label="Description" data-en="You can ask a question to TA Yoon. Optionally with a web search." data-ko="윤조교에게 질문할 수 있습니다. 선택적으로 웹검색 여부를 확인할 수 있습니다.">You can ask a question to TA Yoon. Optionally with a web search.</td>
+                    <td data-label="Example" data-en="/ask question: Please let me know what important topics are in classical mechanics." data-ko="/질문 question: 고전역학에서 중요한 주제를 알려주세요.">/ask question: Please let me know what important topics are in classical mechanics.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask [question] (web_search)" data-ko="/질문 [질문] (링크)">/ask [question] (web_search)</td>
-                    <td data-label="Description" data-en="You can ask a question to TA Yoon. Optionally with a website." data-ko="윤조교에게 질문할 수 있습니다. 선택적으로 URL 첨부가 가능합니다.">You can ask a question to TA Yoon. Optionally with a website.</td>
+                    <td class="command" data-label="Command" data-en="/ask_concept [question]" data-ko="/질문_개념 [question]">/ask_concept [question]</td>
+                    <td data-label="Description" data-en="You can ask a concept to TA Yoon." data-ko="윤조교에게 개념에 대해 질문할 수 있습니다.">You can ask a concept to TA Yoon.</td>
+                    <td data-label="Example" data-en="/ask_concept question: What is the concept of Mohr's circle in mechanical engineering?" data-ko="/질문_개념 question: 기계공학에서 모어원의 개념이 무엇인가요?.">/ask_concept question: What is the concept of Mohr's circle in mechanical engineering?</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/ask_followup [question]" data-ko="/질문_이어서 [질문]">/ask_followup [question]</td>
+                    <td class="command" data-label="Command" data-en="/ask_followup [question]" data-ko="/질문_이어서 [question]">/ask_followup [question]</td>
                     <td data-label="Description" data-en="You can ask a followup question to TA Yoon considering the previous Q&A." data-ko="이전의 문답을 고려하면서 윤조교에게 연이은 질문을 할 수 있습니다.">You can ask a followup question to TA Yoon considering the previous Q&A.</td>
-                </tr>
-                <tr>
-                    <td class="command" data-label="Command" data-en="/ask_concept [question]" data-ko="/질문_개념 [질문]">/ask_concept [question]</td>
-                    <td data-label="Description" data-en="TA Yoon will describe the concept of the question with a conversation style." data-ko="윤조교님이 대화체형식으로 질문에 대한 개념을 설명해주십니다.">TA Yoon will describe the concept of the question with a conversation style.</td>
+                    <td data-label="Example" data-en="/ask_followup question: Then, are the wave equations also important?" data-ko="/질문_이어서 question: 그렇다면, 파동방정식 또한 중요하겠네요?">/ask_followup question: Then, are the wave equations also important?</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/ask_with_image [question]" data-ko="/질문_사진 [질문]">/ask_with_image [question]</td>
-                    <td data-label="Description" data-en="You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon. Supported file extension types are .jpg, .jpeg, .png, .gif, .webp, .bmp." data-ko="먼저 이미지 파일을 업로드하셔야 합니다. 윤조교님이 💾로 저장 여부를 알려줍니다. 이후, 윤조교에게 이미지와 관련된 질문을 할 수 있습니다. 이미지는 .jpg, .jpeg, .png, .gif, .webp, .bmp 확장자가 지원됩니다.">You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon. Supported file extension types are .jpg, .jpeg, .png, .gif, .webp, .bmp.</td>
+                    <td data-label="Description" data-en="You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon." data-ko="먼저 이미지 파일을 업로드하셔야 합니다. 윤조교님이 💾로 저장 여부를 알려줍니다. 이후, 윤조교에게 이미지와 관련된 질문을 할 수 있습니다.">You must upload your image file and TA Yoon will let you know storing a file with a 💾. Then, you can ask a question about the image to TA Yoon.</td>
+                    <td data-label="Example" data-en="(With an img uploaded)<br>/ask_with_image question: Please let me know how this code works. I want to know the flow in detailed." data-ko="(사진 업로드 상태에서)<br>/질문_사진 질문: 이 코드의 동작을 알려주세요. 코드의 흐름을 자세히 알고싶어요.">(With an img uploaded)<br>/ask_with_image question: Please let me know how this code works. I want to know the flow in detailed.</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/ask_with_document [question]" data-ko="/질문_문서 [질문]">/ask_with_document [question]</td>
-                    <td data-label="Description" data-en="Document version of /ask_with_image command. Supported file extension types are .pdf, .docx, and .txt." data-ko="/질문_사진 명령어의 문서 버전. 문서는 .pdf, .docx, .txt 확장자가 지원됩니다.">Document version of /ask_with_image command. Supported file extension types are .pdf, .docx, and .txt.</td>
+                    <td data-label="Description" data-en="Document version of /ask_with_image command." data-ko="/질문_사진 명령어의 문서 버전">Document version of /ask_with_image command.</td>
+                    <td data-label="Example" data-en="(With a doc uploaded)<br>/ask_with_document question: From the document, which one of the people does have the biggest value?" data-ko="(문서 업로드 상태에서)<br>/질문_문서 질문: 주어진 문서에서 어떤 사람이 가장 큰 값을 가지고 있나요?">(With a doc uploaded)<br>/ask_with_document question: From the document, which one of the people does have the biggest value?</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/search_paper [request] (priority)" data-ko="/검색_논문 [질문] (우선순위)">/search_paper [request] (priority)</td>
-                    <td data-label="Description" data-en="TA Yoon will search papers related to the given request. The option priority includes 'Latest' or 'Relevance'." data-ko="윤조교님이 주어진 질문에 관련된 논문들을 찾아줍니다. 우선순위는 최신순 혹은 연관성을 선택이 가능합니다.">TA Yoon will search papers related to the given request. The option priority includes 'Latest' or 'Relevance'.</td>
+                    <td class="command" data-label="Command" data-en="/ask_with_url [question] [url]" data-ko="/질문_웹주소 [질문] [웹주소]">/ask_with_url [question] [url]</td>
+                    <td data-label="Description" data-en="You can ask a question about a website from the given url." data-ko="/질문_웹주소 [질문] [웹주소]">You can ask a question about a website from the given url.</td>
+                    <td data-label="Example" data-en="/ask_with_url question: What are the website saying about? url: https://shorturl.at/UgT2X" data-ko="(문서 업로드 상태에서)<br>/질문_웹주소 질문: 웹사이트는 무엇에 대해 설명하고 있나요? 웹주소: https://shorturl.at/UgT2X">/ask_with_url question: What are the website saying about? url: https://shorturl.at/UgT2X</td>
                 </tr>
+                <!-- Search -->
                 <tr>
                     <td class="command" data-label="Command" data-en="/search_lab [question]" data-ko="/검색_연구실 [질문]">/search_lab [question]</td>
-                    <td data-label="Description" data-en="TA Yoon will answer a question about given laboratory." data-ko="윤조교님이 주어진 연구실에 대한 질문에 답합니다.">TA Yoon will answer a question about given laboratory.</td>
+                    <td data-label="Description" data-en="TA Yoon will search laboratories about your question and show them to users." data-ko="윤조교님이 주어진 질문과 관련된 연구실을 검색하여 보여줍니다.">TA Yoon will search laboratories about your question and show them to users.</td>
+                    <td data-label="Example" data-en="/search_lab question: Please let me know laboratories researching data-mining in the US." data-ko="/검색_연구실 질문: 한국에서 데이터 마이닝을 연구하는 연구실을 알려주세요.">/search_lab question: Please let me know laboratories researching data-mining in the US.</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/search_researcher [question] [english_name]" data-ko="/검색_연구자 [질문] [영문성함]">/search_researcher [question] [english_name]</td>
-                    <td data-label="Description" data-en="TA Yoon will answer questions about the given researcher." data-ko="윤조교님이 주어진 연구자에 대한 질문에 답합니다.">TA Yoon will answer questions about the given researcher.</td>
+                    <td data-label="Description" data-en="TA Yoon will answer questions about the given researcher." data-ko="윤조교님이 입력된 연구자에 대한 질문에 답합니다.">TA Yoon will answer questions about the given researcher.</td>
+                    <td data-label="Example" data-en="/search_researcher question: Please let me know about professor Debdeep Jena belonging to Electrical and Computer Engineering department in Cornell University. english_name: Debdeep Jena" data-ko="/검색_연구자 질문: 코넬 대학교의 전기공학과의 Debdeep Jena 교수님에 대해 알려주세요 영문성함: Debdeep Jena">/search_researcher question: Please let me know about professor Debdeep Jena belonging to Electrical and Computer Engineering department in Cornell University. english_name: Debdeep Jena</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/search_news [request]" data-ko="/검색_뉴스 [요청]">/search_news [request]</td>
-                    <td data-label="Description" data-en="TA Yoon will search for news relevant to the given request." data-ko="윤조교님이 요청과 연관된 뉴스를 검색합니다.">TA Yoon will search for news relevant to the given request.</td>
+                    <td class="command" data-label="Command" data-en="/search_paper [request] (priority)" data-ko="/검색_논문 [request] (priority)">/search_paper [request] (priority)</td>
+                    <td data-label="Description" data-en="TA Yoon will find out papers related to the given request. Optionally able to set a priority with one of relevance or latest." data-ko="윤조교님이 주어진 요청에 연관된 논문들을 찾아줍니다. 선택적으로 관련순 또는 최신순 중에 우선순위를 택할 수 있습니다.">TA Yoon will find out papers related to the given request. Optionally able to set a priority with one of relevance or latest.</td>
+                    <td data-label="Example" data-en="/search_paper request: Please let me know papers about autonomous driving system and deep learning DNN. piority: Latest" data-ko="/검색_논문 request: 자율주행 시스템과 딥러닝 DNN과 관련된 논문을 알려주세요. priority: 최신순">/search_paper request: Please let me know papers about autonomous driving system and deep learning DNN. piority: Latest</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/search_english_video [sentence]" data-ko="/검색_영어영상 [문장]">/search_english_video [sentence]</td>
-                    <td data-label="Description" data-en="TA Yoon will search a short English video, which speaks the entered sentence." data-ko="윤조교님이 입력된 문장을 말하는 짧은 영어 영상을 찾습니다.">TA Yoon will search a short English video, which speaks the entered sentence.</td>
+                    <td class="command" data-label="Command" data-en="/search_news [request]" data-ko="/검색_뉴스 [request]">/search_news [request]</td>
+                    <td data-label="Description" data-en="TA Yoon will find out news articles related to the given request." data-ko="윤조교님이 주어진 요청에 연관된 기사들을 찾아줍니다.">TA Yoon will find out news articles related to the given request.</td>
+                    <td data-label="Example" data-en="/search_news request: Please let me know articles about iOS 18." data-ko="/검색_뉴스 request: iOS 18과 연관된 뉴스 기사를 알려주세요.">/search_news request: Please let me know articles about iOS 18.</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/generate_text_to_speech [request] (accent)" data-ko="/영어발음 [영어텍스트] (발음선택)">/generate_text_to_speech [request] (accent)</td>
-                    <td data-label="Description" data-en="TA Yoon will pronounce the input texts as following American, British, or Australian accent optionally." data-ko="윤조교님이 입력한 영어 텍스트를 발음하여 알려주십니다. 선택사항으로 미국, 영국, 호주 발음을 선택할 수 있습니다.">TA Yoon will pronounce the input texts as following American, British, or Australian accent optionally.</td>
+                    <td class="command" data-label="Command" data-en="/search_youtube_godjunpyo [keyword]" data-ko="/검색_갓준표_유튜브 [키워드]">/search_youtube_godjunpyo [keyword]</td>
+                    <td data-label="Description" data-en="TA Yoon will find out YouTube videos related to the keywords from Godjunpyo YouTube Channel." data-ko="윤조교님이 주어진 요청에 연관된 기사들을 찾아줍니다.">TA Yoon will find out news articles related to the given request.</td>
+                    <td data-label="Example" data-en="/search_youtube_godjunpyo keyword: Mohr's Circle" data-ko="/검색_갓준표_유튜브 키워드: 모어원">/search_youtube_godjunpyo keyword: Mohr's Circle</td>
+                </tr>
+
+                <!--English-->
+                <tr>
+                    <td class="command" data-label="Command" data-en="/search_english_video [english_sentence]" data-ko="/검색_영어영상 [영어문장]">/search_english_video [english_sentence]</td>
+                    <td data-label="Description" data-en="TA Yoon will find out a video to speak the given english sentence or similar one." data-ko="윤조교님이 주어진 영어문장 또는 비슷한 문장을 말하는 영어영상을 찾아줍니다.">TA Yoon will find out a video to speak the given english sentence or similar one.</td>
+                    <td data-label="Example" data-en="/search_english_video english_sentence: This is harassment" data-ko="/검색_영어영상 영어문장: This is harassment">/search_english_video english_sentence: This is harassment</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_text_to_speech [english_text] (accent)" data-ko="/영어발음 [영어텍스트] (발음선택)">/generate_text_to_speech [english_text] (accent)</td>
+                    <td data-label="Description" data-en="TA Yoon will generate the pronunciation of the given English text. Optionally able to set the pronunciation accent with one of American, British, and Australian." data-ko="윤조교님이 주어진 영어 텍스트의 발음을 생성합니다. 선택적으로 미국발음, 영국발음, 호주발음 중에 발음을 선택할 수 있습니다.">TA Yoon will generate the pronunciation of the given English text. Optionally able to set the pronunciation accent with one of American, British, and Australian.</td>
+                    <td data-label="Example" data-en="/generate_text_to_speech english_text: deduce the annals from 1620 accent: American" data-ko="/영어발음 영어텍스트: deduce the annals from 1620 발음선택: 미국발음">/generate_text_to_speech english_text: deduce the annals from 1620 accent: American</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/generate_listening_script [request] (accent)" data-ko="/영어리스닝 [요청] (발음선택)">/generate_listening_script [request] (accent)</td>
-                    <td data-label="Description" data-en="TA Yoon will generate a listening script considering the request as following American, British, or Australian accent optionally." data-ko="윤조교님이 요청에 대한 리스닝 스크립트를 생성합니다. 선택사항으로 미국, 영국, 호주 발음을 선택할 수 있습니다.">TA Yoon will generate a listening script considering the request as following American, British, or Australian accent optionally.</td>
+                    <td data-label="Description" data-en="TA Yoon will generate the listening script related to the given request. Optionally able to set the pronunciation accent with one of American, British, and Australian." data-ko="윤조교님이 주어진 요청에 대한 또는 관련된 리스닝 대본을 생성합니다. 선택적으로 미국발음, 영국발음, 호주발음 중에 발음을 선택할 수 있습니다.">TA Yoon will generate the listening script related to the given request. Optionally able to set the pronunciation accent with one of American, British, and Australian.</td>
+                    <td data-label="Example" data-en="/generate_listening_script request: Possible listening script on the TOEFL listening section. It is related to the topic of geology and is 3 minutes long. accent: Australian" data-ko="/영어리스닝 요청: 토플 리스닝 영역에서 나올법한 리스닝 대본을 만들어주세요. 주제는 지리학이고 3분 정도의 길이로요. 발음선택: 미국발음">/generate_listening_script request: Possible listening script on the TOEFL listening section. It is related to the topic of geology and is 3 minutes long. accent: Australian</td>
+                </tr>
+
+                <!-- record -->
+                <tr>
+                    <td class="command" data-label="Command" data-en="/record_study [study_content] (study_hours) (study_minutes) (feedback) (achievement_rate)" data-ko="/기록_공부 [공부_내용] (공부_시간) (공부_분) (피드백) (달성률)">/record_study [study_content] (study_hours) (study_minutes) (feedback) (achievement_rate)</td>
+                    <td data-label="Description" data-en="Record study content at the recording spread sheet. Optionally able to write study hours, study minutes, feedback, and achievement rate." data-ko="기록 전용 스프레드시트에 공부내용을 기록합니다. 선택적으로 공부 시간, 공부 분, 피드백, 달성률을 기록할 수 있습니다.">Record study content at the recording spread sheet. Optionally able to write study hours, study minutes, feedback, and achievement rate.</td>
+                    <td data-label="Example" data-en="/record_study study_content: Multiplication of matrices in Linear Algebra study_hours: 1 feedback: Computation was slightly complicated, but I've totally understood it. achievement_rate: 90" data-ko="/기록_공부 공부_내용: 선형대수학 - 행렬곱셈 공부_시간: 1 피드백: 계산이 조금 복잡했지만, 완전히 이해했다. 달성률: 90">/record_study study_content: Multiplication of matrices in Linear Algebra study_hours: 1 feedback: Computation was slightly complicated, but I've totally understood it. achievement_rate: 90</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/generate_image [request] (aspect_rate)" data-ko="/이미지생성 [요청] (종횡비)">/generate_image [request] (aspect_rate)</td>
+                    <td class="command" data-label="Command" data-en="/record_study_alarm [study_content] (study_hours) (study_minutes)" data-ko="/기록_공부알람 [공부_내용] (공부_시간) (공부_분)">/record_study_alarm [study_content] (study_hours) (study_minutes)</td>
+                    <td data-label="Description" data-en="TA Yoon will alert the study completion to you after the set time. Optionally able to set study hours, and study minutes, but at least one should be filled." data-ko="윤조교님이 설정 시간 이후에 공뷰 완료 알림을 보내줍니다. 선택적으로 공부 시간, 공부 분을 설정할 수 있으나 최소한 한 개는 입력되어야 합니다..">TA Yoon will alert the study completion to you after the set time.  Optionally able to set study hours, and study minutes, but at least one should be filled.</td>
+                    <td data-label="Example" data-en="/record_study_alarm study_content: PDE of 2-dimensional circular membrane in Engineering Mathematics study_hours: 1 study_minutes: 30" data-ko="/기록_공부알람 공부_내용: 공업수학 - 2차원 원형막의 PDE 공부_시간: 1 공부_분: 30">/record_study_alarm study_content: PDE of 2-dimensional circular membrane in Engineering Mathematics study_hours: 1 study_minutes: 30</td>
+                </tr>
+
+                <!-- image -->
+                <tr>
+                    <td class="command" data-label="Command" data-en="/generate_image [request] (aspect_ratio)" data-ko="/이미지생성 [요청] (종횡비)">/generate_image [request] (aspect_ratio)</td>
                     <td data-label="Description" data-en="TA Yoon will make an image related to your request with the given aspect rate." data-ko="윤조교님이 요청과 연관된 이미지를 종횡비에 맞추어 생성합니다.">TA Yoon will make an image related to your request with the given aspect rate.</td>
+                    <td data-label="Example" data-en="/generate_image request: internship aspect_ratio: Landscape" data-ko="/이미지생성 요청: 인턴십 종횡비: 가로형">/generate_image request: internship aspect_ratio: Landscape</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/generate_img_to_img [request] (aspect_rate)" data-ko="/이미지로이미지생성 [요청] (종횡비)">/generate_img_to_img [request] (aspect_rate)</td>
+                    <td class="command" data-label="Command" data-en="/generate_img_to_img [request] (aspect_ratio)" data-ko="/이미지로이미지생성 [요청] (종횡비)">/generate_img_to_img [request] (aspect_ratio)</td>
                     <td data-label="Description" data-en="TA Yoon will make an image of the given aspect rate by referring to the previously uploaded image." data-ko="윤조교님이 앞서 업로드된 이미지를 참고해 종횡비에 맞추어 이미지를 생성합니다.">TA Yoon will make an image of the given aspect rate by referring to the previously uploaded image.</td>
-                </tr>
-                <tr>
-                    <td class="command" data-label="Command" data-en="/record_study [study_content] (study_hour) (study_minutes) (feedback) (achievement_rate)" data-ko="/기록_공부 [공부_내용] (공부_시간) (공부_분) (피드백) (달성률)">/record_study [study_content] (study_hour) (study_minutes) (feedback) (achievement_rate)</td>
-                    <td data-label="Description" data-en="Your study will be recorded in the Godjunpyo x AI-Study sheet. The options 'study_hour', 'study_minutes', and 'achievement_rate' allow only integer numbers." data-ko="갓준표xAI공부인증 시트에 공부 내용을 기록합니다. '공부 시간', 공부 분', '달성률'은 정수값만 허용합니다.">Your study will be recorded in the Godjunpyo x AI-Study sheet. The options 'study_hour', 'study_minutes', and 'achievement_rate' allow only integer numbers.</td>
-                </tr>
-                <tr>
-                    <td class="command" data-label="Command" data-en="/record_study_alarm [study_content] (study_hour) (study_minutes)" data-ko="/기록_공부알람 [공부_내용] (공부_시간) (공부_분)">/record_study_alarm [study_content] (study_hour) (study_minutes)</td>
-                    <td data-label="Description" data-en="Set a timer, alert the end of study session after the time, and record the studying content. You should allow DM from anyone in the server. The options 'study_hour' and 'study_minutes' allow only integer numbers." data-ko="지정된 시간이 지난 후에 공부 종료 알림을 주고, 공부 내용을 기록합니다. DM이 허용되어 있어야 합니다. 선택 사항들은 정수값만 허용합니다.">Set a timer, alert the end of study session after the time, and record the studying content. You should allow DM from anyone in the server. The options 'study_hour' and 'study_minutes' allow only integer numbers.</td>
+                    <td data-label="Example" data-en="(With an img uploaded)<br>/generate_img_to_img request: students having a discussion are sitting like the given image aspect_ratio: Portrait" data-ko="(사진 업로드 상태에서)<br>/이미지로이미지생성 요청: 주어진 사진처럼 앉아 토론을 하고 있는 학생들 종횡비: 정사각형">(With an img uploaded)<br>/generate_img_to_img request: students having a discussion are sitting like the given image aspect_ratio: Portrait</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/change_nickname" data-ko="/사용자명변경">/change_nickname</td>
                     <td data-label="Description" data-en="Change the nickname saved in the server with the membership code into the current nickname." data-ko="서버에 회원번호로 등록된 닉네임을 현재 닉네임으로 변경합니다.">Change the nickname saved in the server with the membership code into the current nickname.</td>
+                    <td data-label="Example" data-en="/change_nickname" data-ko="/사용자명변경">/change_nickname</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/help" data-ko="/도움말">/help</td>
-                    <td data-label="Description" data-en="You can find this page with this command. (same with /help)" data-ko="갓준표 AI 서비스에서 지원하는 명령어 목록인 이 페이지의 주소를 확인할 수 있습니다.">You can find this page with this command. (same with /help)</td>
+                    <td data-label="Description" data-en="You can find this page with this command." data-ko="갓준표 AI 서비스에서 지원하는 명령어 목록인 이 페이지의 주소를 확인할 수 있습니다.">You can find this page with this command.</td>
+                    <td data-label="Example" data-en="/help" data-ko="/도움말">/help</td>
                 </tr>
-
             </tbody>
         </table>
 
 
-        <!-- Music Player  -->
+
+        <!-- ASSISTANT  -->
+        <img src="../img/nerd.png" alt="../img/nerd.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/make_private_thread [thread_name]" data-ko="/make_private_thread [thread_name]">/make_private_thread [thread_name]</td>
+                    <td data-label="Description" data-en="Make a private thread for Godjunpyo AI yearly member." data-ko="비공개 스레드 만드는 기능입니다. 갓준표 AI 연간 회원 전용의 기능입니다.">Make a private thread for Godjunpyo AI yearly member.</td>
+                    <td data-label="Example" data-en="/make_private_thread thread_name: this is private" data-ko="/make_private_thread thread_name: 비공개 스레드">/make_private_thread thread_name: this is private</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/help_newbie" data-ko="/help_newbie">/help_newbie</td>
+                    <td data-label="Description" data-en="Show users a helpful document for a discord newbie." data-ko="사용자에게 디스코드 첫 사용자를 위한 유용한 설명서를 보여줍니다.">Show users a helpful document for a discord newbie.</td>
+                    <td data-label="Example" data-en="/help_newbie" data-ko="/help_newbie">/help_newbie</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- Tatsu -->
+        <img src="../img/tatsu.png" alt="../img/tatsu.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command" data-label="Command" data-en="t! top (page_num)" data-ko="t! top (페이지)">t! top (page_num)</td>
+                    <td data-label="Description" data-en="Show the ranking, which is corresponding to the page number, of the Godjunpyo AI server. At most 10 users could be shown per page. The default value is 1." data-ko="갓준표 AI 서버에서 페이지에 상응하는 서버 사용 순위를 보여줍니다. 페이지당 최대 10명의 사용자가 보여줄 수 있습니다. 기본값은 1입니다.">Show the ranking, which is corresponding to the page number, of the Godjunpyo AI server. At most 10 users could be shown per page. The default value is 1.</td>
+                    <td data-label="Example" data-en="t! top 1" data-ko="t! top 1">t! top 1</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="t! profile (user)" data-ko="t! profile (사용자)">t! profile (user)</td>
+                    <td data-label="Description" data-en="Show a global profile of the user. Tatsu bot is a global-wide bot. So this profile does not reflect the only Godjunpyo AI discord server. User should be a mentioned form (@) or universal id (unique one). The default value is the user himself." data-ko="사용자의 글로벌 프로필을 보여줍니다. Tatsu 봇은 글로벌 규모의 봇입니다. 그래서 이 프로필은 갓준표 AI 디스코드 서버만을 반영하지 않습니다. User는 언급 형태(@) 또는 개인 ID가 되어야 합니다. 기본값은 사용자 본인입니다.">Show a global profile of the user. Tatsu bot is a global-wide bot. So this profile does not reflect the only Godjunpyo AI discord server. User should be a mentioned form (@) or universal id (unique one). The default value is the user himself.</td>
+                    <td data-label="Example" data-en="t! profile mutexlock_" data-ko="t! profile @MutexLock-G1752">t! profile mutexlock_</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="t! rank (user)" data-ko="t! rank (사용자)">t! rank (user)</td>
+                    <td data-label="Description" data-en="Show a server scale profile of the user. User should be a mentioned form or universal id (unique one). The default value is the user himself." data-ko="사용자의 서버 단위 프로필을 보여줍니다. User는 언급 형태(@) 또는 개인 ID가 되어야 합니다. 기본값은 사용자 본인입니다.">Show a server scale profile of the user. User should be a mentioned form or universal id (unique one). The default value is the user himself.</td>
+                    <td data-label="Example" data-en="t! profile @MutexLock-G1752" data-ko="t! profile mutexlock_">t! profile @MutexLock-G1752</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="t! wallet (user)" data-ko="t! wallet (사용자)">t! wallet (user)</td>
+                    <td data-label="Description" data-en="Display wallet of the user, for tatsu bot, including credits, tokens, and server points. These kinds of currency would be utilized to buy a badge later. The default value is the user himself." data-ko="Tatsu 봇에 사용되는 지갑의 내용을 보여줍니다. 지갑의 정보는 크레딧, 토큰, 서버 포인트 등이 포함되며 이와 같은 재화는 추후 뱃지 같은 상품 구매에 활용될 수 있습니다. 기본값은 사용자 본인입니다.">Display wallet, for tatsu bot, including credits, tokens, and server points. These kinds of currency would be utilized to buy a badge later. The default value is the user himself.</td>
+                    <td data-label="Example" data-en="t! wallet" data-ko="t! wallet">t! wallet</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="t! reputation [user]" data-ko="t! reputation [사용자]">t! reputation [user]</td>
+                    <td data-label="Description" data-en="Vote up the reputation of the user. If you are given help from another person, we recommend giving a reputation to that one. User should be provided and cannot be himself. You can give a reputation to a person every 12 hours. To use this command, you must login to the dashboard of <a href=&quot https://tatsu.gg/ &quot>this site</a> at least once." data-ko="다른 유저의 명성치를 올릴 수 있습니다. 다른 사람으로부터 도움을 받았다면, 그 사람에게 명성치 올리는 것을 추천드립니다. 사용자는 반드시 입력되어야 하며 본인이 될 수 없습니다. 매 12시간마다 다른 사람의 명성치를 한 번 올릴 수 있습니다. 이 명령어를 사용하기 위해선 <a href=&quot https://tatsu.gg/ &quot>타츠 봇 웹사이트</a>의 대시보드에 한 번 이상 로그인해야 합니다.">Vote up the reputation of the user. If you are given help from another person, we recommend giving a reputation to that one. User should be provided and cannot be himself. You can give a reputation to a person every 12 hours. To use this command, you must login to the dashboard of <a href="https://tatsu.gg/">this site</a> at least once.</td>
+                    <td data-label="Example" data-en="t! reputation mutexlock_" data-ko="t! reputation mutexlock_">t! reputation mutexlock_</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- Texit  -->
+        <img src="../img/texit_c.png" alt="../img/texit_c.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
+
+
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command lined" data-label="Command" data-en="```tex<br>[code]<br>```" data-ko="```tex<br>[코드]<br>```">```tex<br>[code]<br>```</td>
+                    <td data-label="Description" data-en="Compile the given LaTex code and give a user a LaTex image." data-ko="주어진 LaTex 코드를 컴파일하고 사용자에게 LaTex 이미지를 제공합니다.">Compile the given LaTex code and give a user a LaTex image.</td>
+                    <td class="lined" data-label="Example" data-en="```tex<br>\begin{align*}<br>\lim_{x\to\infty} \frac{x^2}{(x+1)^2} \\<br>\lim_{x\to0} = \frac{\sin(x)}{x} \\<br>\end{align*}<br>```" data-ko="```tex<br>\begin{align*}<br>\lim_{x\to\infty} \frac{x^2}{(x+1)^2} \\<br>\lim_{x\to0} = \frac{\sin(x)}{x} \\<br>\end{align*}<br>```">```tex<br>\begin{align*}<br>\lim_{x\to\infty} \frac{x^2}{(x+1)^2} \\<br>\lim_{x\to0} = \frac{\sin(x)}{x} \\<br>\end{align*}<br>```</td>
+                </tr>
+                <tr>
+                    <td class="command lined" data-label="Command" data-en=",tex<br>```latex<br>[code]<br>```" data-ko=",tex<br>```latex<br>[코드]<br>```">,tex<br>```latex<br>[code]<br>```</td>
+                    <td data-label="Description" data-en="Compile the given LaTex code and give a user a LaTex image. This command basically has same functionality with the previous one. Aliases for <b style=&quot color: #20d223;&quot>,tex</b> are <b style=&quot color: #20d223;&quot>,,</b>, <b style=&quot color: #20d223;&quot>,align</b>, <b style=&quot color: #20d223;&quot>,texsp</b>, <b style=&quot color: #20d223;&quot>,texw</b>, and <b style=&quot color: #20d223;&quot>,tikz</b>" data-ko="주어진 LaTex 코드를 컴파일하고 사용자에게 LaTex 이미지를 제공합니다. 이 명령어는 본질적으로 이전 명령어와 같습니다. 이와 동일한 기능의 이명 명령어는 <b style=&quot color: #20d223;&quot>,,</b>, <b style=&quot color: #20d223;&quot>,align</b>, <b style=&quot color: #20d223;&quot>,texsp</b>, <b style=&quot color: #20d223;&quot>,texw</b>, <b style=&quot color: #20d223;&quot>,tikz</b>가 있습니다.">Compile the given LaTex code and give a user a LaTex image. This command basically has same functionality with the previous one. Aliases for <b style="color: #20d223;">,tex</b> are <b style="color: #20d223;">,,</b>, <b style="color: #20d223;">,align</b>, <b style="color: #20d223;">,texsp</b>, <b style="color: #20d223;">,texw</b>, and <b style="color: #20d223;">,tikz</b> </td>
+                    <td class="lined" data-label="Example" data-en=",tex<br>```latex<br>\begin{align*}<br>\sum_{n=1}^{\infty} a_{n} = 1 \\<br>\oint_{C}^{} \vec{\nabla}\cdot \vec{F}dt<br>\end{align*}<br>```" data-ko=",tex<br>```latex<br>\begin{align*}<br>\sum_{n=1}^{\infty} a_{n} = 1 \\<br>\oint_{C}^{} \vec{\nabla}\cdot \vec{F}dt<br>\end{align*}<br>```">,tex<br>```latex<br>\begin{align*}<br>\sum_{n=1}^{\infty} a_{n} = 1 \\<br>\oint_{C}^{} \vec{\nabla}\cdot \vec{F}dt<br>\end{align*}<br>```</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="$$[code]$$" data-ko="$$[code]$$">$$[code]$$</td>
+                    <td data-label="Description" data-en="Compile the given LaTex equation code and give a user a LaTex equation image. The LaTex equation code is not identical to the LaTex code mentioned for the command (tex)." data-ko="주어진 LaTex 수식 코드를 컴파일하고 사용자에게 LaTex 수식 이미지를 제공합니다. LaTex 수식 코드는 tex 명령어에서 언급한 LaTex 코드와 다릅니다.">Compile the given LaTex equation code and give a user a LaTex equation image. The LaTex equation code is not identical to the LaTex code mentioned for the command (tex).</td>
+                    <td class="lined"data-label="Example" data-en="```$$ \lim_{x \to 0} x^{2} $$```" data-ko="$$ \lim_{x \to 0} x^{2} $$">```latex<br>\begin{align*}<br>\sum_{n=1}^{\infty} a_{n} = 1 \\<br>\oint_{C}^{} \vec{\nabla}\cdot \vec{F}dt<br>\end{align*}<br>```</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en=",w [equation]" data-ko=",w [수식]">,w [equation]</td>
+                    <td data-label="Description" data-en="Use Wolfram Alpha computational engine. Too heavy computation could cause computational timeout." data-ko="울프램알파 계산 엔진을 사용합니다. 너무 복잡한 수식은 타임아웃(요청시간 초과)을 일으킬 수 있습니다.">Query Wolfram Alpha computational engine. Too heavy computation could cause computational timeout. See also <a href="//www.wolframalpha.com/examples">example pages</a> for more examples.</td>
+                    <td data-label="Example" data-en=",w integral from 0 to 2*pi of exp(-x/pi)" data-ko=",w integral from 0 to 2*pi of exp(-x/pi)">,w integral from 0 to 2*pi of exp(-x/pi)</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/help" data-ko="/help">/help</td>
+                    <td data-label="Description" data-en="Show users a compiler-bot document." data-ko="사용자에게 compiler 봇 사용 설명서를 보여줍니다.">Show users a compiler-bot document.</td>
+                    <td data-label="Example" data-en="/help" data-ko="/help_newbie">/help</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <!-- Compiler  -->
+        <img src="../img/compiler.png" alt="../img/compiler.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
+
+
+        <!-- Command Table -->
+        <table id="commands-table">
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="command lined" data-label="Command" data-en=";compile [lang]<br>```(lang_type)<br>[code]<br>```" data-ko=";compile [언어] <br>```(언어타입) <br>[코드]<br>```">;compile [lang] <br>```(lang_type)<br>[code]<br>```</td>
+                    <td data-label="Description" data-en="Compile and run the given code by the rule of the set language type. lang_type (such as py, cpp, and sh) and lang (such as python, c++, and rust, and including lang_type) are different." data-ko="설정된 언어에 따라 주어진 코드를 컴파일하고 실행합니다. lang_type(py, cpp, 그리고 sh와 비슷한 형식) 그리고 lang(python, c++, 그리고 rust 등과 비슷한 형식, 또한 lang_type을 포함)은 서로 다릅니다.">Compile and run the given code by the rule of the set language type. lang_type (such as py, cpp, and shell) and lang (such as python, c++, and rust, and including lang_type) are different.</td>
+                    <td data-label="Example lined" data-en=";compile python <br>```py<br>print('hello, world!')<br>```" data-ko=";compile python <br>```py<br>print('hello, world!')<br>```">;compile python <br>```py<br>print('hello, world!')<br>```</td>
+                </tr>
+                <tr>
+                    <td class="command lined" data-label="Command" data-en=";compilers [lang]" data-ko=";compilers [언어]">;compilers [lang]</td>
+                    <td data-label="Description" data-en="It shows users available compilers for the given language. Default compiler would be used if users don't specify any detailed compilers." data-ko="주어진 언어에 대한 사용가능한 컴파일러 목록들을 보여줍니다. 세부 컴파일러 적용을 위해 찾아볼 수 있습니다. 구체적인 컴파일러를 명시하지 않으면 기본값으로 설정된 컴파일러가 사용됩니다.">It shows users available compilers for the given language. Users can use this command to apply a specific compiler. Default compiler would be used if users don't specify any detailed compilers.</td>
+                    <td data-label="Example lined" data-en=";compilers python" data-ko=";compilers python">;compilers python</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en=";help (command)" data-ko=";help (명령어)">;help (command)</td>
+                    <td data-label="Description" data-en="Show users a compiler-bot document." data-ko="사용자에게 compiler 봇 사용 설명서를 보여줍니다.">Show users a compiler-bot document.</td>
+                    <td data-label="Example" data-en=";help compile" data-ko=";help compile">;help compile</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <!-- Fred Boat  -->
         <img src="../img/music_c.png" alt="../img/msusic_c.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
 
 
@@ -272,72 +456,89 @@
                 <tr>
                     <th>Command</th>
                     <th>Description</th>
+                    <th>Example</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="command" data-label="Command" data-en="/search deezer [query] (priority)" data-ko="/search deezer [query] (priority)">/search deezer [query] (priority)</td>
                     <td data-label="Description" data-en="Search for tracks on Deezer music with priority. Playing YouTube link is prohibitted by a policy of global Discord." data-ko="Deezer 뮤직에서 음악 트랙을 검색하고 플레이 합니다. 가수와 노래 제목을 같이 적어 검색을 추천합니다. K-POP 노래가 검색되지 않는다면 해당 노래의 영문명으로 검색해보길 바랍니다.유튜브 링크 실행은 디스코드 정책으로 금지되었습니다.">Search for tracks on Deezer music with priority. Playing YouTube link is prohibitted by a policy of global Discord.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/play" data-ko="/play">/playlist play [name]</td>
                     <td data-label="Description" data-en="Play a saved playlist." data-ko="미리 저장된 플레이리스트를 플레이합니다.">Play a saved playlist.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/list" data-ko="/list">/list</td>
                     <td data-label="Description" data-en="Display a list of the current songs in the queue." data-ko="현재 대기열에 있는 노래 목록을 표시합니다.">Display a list of the current songs in the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/playlist list" data-ko="/playlist list">/playlist list</td>
                     <td data-label="Description" data-en="Display the server's saved playlists." data-ko="서버에 저장된 플레이리스트를 보여줍니다.">Display the server's saved playlists.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/playlist list-tracks [name] (page)" data-ko="/playlist list-tracks [name] (page)">/playlist list-tracks [name] (page)</td>
                     <td data-label="Description" data-en="List the tracks from the specified playlist." data-ko="특정 플레이리스트의 트랙들을 보여줍니다.">List the tracks from the specified playlist.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/nowplaying" data-ko="/nowplaying">/nowplaying</td>
                     <td data-label="Description" data-en="Display the currently playing track." data-ko="현재 재생 중인 트랙을 표시합니다.">Display the currently playing track.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/skip first" data-ko="/skip first">/skip first</td>
                     <td data-label="Description" data-en="Skip one or more tracks in the beginning of the queue." data-ko="대기열의 시작 부분에서 하나 이상의 트랙을 건너뜁니다.">Skip one or more tracks in the beginning of the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/stop" data-ko="/stop">/stop</td>
                     <td data-label="Description" data-en="Stop the player and clear the queue." data-ko="플레이어를 정지시키고 대기열을 정리합니다.">Stop the player and clear the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/pause on/off" data-ko="/pause on/off">/pause on/off</td>
                     <td data-label="Description" data-en="on to pause the player and off to resume." data-ko="플레이어를 일시정지하거나 이어서 재생할 수 있습니다.">on to pause the player and off to resume.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/shuffle on/off" data-ko="/shuffle on/off">/shuffle on/off</td>
                     <td data-label="Description" data-en="on to active shuffle mode and off to deactive shuffle mode." data-ko="셔플 모드를 키고 끕니다.">on to active shuffle mode and off to deactive shuffle mode.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/reshuffle" data-ko="/reshuffle">/shuffle on/off</td>
                     <td data-label="Description" data-en="Reshuffle the queue." data-ko="재생 대기열을 다시 섞습니다.">Reshuffle the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/repeat all" data-ko="/repeat all">/repeat all</td>
                     <td data-label="Description" data-en="Repeat all tracks" data-ko="대기열의 모든 트랙을 반복합니다.">Repeat all tracks</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/repeat single" data-ko="/repeat single">/repeat single</td>
                     <td data-label="Description" data-en="Repeat the same track." data-ko="현재 재생중인 트랙만 반복합니다.">Repeat the same track.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/repeat off" data-ko="/repeat off">/repeat off</td>
                     <td data-label="Description" data-en="Play the queue normally." data-ko="대기열을 정상적으로 실행합니다.">Play the queue normally.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/reposition [current-position] [new-position]" data-ko="/reposition [current-position] [new-position]">/reposition [current-position] [new-position]</td>
                     <td data-label="Description" data-en="Change the position of a track in the queue." data-ko="현재 대기열에서 current-position번째의 트랙을 new-position번째로 바꿉니다.">Change the position of a track in the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
                 <tr>
                     <td class="command" data-label="Command" data-en="/skip first (count)" data-ko="/skip first (count)">/skip first (count)</td>
                     <td data-label="Description" data-en="Skip one or more tracks in the beginning of the queue." data-ko="현재 대기열의 앞에서부터 트랙을 하나 또는 그 이상을 스킵합니다. 스킵된 트랙은 대기열에서 없어집니다.">Skip one or more tracks in the beginning of the queue.</td>
+                    <td data-label="Example" data-en="ex" data-ko="예시">ex</td>
                 </tr>
               </tbody>
           </table>
@@ -357,8 +558,10 @@
         function setLanguage(lang) {
             var elements = document.querySelectorAll('[data-en]');
             elements.forEach(function(el) {
-                el.textContent = el.getAttribute('data-' + lang);
+                //el.textContent = el.getAttribute('data-' + lang);
+                el.innerHTML = el.getAttribute('data-' + lang);
             });
+            
 
             var placeholders = document.querySelectorAll('input[placeholder]');
             placeholders.forEach(function(el) {
