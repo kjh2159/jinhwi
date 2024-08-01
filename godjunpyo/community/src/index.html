@@ -187,6 +187,10 @@
                     <td data-label="Description" data-en="TA Yoon will check the expected expiration date of your membership." data-ko="요청자의 예상 멤버십 만료 기한을 알려줍니다.">TA Yoon will check the expected expiration date of your membership.</td>
                     <td data-label="Example" data-en="/check_membership_expiration" data-ko="/결제마감일확인">/check_membership_expiration</td>
                 </tr>
+                <tr> 
+                    <td class="command" data-label="Command" data-en="/gift_gcoin [g_code] [g_coin_amount]" data-ko="/g_coin_선물하기 [g_code] [g_coin_갯수]">/gift_gcoin [g_code] [g_coin_amount]</td>
+                    <td data-label="Description" data-en="Gift G-coins as many as you set to another user." data-ko="해당 G-Code를 가진 다른 사용자에게 G-coin을 선물합니다.">Gift G-coins as many as you set to another user.</td>
+                </tr>
 
                 <!-- Ask -->
                 <tr>
@@ -219,6 +223,15 @@
                     <td data-label="Description" data-en="You can ask a question about a website from the given url." data-ko="/질문_웹주소 [질문] [웹주소]">You can ask a question about a website from the given url.</td>
                     <td data-label="Example" data-en="/ask_with_url question: What are the website saying about? url: https://shorturl.at/UgT2X" data-ko="(문서 업로드 상태에서)<br>/질문_웹주소 질문: 웹사이트는 무엇에 대해 설명하고 있나요? 웹주소: https://shorturl.at/UgT2X">/ask_with_url question: What are the website saying about? url: https://shorturl.at/UgT2X</td>
                 </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_grandma [question]" data-ko="/질문_할머니 [question]">/ask_grandma [question]</td>
+                    <td data-label="Description" data-en="Ask for a simple explanation htat even grandma can understand" data-ko="질문의 내용을 할머니도 알아들으실 수 있을 정도의 비유를 통해서 설명을 요청합니다.">Ask for a simple explanation htat even grandma can understand</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/ask_with_url [question] [url]" data-ko="/질문_웹주소 [질문] [웹주소]">/ask_with_url [question] [url]</td>
+                    <td data-label="Description" data-en="Ask a question with a reference URL" data-ko="주어진 웹주소 페이지의 내용에 대해 질문할 수 있습니다.">Ask a question with a reference URL</td>
+                </tr>
+
                 <!-- Search -->
                 <tr>
                     <td class="command" data-label="Command" data-en="/search_lab [question]" data-ko="/검색_연구실 [질문]">/search_lab [question]</td>
@@ -314,55 +327,46 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="command" data-label="Command" data-en="/make_private_thread [thread_name]" data-ko="/make_private_thread [thread_name]">/make_private_thread [thread_name]</td>
-                    <td data-label="Description" data-en="Make a private thread for Godjunpyo AI yearly member." data-ko="비공개 스레드 만드는 기능입니다. 갓준표 AI 연간 회원 전용의 기능입니다.">Make a private thread for Godjunpyo AI yearly member.</td>
-                    <td data-label="Example" data-en="/make_private_thread thread_name: this is private" data-ko="/make_private_thread thread_name: 비공개 스레드">/make_private_thread thread_name: this is private</td>
-                </tr>
-                <tr>
-                    <td class="command" data-label="Command" data-en="/help_newbie" data-ko="/help_newbie">/help_newbie</td>
+                    <td class="command" data-label="Command" data-en="/help_newbie" data-ko="/초보자용설명서">/help_newbie</td>
                     <td data-label="Description" data-en="Show users a helpful document for a discord newbie." data-ko="사용자에게 디스코드 첫 사용자를 위한 유용한 설명서를 보여줍니다.">Show users a helpful document for a discord newbie.</td>
-                    <td data-label="Example" data-en="/help_newbie" data-ko="/help_newbie">/help_newbie</td>
+                    <td data-label="Example" data-en="/help_newbie" data-ko="/초보자용설명서">/help_newbie</td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="command" data-label="Command" data-en="/make_private_thread [thread_name]" data-ko="/비공개스레드생성 [스레드이름]">/make_private_thread [thread_name]</td>
+                    <td data-label="Description" data-en="Make a private thread for Godjunpyo AI yearly member." data-ko="비공개 스레드 만드는 기능입니다. 갓준표 AI 연간 회원 전용의 기능입니다.">Make a private thread for Godjunpyo AI yearly member.</td>
+                    <td data-label="Example" data-en="/make_private_thread thread_name: this is private" data-ko="/비공개스레드생성 스레드이름: 비공개 스레드">/make_private_thread thread_name: this is private</td>
+                </tr>
 
-
-        <!-- Tatsu -->
-        <img src="../img/tatsu.png" alt="../img/tatsu.png" style="margin-top: 20px; padding-left: 20px; width: min(13vw, 13vh);"/>
-        <!-- Command Table -->
-        <table id="commands-table">
-            <thead>
+                <!-- profilecard -->
                 <tr>
-                    <th>Command</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="command" data-label="Command" data-en="t! top (page_num)" data-ko="t! top (페이지)">t! top (page_num)</td>
-                    <td data-label="Description" data-en="Show the ranking, which is corresponding to the page number, of the Godjunpyo AI server. At most 10 users could be shown per page. The default value is 1." data-ko="갓준표 AI 서버에서 페이지에 상응하는 서버 사용 순위를 보여줍니다. 페이지당 최대 10명의 사용자가 보여줄 수 있습니다. 기본값은 1입니다.">Show the ranking, which is corresponding to the page number, of the Godjunpyo AI server. At most 10 users could be shown per page. The default value is 1.</td>
-                    <td data-label="Example" data-en="t! top 1" data-ko="t! top 1">t! top 1</td>
+                    <td class="command" data-label="Command" data-en="/profilecard (user)" data-ko="/프로필카드 (멤버)">/make_private_thread [thread_name]</td>
+                    <td data-label="Description" data-en="Show a profile card of the given member. The default value is user himself." data-ko="대상자의 프로필카드를 보여줍니다. 기본값은 사용자 본인입니다.">Show a profile card of the given member. The default value is user himself.</td>
+                    <td data-label="Example" data-en="/profilecard" data-ko="/프로필카드">/profilecard</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="t! profile (user)" data-ko="t! profile (사용자)">t! profile (user)</td>
-                    <td data-label="Description" data-en="Show a global profile of the user. Tatsu bot is a global-wide bot. So this profile does not reflect the only Godjunpyo AI discord server. User should be a mentioned form (@) or universal id (unique one). The default value is the user himself." data-ko="사용자의 글로벌 프로필을 보여줍니다. Tatsu 봇은 글로벌 규모의 봇입니다. 그래서 이 프로필은 갓준표 AI 디스코드 서버만을 반영하지 않습니다. User는 언급 형태(@) 또는 개인 ID가 되어야 합니다. 기본값은 사용자 본인입니다.">Show a global profile of the user. Tatsu bot is a global-wide bot. So this profile does not reflect the only Godjunpyo AI discord server. User should be a mentioned form (@) or universal id (unique one). The default value is the user himself.</td>
-                    <td data-label="Example" data-en="t! profile mutexlock_" data-ko="t! profile @MutexLock-G1752">t! profile mutexlock_</td>
+                    <td class="command" data-label="Command" data-en="/set_tags (affiliation) (program) (major) (extra_tag1) (extra_tag2)" data-ko="/프로필태그설정 (소속) (과정) (전공) (추가태그1) (추가태그2)">/set_tags (affiliation) (program) (major) (extra_tag1) (extra_tag2)</td>
+                    <td data-label="Description" data-en="Set your tags for profilecard. For affiliation and major, you can choose one of the choices or input if you need other one. No-options mean to reset your tags." data-ko="프로필카드에 작성되는 태그를 설정합니다. '소속'과 '전공'에 대해, 한 가지를 선택하거나 필요한 경우 직접 다른 텍스트를 입력할 수 있습니다. 아무런 옵션이 없다면, 태그를 초기화합니다.">Set your tags for profilecard. For affiliation and major, you can choose one of the choices or input if you need other one. No-options mean to reset your tags.</td>
+                    <td data-label="Example" data-en="/profilecard" data-ko="/프로필태그설정 소속: 과기원 과정: 박사 전공: 수학">/set_tags affiliation: IST program: Ph.D major: MATH</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="t! rank (user)" data-ko="t! rank (사용자)">t! rank (user)</td>
-                    <td data-label="Description" data-en="Show a server scale profile of the user. User should be a mentioned form or universal id (unique one). The default value is the user himself." data-ko="사용자의 서버 단위 프로필을 보여줍니다. User는 언급 형태(@) 또는 개인 ID가 되어야 합니다. 기본값은 사용자 본인입니다.">Show a server scale profile of the user. User should be a mentioned form or universal id (unique one). The default value is the user himself.</td>
-                    <td data-label="Example" data-en="t! profile @MutexLock-G1752" data-ko="t! profile mutexlock_">t! profile @MutexLock-G1752</td>
+                    <td class="command" data-label="Command" data-en="/set_nickname_font [font_type]" data-ko="/프로필닉네임폰트설정 [폰트타입]">/set_nickname_font [font_type]</td>
+                    <td data-label="Description" data-en="Set a nickname font for your profilecard." data-ko="프로필카드에 작성되는 닉네임의 폰트를 설정합니다.">Set a nickname font for your profilecard.</td>
+                    <td data-label="Example" data-en="/set_nickname_font font_type: Giants Inline" data-ko="/프로필닉네임폰트설정 폰트타입: 자이언츠 인라인">/set_nickname_font font_type: Giants Inline</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="t! wallet (user)" data-ko="t! wallet (사용자)">t! wallet (user)</td>
-                    <td data-label="Description" data-en="Display wallet of the user, for tatsu bot, including credits, tokens, and server points. These kinds of currency would be utilized to buy a badge later. The default value is the user himself." data-ko="Tatsu 봇에 사용되는 지갑의 내용을 보여줍니다. 지갑의 정보는 크레딧, 토큰, 서버 포인트 등이 포함되며 이와 같은 재화는 추후 뱃지 같은 상품 구매에 활용될 수 있습니다. 기본값은 사용자 본인입니다.">Display wallet, for tatsu bot, including credits, tokens, and server points. These kinds of currency would be utilized to buy a badge later. The default value is the user himself.</td>
-                    <td data-label="Example" data-en="t! wallet" data-ko="t! wallet">t! wallet</td>
+                    <td class="command" data-label="Command" data-en="/set_profile_msg [content]" data-ko="/프로필메세지설정 [내용]">/set_profile_msg [content]</td>
+                    <td data-label="Description" data-en="Set your profile message. Maximum length of the content is at most 100 bytes." data-ko="프로필메세지를 설정합니다. 내용의 허용 최대 길이는 총 100 Byte입니다.">Set your profile message. Maximum length of the content is at most 100 bytes.</td>
+                    <td data-label="Example" data-en="/set_profile_msg content: It's a message" data-ko="/프로필메세지설정 내용: It's a message">/set_profile_msg content: It's a message</td>
                 </tr>
                 <tr>
-                    <td class="command" data-label="Command" data-en="t! reputation [user]" data-ko="t! reputation [사용자]">t! reputation [user]</td>
-                    <td data-label="Description" data-en="Vote up the reputation of the user. If you are given help from another person, we recommend giving a reputation to that one. User should be provided and cannot be himself. You can give a reputation to a person every 12 hours. To use this command, you must login to the dashboard of <a href=&quot https://tatsu.gg/ &quot>this site</a> at least once." data-ko="다른 유저의 명성치를 올릴 수 있습니다. 다른 사람으로부터 도움을 받았다면, 그 사람에게 명성치 올리는 것을 추천드립니다. 사용자는 반드시 입력되어야 하며 본인이 될 수 없습니다. 매 12시간마다 다른 사람의 명성치를 한 번 올릴 수 있습니다. 이 명령어를 사용하기 위해선 <a href=&quot https://tatsu.gg/ &quot>타츠 봇 웹사이트</a>의 대시보드에 한 번 이상 로그인해야 합니다.">Vote up the reputation of the user. If you are given help from another person, we recommend giving a reputation to that one. User should be provided and cannot be himself. You can give a reputation to a person every 12 hours. To use this command, you must login to the dashboard of <a href="https://tatsu.gg/">this site</a> at least once.</td>
-                    <td data-label="Example" data-en="t! reputation mutexlock_" data-ko="t! reputation mutexlock_">t! reputation mutexlock_</td>
+                    <td class="command" data-label="Command" data-en="/set_card_bg [msg_link]" data-ko="/프로필배경설정 [메세지링크]">/set_card_bg [msg_link]</td>
+                    <td data-label="Description" data-en="Set your profilecard's background from a discord chat containing an image. The size of the image can be at most 2MB." data-ko="이미지가 포함된 디스코드 채팅으로부터 사용자의 프로필카드 배경을 설정합니다. 이미지의 크기는 최대 2MB까지 허용됩니다.">Set your profilecard's background from a discord chat containing an image. The size of the image can be at most 2MB.</td>
+                    <td data-label="Example" data-en="/set_card_bg msg_link: https://discord.com/copied/message/link/of/discord/chat" data-ko="/프로필배경설정 메세지링크: https://discord.com/디스코드채팅에서/복사한/메세지링크">/set_card_bg msg_link: https://discord.com/copied/message/link/of/discord/chat</td>
+                </tr>
+                <tr>
+                    <td class="command" data-label="Command" data-en="Message Option > App > Set Card Background" data-ko="메세지 옵션 > 앱 > 프로필배경설정">Message Option > App > Set Card Background</td>
+                    <td data-label="Description" data-en="Set your profilecard's background from a discord chat containing an image. The size of the image can be at most 2MB." data-ko="이미지가 포함된 디스코드 채팅으로부터 사용자의 프로필카드 배경을 설정합니다. 이미지의 크기는 최대 2MB까지 허용됩니다.">Set your profilecard's background from a discord chat containing an image. The size of the image can be at most 2MB.</td>
+                    <td data-label="Example" data-en="-" data-ko="-">-</td>
                 </tr>
             </tbody>
         </table>
