@@ -308,6 +308,11 @@ span {
 	text-align:justify;
 }
 
+.main-content .comment-section{
+	margin-left: 6vw;
+	margin-right: 6vw;
+}
+
 
 /** HOME HEADING **/
 .wrapper .home-heading{

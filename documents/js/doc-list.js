@@ -5,6 +5,7 @@ const c = [];
 
 // C++
 const cpp =[
+  { no: 4, date: '2024-08-02', kor_title: 'MacOS 소프트웨어 업데이트 후 발생하는 GCC/G++ 및 컴파일 문제', eng_title: 'GCC/G++ Compilation Problem after MacOS Software Update', link: 'gnu_on_mac.html' },
   { no: 3, date: '2024-02-15', kor_title: 'MacOS에서 C/C++ 세팅', eng_title: 'C/C++ Setup on MacOS ', link: 'mac_setting.html' },
   { no: 2, date: '2022-01-24', kor_title: 'using namespace std는 그만 써야 한다?', eng_title: 'Do not use using namespace std!', link: 'macro_stdio.html' },
   { no: 1, date: '2022-01-24', kor_title: 'C++ 예제 문제', eng_title: 'C++ Exercise Problems',link: 'problems.html' },
