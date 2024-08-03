@@ -55,7 +55,7 @@ span {
 }
 
 /** SIDE MENU **/
-.wrapper .sidemenu{
+.wrapper .sidebar{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -70,7 +70,7 @@ span {
 
 
 /**Contents */
-.wrapper .sidemenu h1{
+.wrapper .sidebar h1{
 	color: white;
 	font-family: "HSSaemaul-Regular";
 	/*font-size: 40pt;*/
@@ -86,7 +86,7 @@ span {
 }
 
 /** LISTING **/
-.sidemenu .button{
+.sidebar .button{
 	/*font-family: "HSSaemaul-Regular";*/
 	font-family: "National-Museum-B";
 	letter-spacing: 1px;
@@ -149,7 +149,7 @@ span {
 	border-radius: 50%;
 }
 
-.sidemenu .profile p{
+.sidebar .profile p{
 	color: white;
 	text-align: center;
 
@@ -157,7 +157,7 @@ span {
 	font-size: 14pt;
 }
 
-.sidemenu .profile .profile-msg{
+.sidebar .profile .profile-msg{
 	color: #C2C2C2;
 	font-size: 12pt;
 	font-style: italic;
@@ -165,7 +165,7 @@ span {
 
 
 /** Social Media **/
-.sidemenu .social-media {
+.sidebar .social-media {
 	/*position: absolute;*/
 
 	/*left:50%;*/
@@ -182,7 +182,7 @@ span {
 	font-size: 20pt;
 }
 
-.sidemenu .social-media a:hover{
+.sidebar .social-media a:hover{
 	color: red;
 }
 
