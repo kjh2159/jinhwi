@@ -1,0 +1,10 @@
+{
+	"menu": {
+		"C/C++": "CPP", 
+		"Python": "PYTHON", 
+		"MATLAB": "MATLAB", 
+		"Com.Arch.": "CA",
+		"OS": "OS", 
+		"Network": "NETWORK"
+	}
+}

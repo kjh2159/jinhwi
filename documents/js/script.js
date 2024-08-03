@@ -1,3 +1,8 @@
+// with keyword instead of assert keyword
+import sidebar from '../data/sidebar.json' with { type: 'json' };
+
+console.log(sidebar['menu'])
+
 var colorModeLight = true;
 const scrollUpBtn = document.getElementById("scorll-up");
 console.log(scrollUpBtn);
@@ -8,7 +13,6 @@ scrollUpBtn.addEventListener("click", () => {
 		behavior: "smooth"
 	});
 });
-
 
 function switchLang(){
 	let langBtn = document.getElementById("l-switch");
@@ -171,3 +175,19 @@ function switchColorMode4DocList(){
 		docTitle.style.color = "#000000";
 	});
 }
+
+
+function generateSideMenu(){
+	var sidemenu_location = document.getElementById('sidemenu')
+	var sidemenu = sidebar['menu']
+	for (var category in sidemenu){
+		//console.log(category, sidemenu[category])
+		sidemenu_location.innerHTML += `
+			<button type="button" class="button contents" onclick="location.href='../${sidemenu[category]}/index.html'">${category}</button>
+		`;
+	}	
+}
+
+
+// generate sidemenu
+generateSideMenu()
