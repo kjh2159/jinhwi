@@ -185,6 +185,8 @@ This is free software; see the source for copying conditions. There is NO warran
 
 		<!-- FOOTER -->
 		<div class="footer">© Copyright 2022 Jinhwi Kim | Designed by Jinhwi Kim </div>
+		<div class="footer" id="pageviews"> Loading...</div>
+		<button style="position: relative; text-align: center;" onclick="authenticate().then(loadClient).then(execute)">Load Page Views</button>
 	</body>
 
 	<!-- External JavaScript -->
@@ -199,5 +201,58 @@ This is free software; see the source for copying conditions. There is NO warran
   		gtag('js', new Date());
 
   		gtag('config', 'G-W1L9HJ4Y4P');
+	</script>
+	<!-- Google Analytics Reporting -->
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script>
+  		// 클라이언트 ID와 API key 설정
+  		const CLIENT_ID = '1016196675005-3vvmv2fng3s591jrj3vu1g87vgbid45p.apps.googleusercontent.com';
+  		const API_KEY = 'AIzaSyCZmUekOCaraSifcF9E0Z2UvYP203JDi4s';
+
+  		function authenticate() {
+    		return gapi.auth2.getAuthInstance()
+        		.signIn({scope: "https://www.googleapis.com/auth/analytics.readonly"})
+        		.then(function() { console.log("Sign-in successful"); },
+              		function(err) { console.error("Error signing in", err); });
+  		}
+  		function loadClient() {
+    		gapi.client.setApiKey(API_KEY);
+    		return gapi.client.load("https://analyticsreporting.googleapis.com/$discovery/rest?version=v4")
+        		.then(function() { console.log("GAPI client loaded for API"); },
+              		function(err) { console.error("Error loading GAPI client for API", err); });
+  		}
+  		// Google Analytics 데이터를 가져오는 함수
+  		function execute() {
+    		return gapi.client.analyticsreporting.reports.batchGet({
+      			"reportRequests": [
+        			{
+          				"viewId": "YOUR_VIEW_ID",
+          				"dateRanges": [
+            				{
+              					"startDate": "30daysAgo",
+              					"endDate": "today"
+            				}
+          				],
+          				"metrics": [
+            				{
+              					"expression": "ga:pageviews"
+            				}
+          				]
+        			}
+      			]
+    		})
+        		.then(function(response) {
+          			console.log("Response", response);
+          			const pageViews = response.result.reports[0].data.totals[0].values[0];
+          			document.getElementById('pageviews').innerText = `Page Views: ${pageViews}`;
+        		},
+              		function(err) { console.error("Execute error", err); });
+  		}
+  		gapi.load("client:auth2", function() {
+    		gapi.auth2.init({
+    			client_id: CLIENT_ID,
+    			api_key: API_KEY
+    		});
+  		});
 	</script>
 </html>
