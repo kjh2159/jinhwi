@@ -89,6 +89,7 @@ h2 {
 
 .navbar a {
     color: white;
+    height: 100%;
 }
 
 .navbar-brand {
@@ -102,10 +103,6 @@ h2 {
 .navbar .navbar-nav .nav-item {
     margin-left: 15px;
     margin-right: 15px;
-}
-
-.navbar .navbar-nav .nav-item:last-child {
-    margin-right: 0;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
@@ -409,8 +406,8 @@ figure.effect-julia p {
 	font-size: 75%;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-120%,0,0);
-	transform: translate3d(-120%,0,0);
+	-webkit-transform: translate3d(-400%,0,0);
+	transform: translate3d(-400%,0,0);
 }
 
 figure.effect-julia p:first-child {
@@ -538,6 +535,15 @@ figure.effect-julia:hover p {
 
 @media (min-width: 992px)
 {
+    .navbar a {
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link {
+        padding: 15px 15px;
+    }
+
     .navbar-expand-lg .navbar-collapse {
         justify-content: flex-end;
     }
@@ -553,7 +559,12 @@ figure.effect-julia:hover p {
 
 @media (max-width: 1200px) {
     .navbar .navbar-nav .nav-item .nav-link {
-        padding: 15px 45px;
+        padding: 15px 15px;
+        display: flex;
+        align-items: center;   /* 링크 박스 안에서 텍스트 세로 가운데 */
+        min-height: 63px;      /* 헤더 높이에 맞춰 가운데 느낌 확보 */
+        line-height: 1.25;  
+        text-align: center;
     }
 }
 
@@ -572,16 +583,23 @@ figure.effect-julia:hover p {
         position: relative;
     }
     
+    .navbar a {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
     .navbar-collapse {
         position: absolute;
         top: 63px;
         right: 0;
         background: rgb(54 75 96);
         border-radius: 5px;
+        text-align: center;
     }
 
     .navbar .navbar-nav .nav-item {
-        margin-bottom: 20px;
+        margin-bottom: 20px;   
     }
 
     .page-left,
