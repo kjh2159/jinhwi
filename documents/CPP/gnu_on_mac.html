@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--FIX HTTPS ERROR-->
+		<title>Jinhwi Kim</title>
+
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/lecture.css">
+
+		<!-- For Icon -->
+		<script src="https://kit.fontawesome.com/35a4560683.js" crossorigin="anonymous"></script>
+		<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+		<!-- CDN Code Highlighter -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/rainbow.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<!-- sidebar -->
+			<div class="sidebar">
+				<h1 class="contents">CONTENTS</h1>
+
+				<!-- sidemenu  -->
+				<div id="sidemenu"></div>
+
+				<!-- Profile  -->
+				<div class="profile">
+					<img src="../img/jh_test.jpg" alt="Unloaded" class="profile-img">
+					<p>Jinhwi Kim</p>
+					<p class="profile-msg">Hello, World</p>
+				</div>
+
+
+				<!-- Social Media -->
+				<div class="social-media">
+					<a href="https://youtube.com/@MutexLock" style="color: white;"><i class="fab fa-youtube"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-github"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+					<a href="#" style="color: white;"><i class="fab fa-discord"></i></a>
+				</div>
+			</div>
+
+
+			<!-- home heading -->
+			<div class="home-heading">
+				<p class="spacing">
+					<a class="head-btn" style="color: white;"><i class="fas fa-home"></i></a>
+					<a id="scorll-up" class="head-btn" style="color: white;"><i class="fas fa-chevron-up"></i></a>
+					<a class="head-btn" style="color: white;"><i class="far fa-id-card"></i></a>
+				</p>
+				<h1>Jinhwi Kim: Docs</h1>
+			</div>
+
+
+
+			<!-- main content -->
+			<div class="main-content">
+				<div class="lang-switch" id = "lang-canvas">
+					<button id="l-switch" onclick="switchLang()" class="lang-detail">한글</button>
+				</div>
+				<div>
+					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="icomoon-free:sun" id="mode-light"></span></button>
+					<button id="color-mode-change" onclick="switchColorMode()"><span class="iconify" data-icon="bi:moon-stars" id="mode-dark"></span></button>
+					<i class="fa fa-brightness"></i>
+				</div>
+				<section id = "section1">
+					<h2 class="kor-text">
+						MacOS 소프트웨어 업데이트이후 gcc/g++에서 발생하는 문제 및 초기화 해결법 (-lgcc Warning)
+					</h2>
+					<h2 class="eng-text">
+						Resolution for problems and reset of gcc/g++ after MacOS software update (-lgcc Warning) 
+					</h2>
+
+					<p class="kor-text">
+						MacOS 소프트웨어를 업데이트하고 난 이후에 <code id="code-word">g++</code>이 제대로 동작하지 않는 문제가 발생했었다. 나는 꽤나 오래전부터 겪고 그 직후 해결하긴 했었지만, 이제서야 글을 쓴다. 23년 중반즈음에 발생한 문제였던 것으로 기억한다. 아무튼, 그래서 <code id="code-word">g++</code>의 버전부터 확인해봤다. 원래 나는 Homebrew를 통해 배포되는 <code id="code-word">Hombrew GCC</code>를 사용했었다. 그런데, <code id="code-word">g++ --version</code>의 결과가 <code id="code-word">Apple Clang</code>으로 초기화됨을 확인했다.
+					</p>
+					<p class="eng-text">
+						A problem, which <code id="code-word">g++</code> does not work properly, happened after I updated a recent MacOS software. I've gone through this problem and resolved it, but I'm just now writing a document about it. I remember that this problem happened at mid of 2023. Anyway, I tried to check the version of <code id="code-word">g++</code>. Actually, I've utilized <code id="code-word">Homebrew GCC</code> distributed by Homebrew. By the way, as a result of the <code id="code-word">g++ --version</code>, the compiler setting has reset with <code id="code-word">Apple Clang</code>.
+					</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">Apple clang version 16.0.0 (clang-1600.0.23.1)
+Target: arm64-apple-darwin24.0.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin</code></pre>
+					</p>
+
+					<p class="kor-text">
+						일단, <code id="code-word">Homebrew GCC</code>를 기존에 사용하고 있었다면, 이 파일이 어디 사라지지는 않는다. 다만, 이 문제는 <code id="code-word">CommandLineTools</code>와 관련된 파일들이 초기화되어버려서 그렇다. 해당 문제를 해결하기 위해서는 일단 터미널을 키고 <code id="code-word">CommandLineTools</code>를 재설치하자. <code id="code-word">SF Symbol</code>도 설치한 적이 있다면 이 기회에 SF Symbol도 업데이트한다. gcc도 재설치를 한다.
+					</p>
+
+					<p class="eng-text">
+						First of all, if you were using <code id="code-word">Homebrew GCC</code>, the files would not go anywhere. But, the problem happened because the files related to <code id="code-word">CommandLineTools</code> were reset. To resolve this problem, turn on a terminal and reinstall CommandLineTools. If you have installed <code id="code-word">SF Symbol</code>, then update it at this time. Plus, you can reinstall gcc. Try the following command line.
+					</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">xcode-select --install
+brew install gcc</code></pre>
+					</p>
+
+					<p class="kor-text">
+						다음으로, <code id="code-word">Homebrew GCC</code>가 설치된 곳으로 이동해서 Symbolic Link를 만들어준다. 제대로 설치되었는지 확인하기 위해서는 디렉토리 이동 후에 <code id="code-word">g++[버전] --version</code>으로 확인해볼 수도 있다. 이때 <code id="code-word">Apple Clang</code>이 뜨면 안 된다. 설정 당시 나의 버전은 14이므로 <code id="code-word">g++-14</code>인데 본인 MacOS에 설치된 g++ 버전은 <code id="code-word">ls</code>로 꼭 확인해보길 바란다.
+					</p>
+
+					<p class="eng-text">
+						Next, move to the directory, which <code id="code-word">Homebrew GCC</code> is installed from, and create a symbolic link for it. To check if it is installed properly, you can check it with <code id="code-word">g++-[version] --version</code> after moving to the directory. When you execute it, the phrase of <code id="code-word">Apple Clang</code> should not be shown. At the moment, my version is 14 so I tried <code id="code-word">g++-14</code>. Please check your g++ version installed on your MacOS with <code id="code-word">ls</code>, which finds out the list of files in the current working directory.
+					</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">cd /opt/homebrew/bin
+sudo ln -s g++-14 g++
+sudo ln -s gcc-14 gcc</code></pre>
+					</p>
+
+					<p class="kor-text">이제 제대로 되는지 확인해야 한다.</p>
+					<p class="eng-text">Now, check working properly.</p>
+
+					<p>
+						<pre><code class="bsh" id="code-canvas">cd
+g++ --version</code></pre>
+					</p>
+
+					<p class="kor-text">결과가 다음과 같아야 한다.</p>
+					<p class="eng-text">The result should be like the following one.</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">g++ (Homebrew GCC 14.1.0) 14.1.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</code></pre>
+					</p>
+
+					<p class="kor-text">테스트를 했는데, 컴파일 결과가 이상하게 나오기도 한다.</p>
+					<p class="eng-text">I tried a test, but the result of the compilation came out really weird.</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">g++ -o runfile main.cpp -lm</code></pre>
+					</p>
+
+					<p class="kor-text">아래와 같은 에러가 뜬다.</p>
+					<p class="eng-text">An error like the below occurred.</p>
+
+					<p>
+						<pre><code class="bash" id="code-canvas">ld: warning: ignoring duplicate libraries: '-lgcc'</code></pre>
+					</p>
+
+					<p class="kor-text">
+						찾아보니, MacOS GCC에서만의 문제라고한다. 그리고 이는 현재는 글을 작성하는 현재(2024.08.02)는 해결된 상태이다. 하지만, 언제 또 이런 에러가 발생할지 그리고 업데이트하지 않은 사람들이 있을지 몰라서 작성하고 있다. 이와 같은 에러는 컴파일에 옵션을 추가하는 것으로 간단히 해결이 가능하다. <code id="code-word">-ld_classic</code> 컴파일 옵션을 추가해주면 됩니다.
+					</p>
+
+					<p class="eng-text">
+						Some documents say this problem is invoked in only MacOS GCC. This has been resolved by Apple at this moment (02.08.24). But, we don't know when this error happens and there are many people who did not update their own software. This error can be resolved by adding a compilation option, <code id="code-word">-ld_classic</code>.
+					</p>
+
+					<p><pre><code class="bash" id="code-canvas">g++ -o runfile main.cpp -lm -ld_classic</code></pre></p>
+					
+					<p class="kor-text">이렇게하면, 깔끔하게 해결이 가능하다.</p>
+					<p class="eng-text">Like this, you can resolve this clearly.</p>
+
+				</section>
+				<div class="comment-section">
+					<script src="https://giscus.app/client.js"
+        						data-repo="kjh-icnl/jinhwi"
+        						data-repo-id="MDEwOlJlcG9zaXRvcnkzOTE4OTA2ODI="
+        						data-category="Comment"
+        						data-category-id="DIC_kwDOF1vG-s4ChW8b"
+        						data-mapping="pathname"
+        						data-strict="0"
+        						data-reactions-enabled="1"
+        						data-emit-metadata="1"
+        						data-input-position="top"
+        						data-theme="dark_dimmed"
+        						data-lang="ko"
+        						crossorigin="anonymous"
+        						async>
+					</script>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- FOOTER -->
+		<div class="footer">© Copyright 2022 Jinhwi Kim | Designed by Jinhwi Kim </div>
+	</body>
+
+	<!-- External JavaScript -->
+	<script src="../js/script.js"></script>
+	<script type="module" src="../js/sidemenu.js"></script>
+</html>
