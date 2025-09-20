@@ -1,0 +1,15 @@
+url: "https://kjh2159.github.io"
+
+baseurl: "/jinhwi"
+
+
+plugins:
+  - jekyll-sitemap     # 공식 지원 플러그인
+  - jekyll-seo-tag     # 메타태그/OG 태그 자동화 (권장)
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: null
